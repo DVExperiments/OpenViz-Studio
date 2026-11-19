@@ -1,0 +1,13 @@
+# V3.27 handoff
+
+New src/map-canvas-edit.js is an editor-only, opt-in runtime installed on #liveChartSvg. It decorates visible map names and callout rects with focusable handles. Root capture listeners consume only handle interactions while enabled; ordinary chart selection remains outside this mode. SVG/name/callout role adjustments are temporary and removed on exit. The renderer adds data-map-label-anchor for transient name leaders; existing data-label-box and data-viz-plot provide geometry. No persisted schema change.
+
+Pointer coordinates use inverse screen CTM, with a viewBox/centred meet fallback for tests. Three screen pixels start movement. Preview changes SVG transforms/leader endpoints only. Completed pointerup commits once; Escape/pointercancel/lost capture/blur/hidden document/stale context/detached SVG cancel. Arrow nudges use 1% plot; Shift 5%; each is one commit. Enter/Space/double-click opens the existing staged authoring modal at the exact target. Whole handle footprint clamps to plot; manual overlap is allowed. Points and symbol anchors remain untouched.
+
+app.js tracks ui.mapCanvasEdit (false initially/reset on selected chart change). Temporary editor config shows eligible names while editing; committing a name also enables geoShowLabels. App commit validates context and existing authoring limits before trackChange, writes only position settings and rerenders. Transient time slider is restored after rerender without modifying saved timeIndex. Context guards project/chart/rows/asset/authoring references and relevant mapping/geometry settings. Full render disconnects runtime. MutationObserver refresh decorates newly rendered time frames and cancels detached gestures. Focus is restored to the same handle after a commit.
+
+Publishing uses rebuilt model output and never installs editor runtime. SVG metadata retains geometry but no handles. Existing portable/story/dashboard/time paths already carry plot-relative authoring fields. New render fixture script produces eight SVGs plus portable JSON and standalone HTML. Example data is fictional regional geometry; no new template (43 options).
+
+Tests: test-map-canvas-v327.mjs plus extended test-studio-v37.mjs and all prior model/runtime suites pass. Native Chromium launch failed before a page opened. Windows, actual pointer/touch/browser and screen-reader acceptance remain pending. See QA_V327.md. Launch in extracted index.html folder: py -m http.server 8000; localhost:8000; Ctrl+F5.
+
+Next: authored numeric colour-domain limits for consistent scales across separate maps. Preserve fixed time domains, explicit diverging midpoint/range policies, source safety, portable validation and Undo. No full Flourish parity claim without identical-data native comparisons.

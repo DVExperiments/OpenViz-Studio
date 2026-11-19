@@ -1,0 +1,9 @@
+# V3.36 handoff
+
+Map-navigation installer now exposes locate(mark). It validates connected/current visible SVG and controller scope, authored frame and map layer. Uses getBBox local geometry; layer.getCTM().inverse().multiply(mark.getCTM()) converts own transforms while excluding reader zoom. Four rectangle corners form fit bounds. Circle cx/cy/r fallback only on untransformed branches; unsafe/unavailable bounds return an explanatory result with no view write. Intersection with authored frame, 76% fit, 1–8× cap (circles 4×), normalized center and existing clamp/apply. Cancels any active drag safely. Return {moved,message}; no project/data writes.
+
+chart-interactions passes onLocate: mark=>navigation.locate(mark) to exploration. Locate button validates current unambiguous item, calls callback, retains focus/highlight, scrolls owning SVG nearest only after successful movement, announces result. Disabled navigation remains focus-only. Serialized chart/story runtimes pick this up via existing toString functions; no new dependencies or settings.
+
+Map appearance hint updated; status/index/publishing v3.36. New test-map-locate-v336 and extended studio suite; all 37 suites pass. New render-map-locate-v336 creates portable five-map/dashboard/two-story project and six HTML examples. Test-only M/L polygon measurement shim used for before/after fixtures; native browser remains unavailable. See QA_V3_36.md. Historical docs/examples retained.
+
+Next: live locator inset. Inspect map-furniture.js and projection metadata/forward+inverse transforms before implementing; original inset currently shows authored extent. Reader zoom remains transient and must not alter persisted geoExtent. Account for nonlinear Mercator/equal-area, wrapped longitude crops and source/static outputs, or explicitly constrain unsupported cases. Preserve scope isolation, story lifecycle, no wheel interception and feature-disabled defaults.

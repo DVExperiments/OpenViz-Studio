@@ -1,0 +1,21 @@
+{
+  "features": 5,
+  "matchedRegions": 5,
+  "unmatchedRows": 1,
+  "unmatchedKeys": [
+    "UNKNOWN"
+  ],
+  "vertices": 35,
+  "rings": 7,
+  "bounds": [
+    172,
+    -43,
+    175.14999999999998,
+    -39.800000000000004
+  ],
+  "timeColourDomain": [
+    0,
+    57
+  ],
+  "timeSizeMax": 57
+}

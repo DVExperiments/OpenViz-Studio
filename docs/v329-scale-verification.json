@@ -1,0 +1,162 @@
+{
+  "log-linear": {
+    "scaleType": "linear",
+    "symlogConstant": 10,
+    "customDomain": false,
+    "scaleMin": 2,
+    "scaleMax": 50000,
+    "below": 0,
+    "above": 0,
+    "diverging": null,
+    "neutralClass": -1,
+    "method": "continuous",
+    "min": 2,
+    "max": 50000,
+    "breaks": [],
+    "classes": 0,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  },
+  "log": {
+    "scaleType": "log",
+    "symlogConstant": 10,
+    "customDomain": false,
+    "scaleMin": 2,
+    "scaleMax": 50000,
+    "below": 0,
+    "above": 0,
+    "diverging": null,
+    "neutralClass": -1,
+    "method": "continuous",
+    "min": 2,
+    "max": 50000,
+    "breaks": [],
+    "classes": 0,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  },
+  "symlog-linear": {
+    "scaleType": "linear",
+    "symlogConstant": 10,
+    "customDomain": false,
+    "scaleMin": -5000,
+    "scaleMax": 5000,
+    "below": 0,
+    "above": 0,
+    "diverging": {
+      "scaleType": "linear",
+      "symlogConstant": 10,
+      "midpoint": 0,
+      "min": -5000,
+      "max": 5000,
+      "rangeMode": "symmetric",
+      "stops": [
+        "#b35806",
+        "#f7f7f7",
+        "#2166ac"
+      ]
+    },
+    "neutralClass": -1,
+    "method": "continuous",
+    "min": -5000,
+    "max": 5000,
+    "breaks": [],
+    "classes": 0,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  },
+  "symlog": {
+    "scaleType": "symlog",
+    "symlogConstant": 10,
+    "customDomain": false,
+    "scaleMin": -5000,
+    "scaleMax": 5000,
+    "below": 0,
+    "above": 0,
+    "diverging": {
+      "scaleType": "symlog",
+      "symlogConstant": 10,
+      "midpoint": 0,
+      "min": -5000,
+      "max": 5000,
+      "rangeMode": "symmetric",
+      "stops": [
+        "#b35806",
+        "#f7f7f7",
+        "#2166ac"
+      ]
+    },
+    "neutralClass": -1,
+    "method": "continuous",
+    "min": -5000,
+    "max": 5000,
+    "breaks": [],
+    "classes": 0,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  },
+  "equal-log": {
+    "scaleType": "log",
+    "symlogConstant": 10,
+    "customDomain": true,
+    "scaleMin": 1,
+    "scaleMax": 100000,
+    "below": 0,
+    "above": 0,
+    "diverging": null,
+    "neutralClass": -1,
+    "method": "equal",
+    "min": 2,
+    "max": 50000,
+    "breaks": [
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "classes": 5,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  },
+  "equal-symlog": {
+    "scaleType": "symlog",
+    "symlogConstant": 10,
+    "customDomain": true,
+    "scaleMin": -1000,
+    "scaleMax": 1000,
+    "below": 3,
+    "above": 1,
+    "diverging": {
+      "scaleType": "symlog",
+      "symlogConstant": 10,
+      "midpoint": 0,
+      "min": -1000,
+      "max": 1000,
+      "rangeMode": "custom",
+      "stops": [
+        "#b35806",
+        "#f7f7f7",
+        "#2166ac"
+      ]
+    },
+    "neutralClass": 2,
+    "method": "equal",
+    "min": -5000,
+    "max": 5000,
+    "breaks": [
+      -149.438362112266,
+      -15.1689022901406,
+      15.1689022901406,
+      149.438362112266
+    ],
+    "classes": 5,
+    "requested": 5,
+    "observations": 14,
+    "error": ""
+  }
+}

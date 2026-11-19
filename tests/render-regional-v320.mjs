@@ -1,0 +1,10 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {join} from 'node:path';
+import {regionalExample} from '../src/regional-example.js';
+import {regionalReport,regionalTimeDomain} from '../src/regional-map.js';
+import {DEFAULT_CHART,buildChart} from '../src/charts.js';
+import {makeInteractiveHtml} from '../src/exports.js';
+const dir=process.argv[2]||'regional-fixtures';mkdirSync(dir,{recursive:true});const ex=regionalExample(),c={...DEFAULT_CHART,...ex.settings,id:'regional-chart',datasetId:'regional-data'};
+for(const width of [360,960])for(const dark of [false,true])for(let timeIndex=0;timeIndex<3;timeIndex++)writeFileSync(join(dir,`regional-${width}-${dark?'dark':'light'}-${timeIndex}.svg`),buildChart(ex.rows,{...c,timeIndex,background:dark?'#17252f':'#ffffff',textColor:dark?'#e6eef4':'#1c2c3e',geoOcean:dark?'#223746':'#eff6f9'},undefined,{width}));
+const project={id:'regional-example-project',name:'Custom regional map · illustrative example',datasets:[{id:'regional-data',name:'Illustrative district values',rows:ex.rows,rawRows:structuredClone(ex.rows),calculations:[],log:[]}],charts:[c],dashboards:[{id:'regional-dashboard',name:'Regional example',mode:'grid',columns:1,chartIds:[c.id],items:[]}],stories:[],slides:[],versions:[]};
+writeFileSync(join(dir,'regional-project.json'),JSON.stringify(project,null,2));writeFileSync(join(dir,'illustrative-districts.geojson'),JSON.stringify(ex.geojson,null,2));writeFileSync(join(dir,'regional-map.html'),makeInteractiveHtml(ex.rows,c));const r=regionalReport(ex.rows,c),domain=regionalTimeDomain([2020,2023,2025].map(Year=>({rows:ex.rows.filter(x=>x.Year===Year)})),c);writeFileSync(join(dir,'verification.json'),JSON.stringify({features:r.map.size,matchedRegions:r.matchedRegions,unmatchedRows:r.unmatchedRows,unmatchedKeys:r.unmatchedKeys,vertices:r.vertices,rings:r.rings,bounds:r.bounds,timeColourDomain:[domain.colorMin,domain.colorMax]},null,2));console.log('Wrote regional GeoJSON/project/HTML and 12 SVG fixtures');

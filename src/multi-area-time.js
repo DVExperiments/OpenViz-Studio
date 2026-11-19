@@ -1,0 +1,6 @@
+import {lineTimeMatrix,lineTimeDomain,renderLineTime} from './multi-line-time.js';
+const present=v=>v!==null&&v!==undefined&&String(v).trim()!=='';
+const numeric=v=>(typeof v==='number'||typeof v==='string'&&v.trim()!=='')&&Number.isFinite(Number(v));
+export function areaTimeMatrix(rows,c){const m=lineTimeMatrix(rows,c);m.error=m.error.replace('multi-series line','multi-series area');if(c.aggregation!=='count'&&rows.some(r=>present(r[c.x])&&present(r[c.seriesField])&&numeric(r[c.y])&&Number(r[c.y])<0))m.error='Overlapping area time views require nonnegative source measures. Filter or correct negative records, or use multi-series lines.';return m;}
+export function areaTimeDomain(frames,c){for(const f of frames){const m=areaTimeMatrix(f.rows,c);if(m.error)return {error:m.error};}const result=lineTimeDomain(frames,c);if(result.domain)result.domain={...result.domain,kind:'multi-area'};result.error=result.error.replaceAll('Multi-series line','Multi-series area').replaceAll('line timeline','area timeline').replaceAll('Line value range','Area value range').replaceAll('Line X range','Area X range');return result;}
+export function renderAreaTime(rows,c,b){return renderLineTime(rows,c,b,{area:true,matrix:areaTimeMatrix(rows,c)});}

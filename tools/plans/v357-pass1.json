@@ -1,0 +1,4 @@
+[{"name":"team-ui","title":"Optional Team Server UI: settings, hosted links, shared projects, sync conflicts and comments.","start":"// V3.56 optional Team Server: hosted links, shared projects, comments.","end":"// V3.55 live data connections."},
+ {"name":"live-data-ui","title":"Live data connections UI: connect, preview, refresh and automatic refresh.","start":"// V3.55 live data connections.","end":"// V3.54 organisation theme packages."},
+ {"name":"brand-ui","title":"Organisation theme editor (brand kits) and automatic theme application.","start":"// V3.54 organisation theme packages.","end":"function labelRuleControls(c){"},
+ {"name":"chart-panels","title":"Inspector panels for V3.53+ features: value labels, drill-down, highlights, reference lines, forecasts, clustering, playback and newer chart options.","start":"function labelRuleControls(c){","end":"function researchControls(c,d){"}]

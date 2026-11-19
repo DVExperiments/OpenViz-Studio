@@ -1,0 +1,14 @@
+{
+  "method": "quantile",
+  "min": -15,
+  "max": 57,
+  "breaks": [
+    29.25,
+    37,
+    45.25
+  ],
+  "classes": 4,
+  "requested": 4,
+  "observations": 14,
+  "error": ""
+}

@@ -1,0 +1,1206 @@
+{
+  "id": "profile-time-example",
+  "name": "Stacked areas and shared-scale facets",
+  "datasets": [
+    {
+      "id": "data-stacked-area",
+      "name": "stacked-area · Fictional profiles",
+      "source": "OpenViz illustrative data",
+      "rows": [
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "North",
+          "Value": 0
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "North",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "South",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "North",
+          "Value": 10
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "North",
+          "Value": 35
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 5
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 30
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 45
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "North",
+          "Value": 30
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "North",
+          "Value": 60
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "South",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "South",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 25
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 5
+        },
+        {
+          "Period": 2022,
+          "Day": 1,
+          "Team": "North",
+          "Value": null
+        }
+      ],
+      "rawRows": [
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "North",
+          "Value": 0
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "North",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "South",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "North",
+          "Value": 10
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "North",
+          "Value": 35
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 5
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 30
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 45
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "North",
+          "Value": 30
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "North",
+          "Value": 60
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "South",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "South",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 25
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 5
+        },
+        {
+          "Period": 2022,
+          "Day": 1,
+          "Team": "North",
+          "Value": null
+        }
+      ],
+      "columns": [
+        "Period",
+        "Day",
+        "Team",
+        "Value"
+      ],
+      "calculations": []
+    },
+    {
+      "id": "data-small-multiples",
+      "name": "small-multiples · Fictional profiles",
+      "source": "OpenViz illustrative data",
+      "rows": [
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "North",
+          "Value": 0
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "North",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "South",
+          "Value": -10
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "South",
+          "Value": -5
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "South",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "North",
+          "Value": 10
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "North",
+          "Value": 35
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 5
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 30
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 45
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "North",
+          "Value": 30
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "North",
+          "Value": 60
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "South",
+          "Value": -20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "South",
+          "Value": -10
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "South",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 25
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 5
+        },
+        {
+          "Period": 2022,
+          "Day": 1,
+          "Team": "North",
+          "Value": null
+        }
+      ],
+      "rawRows": [
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "North",
+          "Value": 0
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "North",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 1,
+          "Team": "South",
+          "Value": -10
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "South",
+          "Value": -5
+        },
+        {
+          "Period": 2020,
+          "Day": 4,
+          "Team": "South",
+          "Value": 5
+        },
+        {
+          "Period": 2020,
+          "Day": 7,
+          "Team": "South",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "North",
+          "Value": 10
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "North",
+          "Value": null
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "North",
+          "Value": 35
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2021,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 5
+        },
+        {
+          "Period": 2021,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 15
+        },
+        {
+          "Period": 2021,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 30
+        },
+        {
+          "Period": 2021,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 45
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "North",
+          "Value": 20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "North",
+          "Value": 30
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "North",
+          "Value": 50
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "North",
+          "Value": 60
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "South",
+          "Value": -20
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "South",
+          "Value": -10
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "South",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "South",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 1,
+          "Team": "Pilot",
+          "Value": 10
+        },
+        {
+          "Period": 2024,
+          "Day": 2,
+          "Team": "Pilot",
+          "Value": 0
+        },
+        {
+          "Period": 2024,
+          "Day": 4,
+          "Team": "Pilot",
+          "Value": 25
+        },
+        {
+          "Period": 2024,
+          "Day": 7,
+          "Team": "Pilot",
+          "Value": 40
+        },
+        {
+          "Period": 2020,
+          "Day": 2,
+          "Team": "North",
+          "Value": 5
+        },
+        {
+          "Period": 2022,
+          "Day": 1,
+          "Team": "North",
+          "Value": null
+        }
+      ],
+      "columns": [
+        "Period",
+        "Day",
+        "Team",
+        "Value"
+      ],
+      "calculations": []
+    }
+  ],
+  "charts": [
+    {
+      "tablePageSize": 25,
+      "tableColumnStyles": [],
+      "geoToLatField": "",
+      "geoToLonField": "",
+      "routeAggregation": "rows",
+      "routeSeparateReciprocal": false,
+      "routeDomainMax": null,
+      "routeShape": "curve",
+      "routeCurve": 0.18,
+      "routeWidthMode": "uniform",
+      "routeWidth": 2,
+      "routeMaxWidth": 10,
+      "routeOpacity": 0.7,
+      "routeArrows": true,
+      "routeEndpoints": true,
+      "geoNavigationEnabled": false,
+      "geoExploreEnabled": false,
+      "geoTooltipFields": [],
+      "geoTooltipMode": "auto",
+      "geoTooltipNameLabel": "",
+      "geoTooltipValueLabel": "",
+      "geoTooltipNumberFormat": "auto",
+      "geoTooltipDecimals": 2,
+      "geoTooltipPrefix": "",
+      "geoTooltipSuffix": "",
+      "geoTooltipShowValue": true,
+      "geoTooltipShowExact": true,
+      "geoTooltipShowCount": true,
+      "geoTooltipShowAggregation": true,
+      "geoTooltipShowPeriod": true,
+      "geoTooltipShowCoordinates": false,
+      "geoTooltipNoDataText": "No data",
+      "type": "stacked-area",
+      "x": "Day",
+      "y": "Value",
+      "aggregation": "sum",
+      "title": "Team contributions by snapshot",
+      "subtitle": "Fictional values · missing components break upper layers",
+      "showTitle": true,
+      "showSubtitle": true,
+      "showLegend": true,
+      "showGrid": true,
+      "showAxes": true,
+      "showLabels": false,
+      "showXAxisLabel": false,
+      "showYAxisLabel": false,
+      "xAxisLabel": "",
+      "yAxisLabel": "",
+      "color": "#0d9488",
+      "secondary": "#f2aa64",
+      "background": "#ffffff",
+      "textColor": "#1c2c3e",
+      "gridColor": "#e0e6ec",
+      "font": "Inter, Arial, sans-serif",
+      "titleSize": 26,
+      "labelSize": 12,
+      "titleAlign": "left",
+      "titleColor": null,
+      "titleWeight": 700,
+      "xLabelRotation": 0,
+      "barWidthRatio": 0.68,
+      "lineWidth": 3,
+      "pointSize": 5,
+      "barRadius": 3,
+      "padding": 40,
+      "width": 960,
+      "height": 640,
+      "transparent": false,
+      "marginTop": null,
+      "marginRight": null,
+      "marginBottom": null,
+      "marginLeft": null,
+      "yMin": null,
+      "yMax": null,
+      "tickCount": 5,
+      "valueFormat": "compact",
+      "decimalPlaces": 2,
+      "axisColor": "#718293",
+      "axisLineWidth": 1,
+      "axisFontSize": 12,
+      "gridWidth": 1,
+      "gridDash": "dashed",
+      "labelColor": "#1c2c3e",
+      "legendPosition": "top-right",
+      "legendFontSize": 12,
+      "showXAxis": true,
+      "showYAxis": true,
+      "publicationStyle": "none",
+      "pointColors": {},
+      "figureNumber": "Figure 1",
+      "figureTitle": "",
+      "figureNote": "",
+      "showFigureNumber": true,
+      "showFigureTitle": true,
+      "showFigureNote": true,
+      "seriesField": "Team",
+      "bubbleSizeField": "",
+      "bubbleMaxRadius": 26,
+      "violinBandwidth": 0,
+      "histBins": 10,
+      "textOffsets": {},
+      "valueLabelOffsets": {},
+      "endField": "",
+      "labelField": "",
+      "parallelFields": [],
+      "networkLayout": "force",
+      "networkNodeRadius": 12,
+      "nodeGap": 12,
+      "nodeWidth": 17,
+      "nodePositions": {},
+      "linkOpacity": 0.48,
+      "timelineZoom": 1,
+      "geoLegendAlign": "left",
+      "geoLegendLayout": "auto",
+      "geoLegendWidth": 100,
+      "geoLegendFontSize": 9,
+      "geoLegendNumberFormat": "auto",
+      "geoLegendDecimals": 2,
+      "geoLegendPrefix": "",
+      "geoLegendSuffix": "",
+      "geoScaleType": "linear",
+      "geoSymlogConstant": 1,
+      "geoDomainMode": "auto",
+      "geoDomainMin": null,
+      "geoDomainMax": null,
+      "geoColorMode": "sequential",
+      "geoMidpoint": 0,
+      "geoDivergingRange": "independent",
+      "geoLowColor": "#b35806",
+      "geoMidColor": "#f7f7f7",
+      "geoHighColor": "#2166ac",
+      "geoClassification": "continuous",
+      "geoClassCount": 5,
+      "geoClassBreaks": [],
+      "geoLegendTitle": "",
+      "geoLegendNoData": true,
+      "geoNoDataLabel": "No data",
+      "geoNoDataColor": "#d8e2e8",
+      "geoProjection": "local",
+      "geoFramePadding": 0,
+      "geoExtent": null,
+      "geoLabelPositions": {},
+      "geoSymbolAnchors": {},
+      "geoAnnotations": [],
+      "geoShowLabels": false,
+      "geoLabelSize": 11,
+      "geoLabelColor": "",
+      "geoShowLocator": false,
+      "geoLocatorColor": "#e65c37",
+      "geoCustom": null,
+      "geoBoundaryKey": "",
+      "geoBoundaryLabel": "",
+      "geoJoinMode": "exact",
+      "geoView": "world",
+      "geoLatField": "",
+      "geoLonField": "",
+      "geoPalette": "teal",
+      "geoLocationMode": "auto",
+      "lowerField": "",
+      "upperField": "",
+      "likertOrder": [
+        "Strongly disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly agree"
+      ],
+      "likertNeutral": "Neutral",
+      "likertNeutralMode": "split",
+      "calendarYear": 0,
+      "intervalLabel": "Supplied interval",
+      "intervalReference": null,
+      "assumptionBaseline": "average",
+      "assumptionAlternative": "median",
+      "assumptionMissing": "exclude",
+      "timeEnabled": true,
+      "timeField": "Period",
+      "timeEntityField": "",
+      "timeIndex": 0,
+      "raceIndex": 0,
+      "raceTopN": 10,
+      "raceStepMs": 1200,
+      "raceMissing": "hide",
+      "raceLoop": false,
+      "raceLoopPauseMs": 1000,
+      "raceTimeline": true,
+      "raceTimelineEntity": "",
+      "raceCaptions": {},
+      "raceAssets": {},
+      "raceShowImages": true,
+      "raceImagePosition": "before-label",
+      "raceImageShape": "contain",
+      "raceImageSize": 24,
+      "raceBarRoundness": 2,
+      "raceBarOpacity": 1,
+      "raceRowSpacing": 0.66,
+      "raceLabelSize": 11,
+      "raceValueLabels": true,
+      "altText": "",
+      "sourceNote": "Available component scale · incomplete totals remain unknown",
+      "includeDataTable": false,
+      "geoShowLegend": true,
+      "geoShowBoundaryNote": false,
+      "geoBorders": true,
+      "geoBorderWidth": 0.65,
+      "geoOpacity": 0.6,
+      "geoMinRadius": 4,
+      "geoMaxRadius": 32,
+      "geoRadius": 35,
+      "geoHeatGamma": 0.85,
+      "geoOcean": "#eff6f9",
+      "id": "chart-stacked-area",
+      "datasetId": "data-stacked-area"
+    },
+    {
+      "tablePageSize": 25,
+      "tableColumnStyles": [],
+      "geoToLatField": "",
+      "geoToLonField": "",
+      "routeAggregation": "rows",
+      "routeSeparateReciprocal": false,
+      "routeDomainMax": null,
+      "routeShape": "curve",
+      "routeCurve": 0.18,
+      "routeWidthMode": "uniform",
+      "routeWidth": 2,
+      "routeMaxWidth": 10,
+      "routeOpacity": 0.7,
+      "routeArrows": true,
+      "routeEndpoints": true,
+      "geoNavigationEnabled": false,
+      "geoExploreEnabled": false,
+      "geoTooltipFields": [],
+      "geoTooltipMode": "auto",
+      "geoTooltipNameLabel": "",
+      "geoTooltipValueLabel": "",
+      "geoTooltipNumberFormat": "auto",
+      "geoTooltipDecimals": 2,
+      "geoTooltipPrefix": "",
+      "geoTooltipSuffix": "",
+      "geoTooltipShowValue": true,
+      "geoTooltipShowExact": true,
+      "geoTooltipShowCount": true,
+      "geoTooltipShowAggregation": true,
+      "geoTooltipShowPeriod": true,
+      "geoTooltipShowCoordinates": false,
+      "geoTooltipNoDataText": "No data",
+      "type": "small-multiples",
+      "x": "Day",
+      "y": "Value",
+      "aggregation": "sum",
+      "title": "Team profiles in shared-scale panels",
+      "subtitle": "Fictional profiles · fixed panels and shared axes",
+      "showTitle": true,
+      "showSubtitle": true,
+      "showLegend": true,
+      "showGrid": true,
+      "showAxes": true,
+      "showLabels": false,
+      "showXAxisLabel": false,
+      "showYAxisLabel": false,
+      "xAxisLabel": "",
+      "yAxisLabel": "",
+      "color": "#0d9488",
+      "secondary": "#f2aa64",
+      "background": "#ffffff",
+      "textColor": "#1c2c3e",
+      "gridColor": "#e0e6ec",
+      "font": "Inter, Arial, sans-serif",
+      "titleSize": 26,
+      "labelSize": 12,
+      "titleAlign": "left",
+      "titleColor": null,
+      "titleWeight": 700,
+      "xLabelRotation": 0,
+      "barWidthRatio": 0.68,
+      "lineWidth": 3,
+      "pointSize": 5,
+      "barRadius": 3,
+      "padding": 40,
+      "width": 960,
+      "height": 820,
+      "transparent": false,
+      "marginTop": null,
+      "marginRight": null,
+      "marginBottom": null,
+      "marginLeft": null,
+      "yMin": null,
+      "yMax": null,
+      "tickCount": 5,
+      "valueFormat": "compact",
+      "decimalPlaces": 2,
+      "axisColor": "#718293",
+      "axisLineWidth": 1,
+      "axisFontSize": 12,
+      "gridWidth": 1,
+      "gridDash": "dashed",
+      "labelColor": "#1c2c3e",
+      "legendPosition": "top-right",
+      "legendFontSize": 12,
+      "showXAxis": true,
+      "showYAxis": true,
+      "publicationStyle": "none",
+      "pointColors": {},
+      "figureNumber": "Figure 1",
+      "figureTitle": "",
+      "figureNote": "",
+      "showFigureNumber": true,
+      "showFigureTitle": true,
+      "showFigureNote": true,
+      "seriesField": "Team",
+      "bubbleSizeField": "",
+      "bubbleMaxRadius": 26,
+      "violinBandwidth": 0,
+      "histBins": 10,
+      "textOffsets": {},
+      "valueLabelOffsets": {},
+      "endField": "",
+      "labelField": "",
+      "parallelFields": [],
+      "networkLayout": "force",
+      "networkNodeRadius": 12,
+      "nodeGap": 12,
+      "nodeWidth": 17,
+      "nodePositions": {},
+      "linkOpacity": 0.48,
+      "timelineZoom": 1,
+      "geoLegendAlign": "left",
+      "geoLegendLayout": "auto",
+      "geoLegendWidth": 100,
+      "geoLegendFontSize": 9,
+      "geoLegendNumberFormat": "auto",
+      "geoLegendDecimals": 2,
+      "geoLegendPrefix": "",
+      "geoLegendSuffix": "",
+      "geoScaleType": "linear",
+      "geoSymlogConstant": 1,
+      "geoDomainMode": "auto",
+      "geoDomainMin": null,
+      "geoDomainMax": null,
+      "geoColorMode": "sequential",
+      "geoMidpoint": 0,
+      "geoDivergingRange": "independent",
+      "geoLowColor": "#b35806",
+      "geoMidColor": "#f7f7f7",
+      "geoHighColor": "#2166ac",
+      "geoClassification": "continuous",
+      "geoClassCount": 5,
+      "geoClassBreaks": [],
+      "geoLegendTitle": "",
+      "geoLegendNoData": true,
+      "geoNoDataLabel": "No data",
+      "geoNoDataColor": "#d8e2e8",
+      "geoProjection": "local",
+      "geoFramePadding": 0,
+      "geoExtent": null,
+      "geoLabelPositions": {},
+      "geoSymbolAnchors": {},
+      "geoAnnotations": [],
+      "geoShowLabels": false,
+      "geoLabelSize": 11,
+      "geoLabelColor": "",
+      "geoShowLocator": false,
+      "geoLocatorColor": "#e65c37",
+      "geoCustom": null,
+      "geoBoundaryKey": "",
+      "geoBoundaryLabel": "",
+      "geoJoinMode": "exact",
+      "geoView": "world",
+      "geoLatField": "",
+      "geoLonField": "",
+      "geoPalette": "teal",
+      "geoLocationMode": "auto",
+      "lowerField": "",
+      "upperField": "",
+      "likertOrder": [
+        "Strongly disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly agree"
+      ],
+      "likertNeutral": "Neutral",
+      "likertNeutralMode": "split",
+      "calendarYear": 0,
+      "intervalLabel": "Supplied interval",
+      "intervalReference": null,
+      "assumptionBaseline": "average",
+      "assumptionAlternative": "median",
+      "assumptionMissing": "exclude",
+      "timeEnabled": true,
+      "timeField": "Period",
+      "timeEntityField": "",
+      "timeIndex": 0,
+      "raceIndex": 0,
+      "raceTopN": 10,
+      "raceStepMs": 1200,
+      "raceMissing": "hide",
+      "raceLoop": false,
+      "raceLoopPauseMs": 1000,
+      "raceTimeline": true,
+      "raceTimelineEntity": "",
+      "raceCaptions": {},
+      "raceAssets": {},
+      "raceShowImages": true,
+      "raceImagePosition": "before-label",
+      "raceImageShape": "contain",
+      "raceImageSize": 24,
+      "raceBarRoundness": 2,
+      "raceBarOpacity": 1,
+      "raceRowSpacing": 0.66,
+      "raceLabelSize": 11,
+      "raceValueLabels": true,
+      "altText": "",
+      "sourceNote": "One panel per series · same axes across all periods",
+      "includeDataTable": false,
+      "geoShowLegend": true,
+      "geoShowBoundaryNote": false,
+      "geoBorders": true,
+      "geoBorderWidth": 0.65,
+      "geoOpacity": 0.6,
+      "geoMinRadius": 4,
+      "geoMaxRadius": 32,
+      "geoRadius": 35,
+      "geoHeatGamma": 0.85,
+      "geoOcean": "#eff6f9",
+      "id": "chart-small-multiples",
+      "datasetId": "data-small-multiples"
+    }
+  ],
+  "dashboards": [
+    {
+      "id": "profiles-dashboard",
+      "name": "Saved profile periods",
+      "chartIds": [
+        "chart-stacked-area",
+        "chart-small-multiples"
+      ],
+      "mode": "grid",
+      "sharedFilterField": "Team",
+      "interactionMode": "filter"
+    }
+  ],
+  "slides": [],
+  "stories": [],
+  "versions": []
+}

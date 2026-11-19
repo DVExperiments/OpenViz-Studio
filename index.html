@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#182738" />
+  <meta name="description" content="OpenViz Studio — Free, local-first professional data visualisation and presentation design." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>OpenViz Studio — Professional visualisation for everyone</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="stylesheet" href="src/ui-refresh.css" />
+</head>
+<body>
+  <a class="skip-to-workspace" href="#workspace">Skip to main workspace</a>
+  <div id="app" class="app-shell">
+    <header class="app-header">
+      <div class="header-main">
+        <button class="brand" data-action="home" title="OpenViz Studio home" aria-label="OpenViz Studio home"><span class="brand-logo"><i></i><i></i><i></i></span><strong>OpenViz <span>Studio</span></strong></button>
+        <span class="header-rule"></span>
+        <button id="projectName" class="project-name" data-action="rename-project" title="Rename project">Untitled project <span class="chev">⌄</span></button>
+        <span id="saveStatus" class="save-status" role="status" aria-live="polite" aria-atomic="true">● Saved locally</span>
+        <div class="header-grow"></div>
+        <nav id="homeQuickLinks" class="home-quick-links" aria-label="Home information" hidden>
+          <button type="button" data-action="home-scroll-help" title="Jump to Help Centre"><span class="home-nav-icon" aria-hidden="true">?</span> Help</button>
+          <button type="button" data-action="home-scroll-about" title="Jump to About OpenViz Studio"><span class="home-nav-icon" aria-hidden="true">i</span> About</button>
+        </nav>
+        <button id="commandButton" class="command-button" data-action="command"><span class="icon">⌕</span> Search commands <kbd>Ctrl K</kbd></button>
+        <button id="editorHelpButton" class="header-icon" data-action="help" aria-label="Open Help Centre" title="Help Centre"><svg class="ovi" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></button>
+        <button class="header-icon" data-action="theme" aria-label="Toggle theme" title="Toggle light/dark theme">◐</button>
+        <button id="headerExport" class="primary header-export" data-action="export" title="Export">↥ <span>Export</span></button>
+      </div>
+      <div class="menu-line" id="menuLine" role="menubar" aria-label="Application menus"><button data-menu="File" role="menuitem" aria-haspopup="menu" aria-expanded="false">File</button><button data-menu="Edit" role="menuitem" aria-haspopup="menu" aria-expanded="false">Edit</button><button data-menu="View" role="menuitem" aria-haspopup="menu" aria-expanded="false">View</button><button data-menu="Data" role="menuitem" aria-haspopup="menu" aria-expanded="false">Data</button><button data-menu="Insert" role="menuitem" aria-haspopup="menu" aria-expanded="false">Insert</button><button data-menu="Format" role="menuitem" aria-haspopup="menu" aria-expanded="false">Format</button><button data-menu="Arrange" role="menuitem" aria-haspopup="menu" aria-expanded="false">Arrange</button><button data-menu="Help" role="menuitem" aria-haspopup="menu" aria-expanded="false">Help</button></div>
+
+    </header>
+    <div class="main-frame">
+      <aside class="project-panel" id="projectPanel">
+        <div class="panel-head"><strong id="panelHeading">Project</strong></div>
+        <div id="projectTree" class="project-tree"></div>
+        <div class="project-foot"><span class="online-dot"></span> Local-first workspace <small>No account or AI required</small></div>
+      </aside>
+      <div id="resizeProject" class="panel-resizer panel-resizer-left" role="separator" tabindex="0" aria-label="Resize project panel" aria-orientation="vertical" aria-valuemin="180" aria-valuemax="480" aria-valuenow="260" title="Drag to resize Project panel · Double-click to reset"></div>
+      <main class="workspace" id="workspace" tabindex="-1">
+        <div class="workspace-toolbar" id="workspaceToolbar"></div>
+        <div class="workspace-content" id="workspaceContent"></div>
+      </main>
+      <div id="resizeInspector" class="panel-resizer panel-resizer-right" role="separator" tabindex="0" aria-label="Resize Properties panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="520" aria-valuenow="304" title="Drag to resize Properties panel · Double-click to reset"></div>
+      <aside class="inspector" id="inspector" aria-label="Properties panel"><div class="panel-head"><strong id="inspectorHeading">Properties</strong><button class="icon-button studio-close-settings" data-action="v36-toggle-properties" aria-label="Close settings">×</button></div><div id="inspectorContent" class="inspector-content"></div></aside>
+    </div>
+    <footer class="status-bar"><span id="statusLeft">● Ready · Data stays on your device</span><span id="statusRight">OpenViz Studio v3.60 · Browser edition</span></footer>
+  </div>
+  <div id="menuPopover" class="floating-menu hidden" role="menu"></div>
+  <div id="chartContextMenu" class="floating-menu hidden" role="menu"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modalLayer" class="modal-layer hidden"></div>
+  <script src="vendor/jszip.min.js"></script>
+  <script src="vendor/pptxgen.min.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

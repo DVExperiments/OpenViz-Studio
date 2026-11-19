@@ -1,0 +1,1664 @@
+{
+  "provenance": {
+    "provider": "Natural Earth",
+    "scale": "Simplified 1:110m snapshot bundled with OpenViz",
+    "license": "Public domain",
+    "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "limitations": "Country/area outlines, not internal administrative divisions. Simplified coastlines, disputed boundaries and missing small islands require review. This bundled snapshot is not a current official boundary register."
+  },
+  "cleanup": {
+    "droppedRings": 1,
+    "droppedPolygons": 1,
+    "droppedFeatures": 0,
+    "sourceFeatures": 176
+  },
+  "resources": [
+    {
+      "id": "world",
+      "name": "World country / area outlines",
+      "group": "World",
+      "kind": "world",
+      "count": 176
+    },
+    {
+      "id": "continent-0",
+      "name": "Africa country / area outlines",
+      "group": "Africa",
+      "kind": "continent",
+      "continent": "Africa",
+      "count": 51
+    },
+    {
+      "id": "continent-1",
+      "name": "Asia country / area outlines",
+      "group": "Asia",
+      "kind": "continent",
+      "continent": "Asia",
+      "count": 47
+    },
+    {
+      "id": "continent-2",
+      "name": "Europe country / area outlines",
+      "group": "Europe",
+      "kind": "continent",
+      "continent": "Europe",
+      "count": 39
+    },
+    {
+      "id": "continent-3",
+      "name": "North America country / area outlines",
+      "group": "North America",
+      "kind": "continent",
+      "continent": "North America",
+      "count": 18
+    },
+    {
+      "id": "continent-4",
+      "name": "Oceania country / area outlines",
+      "group": "Oceania",
+      "kind": "continent",
+      "continent": "Oceania",
+      "count": 7
+    },
+    {
+      "id": "continent-5",
+      "name": "Seven seas (open ocean) country / area outlines",
+      "group": "Seven seas (open ocean)",
+      "kind": "continent",
+      "continent": "Seven seas (open ocean)",
+      "count": 1
+    },
+    {
+      "id": "continent-6",
+      "name": "South America country / area outlines",
+      "group": "South America",
+      "kind": "continent",
+      "continent": "South America",
+      "count": 13
+    },
+    {
+      "id": "NE-001",
+      "name": "Fiji",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "FJI",
+      "iso2": "FJ",
+      "count": 1
+    },
+    {
+      "id": "NE-002",
+      "name": "Tanzania",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "TZA",
+      "iso2": "TZ",
+      "count": 1
+    },
+    {
+      "id": "NE-003",
+      "name": "W. Sahara",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ESH",
+      "iso2": "EH",
+      "count": 1
+    },
+    {
+      "id": "NE-004",
+      "name": "Canada",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "CAN",
+      "iso2": "CA",
+      "count": 1
+    },
+    {
+      "id": "NE-005",
+      "name": "United States of America",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "USA",
+      "iso2": "US",
+      "count": 1
+    },
+    {
+      "id": "NE-006",
+      "name": "Kazakhstan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "KAZ",
+      "iso2": "KZ",
+      "count": 1
+    },
+    {
+      "id": "NE-007",
+      "name": "Uzbekistan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "UZB",
+      "iso2": "UZ",
+      "count": 1
+    },
+    {
+      "id": "NE-008",
+      "name": "Papua New Guinea",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "PNG",
+      "iso2": "PG",
+      "count": 1
+    },
+    {
+      "id": "NE-009",
+      "name": "Indonesia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "IDN",
+      "iso2": "ID",
+      "count": 1
+    },
+    {
+      "id": "NE-010",
+      "name": "Argentina",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "ARG",
+      "iso2": "AR",
+      "count": 1
+    },
+    {
+      "id": "NE-011",
+      "name": "Chile",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "CHL",
+      "iso2": "CL",
+      "count": 1
+    },
+    {
+      "id": "NE-012",
+      "name": "Dem. Rep. Congo",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "COD",
+      "iso2": "CD",
+      "count": 1
+    },
+    {
+      "id": "NE-013",
+      "name": "Somalia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SOM",
+      "iso2": "SO",
+      "count": 1
+    },
+    {
+      "id": "NE-014",
+      "name": "Kenya",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "KEN",
+      "iso2": "KE",
+      "count": 1
+    },
+    {
+      "id": "NE-015",
+      "name": "Sudan",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SDN",
+      "iso2": "SD",
+      "count": 1
+    },
+    {
+      "id": "NE-016",
+      "name": "Chad",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "TCD",
+      "iso2": "TD",
+      "count": 1
+    },
+    {
+      "id": "NE-017",
+      "name": "Haiti",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "HTI",
+      "iso2": "HT",
+      "count": 1
+    },
+    {
+      "id": "NE-018",
+      "name": "Dominican Rep.",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "DOM",
+      "iso2": "DO",
+      "count": 1
+    },
+    {
+      "id": "NE-019",
+      "name": "Russia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "RUS",
+      "iso2": "RU",
+      "count": 1
+    },
+    {
+      "id": "NE-020",
+      "name": "Bahamas",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "BHS",
+      "iso2": "BS",
+      "count": 1
+    },
+    {
+      "id": "NE-021",
+      "name": "Falkland Is.",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "FLK",
+      "iso2": "FK",
+      "count": 1
+    },
+    {
+      "id": "NE-022",
+      "name": "Norway",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "-99",
+      "iso2": "NO",
+      "count": 1
+    },
+    {
+      "id": "NE-023",
+      "name": "Greenland",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "GRL",
+      "iso2": "GL",
+      "count": 1
+    },
+    {
+      "id": "NE-024",
+      "name": "Fr. S. Antarctic Lands",
+      "group": "Seven seas (open ocean)",
+      "kind": "outline",
+      "iso3": "ATF",
+      "iso2": "TF",
+      "count": 1
+    },
+    {
+      "id": "NE-025",
+      "name": "Timor-Leste",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "TLS",
+      "iso2": "TL",
+      "count": 1
+    },
+    {
+      "id": "NE-026",
+      "name": "South Africa",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ZAF",
+      "iso2": "ZA",
+      "count": 1
+    },
+    {
+      "id": "NE-027",
+      "name": "Lesotho",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "LSO",
+      "iso2": "LS",
+      "count": 1
+    },
+    {
+      "id": "NE-028",
+      "name": "Mexico",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "MEX",
+      "iso2": "MX",
+      "count": 1
+    },
+    {
+      "id": "NE-029",
+      "name": "Uruguay",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "URY",
+      "iso2": "UY",
+      "count": 1
+    },
+    {
+      "id": "NE-030",
+      "name": "Brazil",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "BRA",
+      "iso2": "BR",
+      "count": 1
+    },
+    {
+      "id": "NE-031",
+      "name": "Bolivia",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "BOL",
+      "iso2": "BO",
+      "count": 1
+    },
+    {
+      "id": "NE-032",
+      "name": "Peru",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "PER",
+      "iso2": "PE",
+      "count": 1
+    },
+    {
+      "id": "NE-033",
+      "name": "Colombia",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "COL",
+      "iso2": "CO",
+      "count": 1
+    },
+    {
+      "id": "NE-034",
+      "name": "Panama",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "PAN",
+      "iso2": "PA",
+      "count": 1
+    },
+    {
+      "id": "NE-035",
+      "name": "Costa Rica",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "CRI",
+      "iso2": "CR",
+      "count": 1
+    },
+    {
+      "id": "NE-036",
+      "name": "Nicaragua",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "NIC",
+      "iso2": "NI",
+      "count": 1
+    },
+    {
+      "id": "NE-037",
+      "name": "Honduras",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "HND",
+      "iso2": "HN",
+      "count": 1
+    },
+    {
+      "id": "NE-038",
+      "name": "El Salvador",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "SLV",
+      "iso2": "SV",
+      "count": 1
+    },
+    {
+      "id": "NE-039",
+      "name": "Guatemala",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "GTM",
+      "iso2": "GT",
+      "count": 1
+    },
+    {
+      "id": "NE-040",
+      "name": "Belize",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "BLZ",
+      "iso2": "BZ",
+      "count": 1
+    },
+    {
+      "id": "NE-041",
+      "name": "Venezuela",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "VEN",
+      "iso2": "VE",
+      "count": 1
+    },
+    {
+      "id": "NE-042",
+      "name": "Guyana",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "GUY",
+      "iso2": "GY",
+      "count": 1
+    },
+    {
+      "id": "NE-043",
+      "name": "Suriname",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "SUR",
+      "iso2": "SR",
+      "count": 1
+    },
+    {
+      "id": "NE-044",
+      "name": "France",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "-99",
+      "iso2": "FR",
+      "count": 1
+    },
+    {
+      "id": "NE-045",
+      "name": "Ecuador",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "ECU",
+      "iso2": "EC",
+      "count": 1
+    },
+    {
+      "id": "NE-046",
+      "name": "Puerto Rico",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "PRI",
+      "iso2": "PR",
+      "count": 1
+    },
+    {
+      "id": "NE-047",
+      "name": "Jamaica",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "JAM",
+      "iso2": "JM",
+      "count": 1
+    },
+    {
+      "id": "NE-048",
+      "name": "Cuba",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "CUB",
+      "iso2": "CU",
+      "count": 1
+    },
+    {
+      "id": "NE-049",
+      "name": "Zimbabwe",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ZWE",
+      "iso2": "ZW",
+      "count": 1
+    },
+    {
+      "id": "NE-050",
+      "name": "Botswana",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "BWA",
+      "iso2": "BW",
+      "count": 1
+    },
+    {
+      "id": "NE-051",
+      "name": "Namibia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "NAM",
+      "iso2": "NA",
+      "count": 1
+    },
+    {
+      "id": "NE-052",
+      "name": "Senegal",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SEN",
+      "iso2": "SN",
+      "count": 1
+    },
+    {
+      "id": "NE-053",
+      "name": "Mali",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MLI",
+      "iso2": "ML",
+      "count": 1
+    },
+    {
+      "id": "NE-054",
+      "name": "Mauritania",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MRT",
+      "iso2": "MR",
+      "count": 1
+    },
+    {
+      "id": "NE-055",
+      "name": "Benin",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "BEN",
+      "iso2": "BJ",
+      "count": 1
+    },
+    {
+      "id": "NE-056",
+      "name": "Niger",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "NER",
+      "iso2": "NE",
+      "count": 1
+    },
+    {
+      "id": "NE-057",
+      "name": "Nigeria",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "NGA",
+      "iso2": "NG",
+      "count": 1
+    },
+    {
+      "id": "NE-058",
+      "name": "Cameroon",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "CMR",
+      "iso2": "CM",
+      "count": 1
+    },
+    {
+      "id": "NE-059",
+      "name": "Togo",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "TGO",
+      "iso2": "TG",
+      "count": 1
+    },
+    {
+      "id": "NE-060",
+      "name": "Ghana",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GHA",
+      "iso2": "GH",
+      "count": 1
+    },
+    {
+      "id": "NE-061",
+      "name": "Côte d'Ivoire",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "CIV",
+      "iso2": "CI",
+      "count": 1
+    },
+    {
+      "id": "NE-062",
+      "name": "Guinea",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GIN",
+      "iso2": "GN",
+      "count": 1
+    },
+    {
+      "id": "NE-063",
+      "name": "Guinea-Bissau",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GNB",
+      "iso2": "GW",
+      "count": 1
+    },
+    {
+      "id": "NE-064",
+      "name": "Liberia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "LBR",
+      "iso2": "LR",
+      "count": 1
+    },
+    {
+      "id": "NE-065",
+      "name": "Sierra Leone",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SLE",
+      "iso2": "SL",
+      "count": 1
+    },
+    {
+      "id": "NE-066",
+      "name": "Burkina Faso",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "BFA",
+      "iso2": "BF",
+      "count": 1
+    },
+    {
+      "id": "NE-067",
+      "name": "Central African Rep.",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "CAF",
+      "iso2": "CF",
+      "count": 1
+    },
+    {
+      "id": "NE-068",
+      "name": "Congo",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "COG",
+      "iso2": "CG",
+      "count": 1
+    },
+    {
+      "id": "NE-069",
+      "name": "Gabon",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GAB",
+      "iso2": "GA",
+      "count": 1
+    },
+    {
+      "id": "NE-070",
+      "name": "Eq. Guinea",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GNQ",
+      "iso2": "GQ",
+      "count": 1
+    },
+    {
+      "id": "NE-071",
+      "name": "Zambia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ZMB",
+      "iso2": "ZM",
+      "count": 1
+    },
+    {
+      "id": "NE-072",
+      "name": "Malawi",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MWI",
+      "iso2": "MW",
+      "count": 1
+    },
+    {
+      "id": "NE-073",
+      "name": "Mozambique",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MOZ",
+      "iso2": "MZ",
+      "count": 1
+    },
+    {
+      "id": "NE-074",
+      "name": "eSwatini",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SWZ",
+      "iso2": "SZ",
+      "count": 1
+    },
+    {
+      "id": "NE-075",
+      "name": "Angola",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "AGO",
+      "iso2": "AO",
+      "count": 1
+    },
+    {
+      "id": "NE-076",
+      "name": "Burundi",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "BDI",
+      "iso2": "BI",
+      "count": 1
+    },
+    {
+      "id": "NE-077",
+      "name": "Israel",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "ISR",
+      "iso2": "IL",
+      "count": 1
+    },
+    {
+      "id": "NE-078",
+      "name": "Lebanon",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "LBN",
+      "iso2": "LB",
+      "count": 1
+    },
+    {
+      "id": "NE-079",
+      "name": "Madagascar",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MDG",
+      "iso2": "MG",
+      "count": 1
+    },
+    {
+      "id": "NE-080",
+      "name": "Palestine",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "PSE",
+      "iso2": "PS",
+      "count": 1
+    },
+    {
+      "id": "NE-081",
+      "name": "Gambia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "GMB",
+      "iso2": "GM",
+      "count": 1
+    },
+    {
+      "id": "NE-082",
+      "name": "Tunisia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "TUN",
+      "iso2": "TN",
+      "count": 1
+    },
+    {
+      "id": "NE-083",
+      "name": "Algeria",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "DZA",
+      "iso2": "DZ",
+      "count": 1
+    },
+    {
+      "id": "NE-084",
+      "name": "Jordan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "JOR",
+      "iso2": "JO",
+      "count": 1
+    },
+    {
+      "id": "NE-085",
+      "name": "United Arab Emirates",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "ARE",
+      "iso2": "AE",
+      "count": 1
+    },
+    {
+      "id": "NE-086",
+      "name": "Qatar",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "QAT",
+      "iso2": "QA",
+      "count": 1
+    },
+    {
+      "id": "NE-087",
+      "name": "Kuwait",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "KWT",
+      "iso2": "KW",
+      "count": 1
+    },
+    {
+      "id": "NE-088",
+      "name": "Iraq",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "IRQ",
+      "iso2": "IQ",
+      "count": 1
+    },
+    {
+      "id": "NE-089",
+      "name": "Oman",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "OMN",
+      "iso2": "OM",
+      "count": 1
+    },
+    {
+      "id": "NE-090",
+      "name": "Vanuatu",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "VUT",
+      "iso2": "VU",
+      "count": 1
+    },
+    {
+      "id": "NE-091",
+      "name": "Cambodia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "KHM",
+      "iso2": "KH",
+      "count": 1
+    },
+    {
+      "id": "NE-092",
+      "name": "Thailand",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "THA",
+      "iso2": "TH",
+      "count": 1
+    },
+    {
+      "id": "NE-093",
+      "name": "Laos",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "LAO",
+      "iso2": "LA",
+      "count": 1
+    },
+    {
+      "id": "NE-094",
+      "name": "Myanmar",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "MMR",
+      "iso2": "MM",
+      "count": 1
+    },
+    {
+      "id": "NE-095",
+      "name": "Vietnam",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "VNM",
+      "iso2": "VN",
+      "count": 1
+    },
+    {
+      "id": "NE-096",
+      "name": "North Korea",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "PRK",
+      "iso2": "KP",
+      "count": 1
+    },
+    {
+      "id": "NE-097",
+      "name": "South Korea",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "KOR",
+      "iso2": "KR",
+      "count": 1
+    },
+    {
+      "id": "NE-098",
+      "name": "Mongolia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "MNG",
+      "iso2": "MN",
+      "count": 1
+    },
+    {
+      "id": "NE-099",
+      "name": "India",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "IND",
+      "iso2": "IN",
+      "count": 1
+    },
+    {
+      "id": "NE-100",
+      "name": "Bangladesh",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "BGD",
+      "iso2": "BD",
+      "count": 1
+    },
+    {
+      "id": "NE-101",
+      "name": "Bhutan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "BTN",
+      "iso2": "BT",
+      "count": 1
+    },
+    {
+      "id": "NE-102",
+      "name": "Nepal",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "NPL",
+      "iso2": "NP",
+      "count": 1
+    },
+    {
+      "id": "NE-103",
+      "name": "Pakistan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "PAK",
+      "iso2": "PK",
+      "count": 1
+    },
+    {
+      "id": "NE-104",
+      "name": "Afghanistan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "AFG",
+      "iso2": "AF",
+      "count": 1
+    },
+    {
+      "id": "NE-105",
+      "name": "Tajikistan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "TJK",
+      "iso2": "TJ",
+      "count": 1
+    },
+    {
+      "id": "NE-106",
+      "name": "Kyrgyzstan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "KGZ",
+      "iso2": "KG",
+      "count": 1
+    },
+    {
+      "id": "NE-107",
+      "name": "Turkmenistan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "TKM",
+      "iso2": "TM",
+      "count": 1
+    },
+    {
+      "id": "NE-108",
+      "name": "Iran",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "IRN",
+      "iso2": "IR",
+      "count": 1
+    },
+    {
+      "id": "NE-109",
+      "name": "Syria",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "SYR",
+      "iso2": "SY",
+      "count": 1
+    },
+    {
+      "id": "NE-110",
+      "name": "Armenia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "ARM",
+      "iso2": "AM",
+      "count": 1
+    },
+    {
+      "id": "NE-111",
+      "name": "Sweden",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "SWE",
+      "iso2": "SE",
+      "count": 1
+    },
+    {
+      "id": "NE-112",
+      "name": "Belarus",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "BLR",
+      "iso2": "BY",
+      "count": 1
+    },
+    {
+      "id": "NE-113",
+      "name": "Ukraine",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "UKR",
+      "iso2": "UA",
+      "count": 1
+    },
+    {
+      "id": "NE-114",
+      "name": "Poland",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "POL",
+      "iso2": "PL",
+      "count": 1
+    },
+    {
+      "id": "NE-115",
+      "name": "Austria",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "AUT",
+      "iso2": "AT",
+      "count": 1
+    },
+    {
+      "id": "NE-116",
+      "name": "Hungary",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "HUN",
+      "iso2": "HU",
+      "count": 1
+    },
+    {
+      "id": "NE-117",
+      "name": "Moldova",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "MDA",
+      "iso2": "MD",
+      "count": 1
+    },
+    {
+      "id": "NE-118",
+      "name": "Romania",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "ROU",
+      "iso2": "RO",
+      "count": 1
+    },
+    {
+      "id": "NE-119",
+      "name": "Lithuania",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "LTU",
+      "iso2": "LT",
+      "count": 1
+    },
+    {
+      "id": "NE-120",
+      "name": "Latvia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "LVA",
+      "iso2": "LV",
+      "count": 1
+    },
+    {
+      "id": "NE-121",
+      "name": "Estonia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "EST",
+      "iso2": "EE",
+      "count": 1
+    },
+    {
+      "id": "NE-122",
+      "name": "Germany",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "DEU",
+      "iso2": "DE",
+      "count": 1
+    },
+    {
+      "id": "NE-123",
+      "name": "Bulgaria",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "BGR",
+      "iso2": "BG",
+      "count": 1
+    },
+    {
+      "id": "NE-124",
+      "name": "Greece",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "GRC",
+      "iso2": "GR",
+      "count": 1
+    },
+    {
+      "id": "NE-125",
+      "name": "Turkey",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "TUR",
+      "iso2": "TR",
+      "count": 1
+    },
+    {
+      "id": "NE-126",
+      "name": "Albania",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "ALB",
+      "iso2": "AL",
+      "count": 1
+    },
+    {
+      "id": "NE-127",
+      "name": "Croatia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "HRV",
+      "iso2": "HR",
+      "count": 1
+    },
+    {
+      "id": "NE-128",
+      "name": "Switzerland",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "CHE",
+      "iso2": "CH",
+      "count": 1
+    },
+    {
+      "id": "NE-129",
+      "name": "Luxembourg",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "LUX",
+      "iso2": "LU",
+      "count": 1
+    },
+    {
+      "id": "NE-130",
+      "name": "Belgium",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "BEL",
+      "iso2": "BE",
+      "count": 1
+    },
+    {
+      "id": "NE-131",
+      "name": "Netherlands",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "NLD",
+      "iso2": "NL",
+      "count": 1
+    },
+    {
+      "id": "NE-132",
+      "name": "Portugal",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "PRT",
+      "iso2": "PT",
+      "count": 1
+    },
+    {
+      "id": "NE-133",
+      "name": "Spain",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "ESP",
+      "iso2": "ES",
+      "count": 1
+    },
+    {
+      "id": "NE-134",
+      "name": "Ireland",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "IRL",
+      "iso2": "IE",
+      "count": 1
+    },
+    {
+      "id": "NE-135",
+      "name": "New Caledonia",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "NCL",
+      "iso2": "NC",
+      "count": 1
+    },
+    {
+      "id": "NE-136",
+      "name": "Solomon Is.",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "SLB",
+      "iso2": "SB",
+      "count": 1
+    },
+    {
+      "id": "NE-137",
+      "name": "New Zealand",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "NZL",
+      "iso2": "NZ",
+      "count": 1
+    },
+    {
+      "id": "NE-138",
+      "name": "Australia",
+      "group": "Oceania",
+      "kind": "outline",
+      "iso3": "AUS",
+      "iso2": "AU",
+      "count": 1
+    },
+    {
+      "id": "NE-139",
+      "name": "Sri Lanka",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "LKA",
+      "iso2": "LK",
+      "count": 1
+    },
+    {
+      "id": "NE-140",
+      "name": "China",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "CHN",
+      "iso2": "CN",
+      "count": 1
+    },
+    {
+      "id": "NE-141",
+      "name": "Taiwan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "TWN",
+      "iso2": "TW",
+      "count": 1
+    },
+    {
+      "id": "NE-142",
+      "name": "Italy",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "ITA",
+      "iso2": "IT",
+      "count": 1
+    },
+    {
+      "id": "NE-143",
+      "name": "Denmark",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "DNK",
+      "iso2": "DK",
+      "count": 1
+    },
+    {
+      "id": "NE-144",
+      "name": "United Kingdom",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "GBR",
+      "iso2": "GB",
+      "count": 1
+    },
+    {
+      "id": "NE-145",
+      "name": "Iceland",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "ISL",
+      "iso2": "IS",
+      "count": 1
+    },
+    {
+      "id": "NE-146",
+      "name": "Azerbaijan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "AZE",
+      "iso2": "AZ",
+      "count": 1
+    },
+    {
+      "id": "NE-147",
+      "name": "Georgia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "GEO",
+      "iso2": "GE",
+      "count": 1
+    },
+    {
+      "id": "NE-148",
+      "name": "Philippines",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "PHL",
+      "iso2": "PH",
+      "count": 1
+    },
+    {
+      "id": "NE-149",
+      "name": "Malaysia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "MYS",
+      "iso2": "MY",
+      "count": 1
+    },
+    {
+      "id": "NE-150",
+      "name": "Brunei",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "BRN",
+      "iso2": "BN",
+      "count": 1
+    },
+    {
+      "id": "NE-151",
+      "name": "Slovenia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "SVN",
+      "iso2": "SI",
+      "count": 1
+    },
+    {
+      "id": "NE-152",
+      "name": "Finland",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "FIN",
+      "iso2": "FI",
+      "count": 1
+    },
+    {
+      "id": "NE-153",
+      "name": "Slovakia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "SVK",
+      "iso2": "SK",
+      "count": 1
+    },
+    {
+      "id": "NE-154",
+      "name": "Czechia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "CZE",
+      "iso2": "CZ",
+      "count": 1
+    },
+    {
+      "id": "NE-155",
+      "name": "Eritrea",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ERI",
+      "iso2": "ER",
+      "count": 1
+    },
+    {
+      "id": "NE-156",
+      "name": "Japan",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "JPN",
+      "iso2": "JP",
+      "count": 1
+    },
+    {
+      "id": "NE-157",
+      "name": "Paraguay",
+      "group": "South America",
+      "kind": "outline",
+      "iso3": "PRY",
+      "iso2": "PY",
+      "count": 1
+    },
+    {
+      "id": "NE-158",
+      "name": "Yemen",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "YEM",
+      "iso2": "YE",
+      "count": 1
+    },
+    {
+      "id": "NE-159",
+      "name": "Saudi Arabia",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "SAU",
+      "iso2": "SA",
+      "count": 1
+    },
+    {
+      "id": "NE-160",
+      "name": "N. Cyprus",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "-99",
+      "iso2": "",
+      "count": 1
+    },
+    {
+      "id": "NE-161",
+      "name": "Cyprus",
+      "group": "Asia",
+      "kind": "outline",
+      "iso3": "CYP",
+      "iso2": "CY",
+      "count": 1
+    },
+    {
+      "id": "NE-162",
+      "name": "Morocco",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "MAR",
+      "iso2": "MA",
+      "count": 1
+    },
+    {
+      "id": "NE-163",
+      "name": "Egypt",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "EGY",
+      "iso2": "EG",
+      "count": 1
+    },
+    {
+      "id": "NE-164",
+      "name": "Libya",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "LBY",
+      "iso2": "LY",
+      "count": 1
+    },
+    {
+      "id": "NE-165",
+      "name": "Ethiopia",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "ETH",
+      "iso2": "ET",
+      "count": 1
+    },
+    {
+      "id": "NE-166",
+      "name": "Djibouti",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "DJI",
+      "iso2": "DJ",
+      "count": 1
+    },
+    {
+      "id": "NE-167",
+      "name": "Somaliland",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "-99",
+      "iso2": "",
+      "count": 1
+    },
+    {
+      "id": "NE-168",
+      "name": "Uganda",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "UGA",
+      "iso2": "UG",
+      "count": 1
+    },
+    {
+      "id": "NE-169",
+      "name": "Rwanda",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "RWA",
+      "iso2": "RW",
+      "count": 1
+    },
+    {
+      "id": "NE-170",
+      "name": "Bosnia and Herz.",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "BIH",
+      "iso2": "BA",
+      "count": 1
+    },
+    {
+      "id": "NE-171",
+      "name": "Macedonia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "MKD",
+      "iso2": "MK",
+      "count": 1
+    },
+    {
+      "id": "NE-172",
+      "name": "Serbia",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "SRB",
+      "iso2": "RS",
+      "count": 1
+    },
+    {
+      "id": "NE-173",
+      "name": "Montenegro",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "MNE",
+      "iso2": "ME",
+      "count": 1
+    },
+    {
+      "id": "NE-174",
+      "name": "Kosovo",
+      "group": "Europe",
+      "kind": "outline",
+      "iso3": "-99",
+      "iso2": "",
+      "count": 1
+    },
+    {
+      "id": "NE-175",
+      "name": "Trinidad and Tobago",
+      "group": "North America",
+      "kind": "outline",
+      "iso3": "TTO",
+      "iso2": "TT",
+      "count": 1
+    },
+    {
+      "id": "NE-176",
+      "name": "S. Sudan",
+      "group": "Africa",
+      "kind": "outline",
+      "iso3": "SSD",
+      "iso2": "SS",
+      "count": 1
+    }
+  ]
+}

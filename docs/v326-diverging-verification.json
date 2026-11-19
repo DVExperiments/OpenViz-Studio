@@ -1,0 +1,22 @@
+{
+  "diverging": {
+    "midpoint": 0,
+    "min": -57,
+    "max": 57,
+    "rangeMode": "symmetric",
+    "stops": [
+      "#b35806",
+      "#f7f7f7",
+      "#2166ac"
+    ]
+  },
+  "neutralClass": -1,
+  "method": "continuous",
+  "min": -15,
+  "max": 57,
+  "breaks": [],
+  "classes": 0,
+  "requested": 5,
+  "observations": 14,
+  "error": ""
+}

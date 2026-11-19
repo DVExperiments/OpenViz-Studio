@@ -1,0 +1,27 @@
+{
+  "customDomain": true,
+  "scaleMin": -10,
+  "scaleMax": 40,
+  "below": 1,
+  "above": 6,
+  "diverging": {
+    "midpoint": 0,
+    "min": -10,
+    "max": 40,
+    "rangeMode": "custom",
+    "stops": [
+      "#b35806",
+      "#f7f7f7",
+      "#2166ac"
+    ]
+  },
+  "neutralClass": -1,
+  "method": "continuous",
+  "min": -15,
+  "max": 57,
+  "breaks": [],
+  "classes": 0,
+  "requested": 5,
+  "observations": 14,
+  "error": ""
+}

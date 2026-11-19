@@ -1,0 +1,9 @@
+# V3.51 handoff — profile snapshots
+
+Baseline V3.50. Catalogue 45 unchanged; TIME_TYPES now 19. New profile-time.js shares existing line/area matrices/domains and adds stacked-area domain/renderer plus shared-axis facet rendering. Wiring spans time-controls, charts, app, dashboard-interactive, data-contracts and time-examples. Both use the existing internal lineTimeSourceRows full-source override under dashboard filtering. Static expanded renderers remain unchanged.
+
+Stacked scale: max available component sum per known X/snapshot; zero-anchored. Negative raw contributors reject except Count. Missing lower component blocks itself/all above, with upper observed records retained in a nonquantitative rail marker and unknown complete total. Lower known components can remain visible. Out-of-range filtered sums block geometry/disclose values. Overflow rejects partial paths. All fills before outlines/markers. Never silently zero-impute missing components.
+
+Facets: fixed full-timeline series order and shared signed X/Y domains;8 facets,60 X positions. Empty facets remain; lines use existing known-X gap logic. Two columns at widths>=700, otherwise one column; SVG height grows to fit. exports.svgExportDimensions preserves actual SVG aspect ratio for PNG rasterization of auto-height layouts. Existing data/motion settings remain immutable during playback; capture is Undoable.
+
+Six focused suites pass; see QA_V3_51.md. Earlier TIME_TYPES count assertions updated to 19 for the current tree; this does not assert the full suite was rerun. New renderer/examples and generated visual contact sheets included. Full/native verification is deferred by user. Next: ordinary snapshot GIF/video export, then broader template depth/editorial work. Preserve missing/zero distinctions, raw measures, shared domains, reduced-motion behavior and publication privacy.

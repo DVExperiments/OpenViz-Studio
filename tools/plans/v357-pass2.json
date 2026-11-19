@@ -1,0 +1,2 @@
+[{"name":"map-library-ui","title":"Map library dialog: starting points, outline resources, provider guidance and boundary review.","start":"let mapLibraryUI={tab:'starters'","end":"let snapshotExportContext=null"},
+ {"name":"snapshot-export-ui","title":"Time-snapshot GIF/video export dialog: planning, estimates, progress and cancellation.","start":"let snapshotExportContext=null","end":"\ninstallIcons();"}]

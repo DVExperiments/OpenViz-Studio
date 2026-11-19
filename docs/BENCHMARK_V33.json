@@ -1,0 +1,15 @@
+{
+  "environment": "Node 22, synthetic dataset; 5 passes, median, not general latency guarantee",
+  "rows": 100000,
+  "csvRows": 50000,
+  "profile": {
+    "v32MedianMs": 83.09,
+    "v33MedianMs": 14.97,
+    "speedup": 5.55
+  },
+  "csv": {
+    "v32MedianMs": 163.48,
+    "v33MedianMs": 104.29,
+    "speedup": 1.57
+  }
+}

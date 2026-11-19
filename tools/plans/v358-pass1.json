@@ -1,0 +1,7 @@
+[{"name":"story-ui","title":"Story Studio: multi-scene stories, keyframes, timeline, playback and story video export.","start":"// Story Studio V2.9: project-scoped multi-scene editing","end":"function dashboardSelectionField(dash)"},
+ {"name":"slides-ui","title":"Slides and presentation: selection, guides, alignment, layers, present mode and slide objects.","start":"// V1.8 slide selection and direct editing live in the editor only.","end":"function renderHistory(){"},
+ {"name":"storage-ui","title":"Storage centre and recovery checkpoints.","start":"function friendlyBytes(bytes)","end":"let modalReturnFocus=null;"},
+ {"name":"publish-ui","title":"Publishing Studio: standalone/live HTML, preview, embed kit and downloads.","start":"// V3.5: local-first Publishing Studio;","end":"function openExport(){"},
+ {"name":"catalogue-ui","title":"Chart catalogue and chooser: suitability, preview cards and applying a chart type.","start":"function openChartChooser(mode='create'","end":"function openPublicationStyles(){"},
+ {"name":"data-edit-ui","title":"Dataset editing: corrections, rows, columns, renames and deletes.","start":"function recordDatasetCorrection(d,summary)","end":"function styleTargetChart(){"},
+ {"name":"style-library-ui","title":"Style library: saved user styles, thumbnails, import and export.","start":"function styleTargetChart(){","end":"let lastReleaseDiagnostics=null;"}]

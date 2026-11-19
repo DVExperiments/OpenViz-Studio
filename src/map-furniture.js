@@ -1,0 +1,31 @@
+import {escapeText as E,fitText,textWidth} from './chart-quality.js';
+import {WORLD} from './world-data.js';
+const num=(v,d,min,max)=>Math.max(min,Math.min(max,Number(v)||d));
+/** Decorative map labels: bounded, deterministic placement; full names stay in titles. */
+export function mapLabels(candidates,c,b,{reserved=[]}={}){
+ if(!c.geoShowLabels)return '';
+ const size=num(c.geoLabelSize,11,9,18),padding=3,boxes=[...reserved,...candidates.filter(p=>Number(p.radius)>0&&Number.isFinite(p.x)&&Number.isFinite(p.y)).map(p=>({x:p.x-p.radius-1,y:p.y-p.radius-1,w:p.radius*2+2,h:p.radius*2+2}))],placed=[];
+ const overlaps=(a,z)=>a.x<z.x+z.w&&a.x+a.w>z.x&&a.y<z.y+z.h&&a.y+a.h>z.y;
+ const colour=/^#[\da-f]{6}$/i.test(c.geoLabelColor||'')?c.geoLabelColor:b.T,halo=/^#[\da-f]{6}$/i.test(c.background||'')?c.background:'#ffffff';
+ const seen=new Set();let skipped=0,eligible=0;
+ for(const candidate of [...candidates].sort((a,b)=>Number(Object.hasOwn(c.geoLabelPositions||{},String(b.id)))-Number(Object.hasOwn(c.geoLabelPositions||{},String(a.id))))){const {x,y,name,id}=candidate;if(!Number.isFinite(x)||!Number.isFinite(y)||x<b.left||x>b.left+b.pw||y<b.top||y>b.top+b.ph||seen.has(String(id)))continue;seen.add(String(id));eligible++;const manual=Object.hasOwn(c.geoLabelPositions||{},String(id))?c.geoLabelPositions[String(id)]:null;if(manual?.hidden){skipped++;continue;}
+  if(placed.length>=80){skipped++;continue;}const maxWidth=Math.min(150,Math.max(40,b.pw*.42)),title=String(name??id),label=fitText(title,maxWidth,size),w=textWidth(label,size)+padding*2,h=size+padding*2,r=Math.max(0,Number(candidate.radius)||0),d=r+5;
+  if(w>b.pw||h>b.ph){skipped++;continue;}const options=[[x-w/2,y-h/2],[x+d,y-h/2],[x-w-d,y-h/2],[x-w/2,y-h-d],[x-w/2,y+d],[x+d,y-h-d],[x-w-d,y-h-d],[x+d,y+d],[x-w-d,y+d]];
+  if(r>0)options.shift();let chosen=manual&&Number.isFinite(manual.x)&&Number.isFinite(manual.y)?{x:Math.max(b.left,Math.min(b.left+b.pw-w,b.left+manual.x*b.pw-w/2)),y:Math.max(b.top,Math.min(b.top+b.ph-h,b.top+manual.y*b.ph-h/2)),w,h}:null;
+  for(const [px,py] of chosen?[]:options){const box={x:px,y:py,w,h};if(px<b.left||py<b.top||px+w>b.left+b.pw||py+h>b.top+b.ph||boxes.some(z=>overlaps(box,z)))continue;chosen=box;break;}
+  if(!chosen){skipped++;continue;}boxes.push(chosen);const endX=Math.max(chosen.x,Math.min(chosen.x+w,x)),endY=Math.max(chosen.y,Math.min(chosen.y+h,y)),dx=endX-x,dy=endY-y,distance=Math.hypot(dx,dy),leader=distance>r+3?`<line x1="${(x+dx/distance*r).toFixed(2)}" y1="${(y+dy/distance*r).toFixed(2)}" x2="${endX.toFixed(2)}" y2="${endY.toFixed(2)}" stroke="${E(colour)}" stroke-opacity=".55" stroke-width=".7"/>`:'';placed.push(`${leader}<text x="${(chosen.x+w/2).toFixed(2)}" y="${(chosen.y+padding+size*.82).toFixed(2)}" text-anchor="middle" font-family="Arial,sans-serif" font-size="${size}" fill="${E(colour)}" stroke="${halo}" stroke-width="3" stroke-linejoin="round" paint-order="stroke" data-map-label="${E(id)}" data-map-label-anchor="${[x,y,r].join(',')}" data-label-manual="${!!manual}" data-label-box="${[chosen.x,chosen.y,w,h].map(n=>n.toFixed(2)).join(',')}"><title>${E(title)}</title>${E(label)}</text>`);
+ }
+ return `<g data-map-labels="" data-label-placed="${placed.length}" data-label-skipped="${skipped}" data-label-eligible="${eligible}" aria-hidden="true" pointer-events="none">${placed.join('')}</g>`;
+}
+export function locatorBox(c,b){if(!c.geoShowLocator||b.pw<140||b.ph<110)return null;const w=Math.min(170,Math.max(100,b.pw*.25)),h=w*.5+24;return {x:b.left+b.pw-w-8,y:b.top+b.ph-h-8,w,h};}
+const worldPaths=WORLD.features.map(f=>{let d='';const polys=f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;for(const poly of polys||[])for(const ring of poly.slice(0,1)){let run=[];const emit=()=>{if(run.length>2)d+='M'+run.map(([x,y])=>[(x+180)/360,(90-y)/180].map(v=>v.toFixed(5)).join(',')).join('L')+'Z';run=[];};let prev=null;for(const p of ring){if(prev&&Math.abs(p[0]-prev[0])>180)emit();run.push(p);prev=p;}emit();}return d;}).join('');
+/** World inset with a split focus rectangle; tiny extents use a minimum visible marker. */
+export function mapLocator(view,c,b,projection=null){const box=locatorBox(c,b);if(!box||!view?.every(Number.isFinite))return '';const {x,y,w,h}=box,m=5,iw=w-2*m,ih=iw/2,top=y+19,[west,south,east,north]=view,span=Math.min(360,east-west);if(span<=0||north<=south)return '';
+ const pieces=[];let start=((west+180)%360+360)%360-180;if(span>=360)pieces.push([-180,180]);else if(start+span>180)pieces.push([start,180],[-180,start+span-360]);else pieces.push([start,start+span]);
+ const colour=/^#[\da-f]{6}$/i.test(c.geoLocatorColor||'')?c.geoLocatorColor:'#e65c37';
+ const model=c.geoNavigationEnabled&&projection?{version:1,kind:projection.kind,view:[...projection.view],plot:[...projection.raw(projection.view[0],projection.view[3]),...projection.raw(projection.view[2],projection.view[1])],inset:[x+m,top,iw,ih]}:null;
+ let out=`<g ${model?`data-locator-model="${E(JSON.stringify(model))}"`:''} data-map-locator="" role="img" aria-label="World locator showing map extent; very small extents use an enlarged marker. Natural Earth simplified boundaries."><title>World locator · map extent · Natural Earth (simplified). Small extents are enlarged for visibility.</title><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${/^#[\da-f]{6}$/i.test(c.background||'')?c.background:'#fff'}" stroke="${b.T}" stroke-opacity=".4"/><text x="${x+m}" y="${y+13}" fill="${b.T}" font-family="Arial,sans-serif" font-size="9">World locator</text><rect x="${x+m}" y="${top}" width="${iw}" height="${ih}" fill="#e8f1f5"/><path d="${worldPaths}" transform="translate(${x+m} ${top}) scale(${iw} ${ih})" fill="#b7c8d1"/>`;
+ const northClamped=Math.min(90,Math.max(-90,north)),southClamped=Math.min(90,Math.max(-90,south)),rawY=top+(90-northClamped)/180*ih,rawH=(northClamped-southClamped)/180*ih,rh=Math.min(ih,Math.max(3,rawH)),ry=Math.max(top,Math.min(top+ih-rh,rawY+(rawH-rh)/2));
+ for(const [a,z] of pieces){const rawX=x+m+(a+180)/360*iw,rawW=(z-a)/360*iw,rw=Math.min(iw,Math.max(3,rawW)),rx=Math.max(x+m,Math.min(x+m+iw-rw,rawX+(rawW-rw)/2));out+=`<rect data-locator-focus="" x="${rx}" y="${ry}" width="${rw}" height="${rh}" fill="${colour}" fill-opacity=".2" stroke="${colour}" stroke-width="1.5"/>`;}
+ return out+'</g>';
+}

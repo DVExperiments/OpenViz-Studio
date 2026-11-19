@@ -1,0 +1,27 @@
+// Matching shapes only; no paths, inferred joins, moving axes or invented values.
+const axes='[data-viz-part="x-axis"],[data-viz-part="y-axis"],[data-viz-part="grid"],[data-viz-part="axis-title"],[data-viz-part="x-axis-title"],[data-viz-part="y-axis-title"]';
+const marks='[data-viz-part="point"][data-viz-key]';
+function read(svg){const d=new DOMParser().parseFromString(svg,'image/svg+xml');if(d.querySelector('parsererror'))throw Error('Invalid SVG');return d;}
+function endPose(scene){if(scene.focusKey)return false;return Object.values(scene.tracks||{}).every(keys=>{const last=keys?.at(-1);return !last||(last.opacity===1&&!last.dx&&!last.dy&&last.scale===1);});}
+export function stateTransitionCheck(a,b,outgoing={},incoming={}){
+ try{if(outgoing.chartId&&incoming.chartId&&outgoing.chartId!==incoming.chartId)return {ok:false,reason:'Matching marks needs two saved views of the same linked chart.'};const A=read(a),B=read(b),ar=A.documentElement,br=B.documentElement;
+  if((outgoing.animationMs||0)>(outgoing.duration||5400)-Math.min(incoming.transitionMs||0,(outgoing.duration||5400)*.4,(incoming.duration||5400)*.4))return {ok:false,reason:'The outgoing reveal is still running during the transition. Shorten its animation or use Instant.'};
+  if(!endPose(outgoing)||!endPose(incoming))return {ok:false,reason:'Reset focus and finish layer tracks at full opacity with no movement to match marks.'};
+  if(ar.getAttribute('data-viz-chart-type')!==br.getAttribute('data-viz-chart-type')||!['bar','hbar','dot','scatter','bubble'].includes(ar.getAttribute('data-viz-chart-type')))return {ok:false,reason:'Matching marks supports two views of the same column, horizontal-bar, dot, scatter or bubble chart type.'};
+  if(ar.getAttribute('data-viz-plot')!==br.getAttribute('data-viz-plot')||ar.getAttribute('data-time-domain')!==br.getAttribute('data-time-domain')||[...A.querySelectorAll(axes)].map(n=>n.outerHTML).join('')!==[...B.querySelectorAll(axes)].map(n=>n.outerHTML).join(''))return {ok:false,reason:'The plot bounds or axes differ. Use a common fixed scale and layout to match marks.'};
+  const all=[A,B].map(d=>[...d.querySelectorAll(marks)]);if(all.some(m=>m.length>400||!m.length))return {ok:false,reason:'Matching marks needs 1–400 keyed marks in each view.'};
+  for(const list of all){const seen=new Set();for(const node of list){const key=node.getAttribute('data-viz-key');if(seen.has(key)||!['rect','circle'].includes(node.localName)||node.hasAttribute('transform'))return {ok:false,reason:'Marks must be unique keyed rectangles or circles without custom transforms.'};seen.add(key);for(const attr of node.localName==='rect'?['x','y','width','height']:['cx','cy','r'])if(!Number.isFinite(Number(node.getAttribute(attr))))return {ok:false,reason:'Invalid mark geometry.'};}}
+  const from=new Map(all[0].map(n=>[n.getAttribute('data-viz-key'),n]));for(const node of all[1])if(from.has(node.getAttribute('data-viz-key'))&&from.get(node.getAttribute('data-viz-key')).localName!==node.localName)return {ok:false,reason:'A shared mark changes shape.'};
+  return {ok:true,reason:'Matching keys on fixed axes. Missing marks fade without inventing positions.'};
+ }catch{return {ok:false,reason:'The source SVG cannot be matched.'};}
+}
+const esc=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+export function stateTransitionSvg(a,b,progress){
+ const p=Math.max(0,Math.min(1,Number(progress)||0)),A=read(a),B=read(b),from=new Map([...A.querySelectorAll(marks)].map(n=>[n.getAttribute('data-viz-key'),n])),to=new Map([...B.querySelectorAll(marks)].map(n=>[n.getAttribute('data-viz-key'),n])),mixed=[];
+ for(const key of new Set([...from.keys(),...to.keys()])){const start=from.get(key),end=to.get(key),node=(end||start).cloneNode(true);if(start&&end){for(const attr of node.localName==='rect'?['x','y','width','height','rx']:['cx','cy','r'])node.setAttribute(attr,String(Number(start.getAttribute(attr)||0)*(1-p)+Number(end.getAttribute(attr)||0)*p));for(const attr of ['fill','stroke']){const x=start.getAttribute(attr),y=end.getAttribute(attr);if(/^#[\da-f]{6}$/i.test(x||'')&&/^#[\da-f]{6}$/i.test(y||''))node.setAttribute(attr,'#'+[1,3,5].map(i=>Math.round(parseInt(x.slice(i,i+2),16)*(1-p)+parseInt(y.slice(i,i+2),16)*p).toString(16).padStart(2,'0')).join(''));}for(const attr of ['opacity','fill-opacity','stroke-opacity'])node.setAttribute(attr,String(Number(start.getAttribute(attr)??1)*(1-p)+Number(end.getAttribute(attr)??1)*p));}else node.setAttribute('opacity',String(Number(node.getAttribute('opacity')??1)*(start?1-p:p)));
+  node.removeAttribute('aria-label');const title=node.querySelector('title')||node.ownerDocument.createElementNS('http://www.w3.org/2000/svg','title');title.textContent=decodeKey(key)+' · visual transition; intermediate geometry is not an observation';if(!title.parentNode)node.append(title);mixed.push(new XMLSerializer().serializeToString(node));
+ }
+ for(const d of [A,B])d.querySelectorAll(marks).forEach(n=>n.remove());
+ return `<g data-story-state-transition="" role="img" aria-label="Visual transition between saved views; intermediate positions are not observations"><g opacity="${1-p}">${new XMLSerializer().serializeToString(A.documentElement)}</g><g opacity="${p}">${new XMLSerializer().serializeToString(B.documentElement)}</g>${mixed.join('')}</g>`;
+}
+function decodeKey(key){try{return decodeURIComponent(key);}catch{return key;}}

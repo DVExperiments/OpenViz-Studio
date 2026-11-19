@@ -1,0 +1,11 @@
+# V3.40 handoff
+
+Implemented route time playback; see README and QA_V3_40.md for contracts, examples and pending native acceptance. 44 chart options, eight time-enabled types, 41 passing automated suites.
+
+Core changes: time-spatial.js includes geo-route; time-controls.js validates period/optional ID roles, duplicates, per-period cap and exclusions. route-map.js exports routeTimelineDomain and uses transient stable IDs, all-period maximum/framing/reciprocal keys and reader fingerprint. geo.js clears time domain for the background symbol renderer to avoid inset mismatch and calculates timed Fit without pooled aggregation. charts.js applies routeTimeActive only to snapshots and accepts internal routeTimeSourceRows to preserve dashboard saved periods and reference scales under filters. app.js and dashboard-interactive.js supply that private full-source override; it is neither persisted nor embedded as extra source rows. map-exploration-meta.js ignores unsupported route custom boundaries.
+
+Row mode identity: optional explicit Route ID, otherwise exact directed pair. Group modes aggregate each frame separately and use pair IDs. Duplicate identities within a period fail validation; selected blank IDs are excluded. Period changes update geometry/details but preserve reader view/pins; missing pins are unavailable until return. Existing non-time routes retain defaults. Interactive chart HTML includes snapshot controls; other delivery uses saved periods.
+
+Tests: test-route-time-v340.mjs; extended studio test; spatial time count updated to eight. Full regression passes 41 suites. Generator render-route-time-v340.mjs writes portable example, six HTML examples and 48 SVGs; representative comparison in docs/v340-route-time.png. Native Chromium launch fails before a page opens; Windows/browser/touch/screen reader acceptance pending.
+
+Next batch: route tooltip customisation and explicitly selected additional detail fields. Reuse existing plain-text map tooltip design where practical, preserving route period/ID/group-contributor disclosure, current-frame values, source-binding rename protections, bounded export payload and no HTML injection. Do not claim competitor parity without matched dataset/native export checks.

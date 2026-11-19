@@ -1,0 +1,1587 @@
+{
+  "id": "editorial-example",
+  "name": "Editorial table examples",
+  "datasets": [
+    {
+      "id": "editorial-data",
+      "name": "Fictional regional figures",
+      "source": "OpenViz illustrative example",
+      "rows": [
+        {
+          "Region": "Auckland 1",
+          "Revenue": 42000,
+          "Change": 0,
+          "Responses": 40,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Wellington 1",
+          "Revenue": 60672,
+          "Change": 0.202,
+          "Responses": 43,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 1",
+          "Revenue": 69828,
+          "Change": 0.218,
+          "Responses": 46,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 1",
+          "Revenue": 64802,
+          "Change": 0.034,
+          "Responses": 49,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 1",
+          "Revenue": 48154,
+          "Change": -0.182,
+          "Responses": 52,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 2",
+          "Revenue": 28370,
+          "Change": null,
+          "Responses": 55,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 2",
+          "Revenue": 15533,
+          "Change": -0.067,
+          "Responses": 58,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 2",
+          "Revenue": 16184,
+          "Change": 0.158,
+          "Responses": null,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 2",
+          "Revenue": 29993,
+          "Change": 0.237,
+          "Responses": 64,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 2",
+          "Revenue": 49921,
+          "Change": 0.099,
+          "Responses": 67,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Auckland 3",
+          "Revenue": 65812,
+          "Change": -0.131,
+          "Responses": 70,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 3",
+          "Revenue": 69567,
+          "Change": -0.24,
+          "Responses": 73,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 3",
+          "Revenue": 59273,
+          "Change": -0.129,
+          "Responses": 76,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 3",
+          "Revenue": 40175,
+          "Change": 0.101,
+          "Responses": 79,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 3",
+          "Revenue": 22007,
+          "Change": 0.238,
+          "Responses": 82,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 4",
+          "Revenue": 14029,
+          "Change": 0.156,
+          "Responses": 85,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 4",
+          "Revenue": 20306,
+          "Change": -0.069,
+          "Responses": 88,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 4",
+          "Revenue": 37639,
+          "Change": -0.231,
+          "Responses": 91,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 4",
+          "Revenue": 57195,
+          "Change": -0.18,
+          "Responses": 94,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Waikato 4",
+          "Revenue": 69007,
+          "Change": 0.036,
+          "Responses": 97,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 5",
+          "Revenue": 67054,
+          "Change": 0.219,
+          "Responses": 100,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 5",
+          "Revenue": 52333,
+          "Change": 0.201,
+          "Responses": 103,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 5",
+          "Revenue": 32345,
+          "Change": -0.002,
+          "Responses": 106,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 5",
+          "Revenue": 17278,
+          "Change": -0.203,
+          "Responses": 109,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 5",
+          "Revenue": 14811,
+          "Change": -0.217,
+          "Responses": 112,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 6",
+          "Revenue": 26200,
+          "Change": -0.032,
+          "Responses": 115,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 6",
+          "Revenue": 45642,
+          "Change": 0.183,
+          "Responses": 118,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 6",
+          "Revenue": 63228,
+          "Change": 0.23,
+          "Responses": 121,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Otago 6",
+          "Revenue": 69995,
+          "Change": 0.065,
+          "Responses": 124,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 6",
+          "Revenue": 62494,
+          "Change": -0.159,
+          "Responses": 127,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 7",
+          "Revenue": 44549,
+          "Change": -0.237,
+          "Responses": 130,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 7",
+          "Revenue": 25304,
+          "Change": -0.097,
+          "Responses": 133,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 7",
+          "Revenue": 14569,
+          "Change": 0.132,
+          "Responses": 136,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 7",
+          "Revenue": 17814,
+          "Change": 0.24,
+          "Responses": 139,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 7",
+          "Revenue": 33385,
+          "Change": 0.127,
+          "Responses": 142,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 8",
+          "Revenue": 53347,
+          "Change": -0.103,
+          "Responses": 145,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 8",
+          "Revenue": 67526,
+          "Change": -0.238,
+          "Responses": 148,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Canterbury 8",
+          "Revenue": 68695,
+          "Change": -0.154,
+          "Responses": 151,
+          "Note": "Reviewed"
+        }
+      ],
+      "rawRows": [
+        {
+          "Region": "Auckland 1",
+          "Revenue": 42000,
+          "Change": 0,
+          "Responses": 40,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Wellington 1",
+          "Revenue": 60672,
+          "Change": 0.202,
+          "Responses": 43,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 1",
+          "Revenue": 69828,
+          "Change": 0.218,
+          "Responses": 46,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 1",
+          "Revenue": 64802,
+          "Change": 0.034,
+          "Responses": 49,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 1",
+          "Revenue": 48154,
+          "Change": -0.182,
+          "Responses": 52,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 2",
+          "Revenue": 28370,
+          "Change": null,
+          "Responses": 55,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 2",
+          "Revenue": 15533,
+          "Change": -0.067,
+          "Responses": 58,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 2",
+          "Revenue": 16184,
+          "Change": 0.158,
+          "Responses": null,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 2",
+          "Revenue": 29993,
+          "Change": 0.237,
+          "Responses": 64,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 2",
+          "Revenue": 49921,
+          "Change": 0.099,
+          "Responses": 67,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Auckland 3",
+          "Revenue": 65812,
+          "Change": -0.131,
+          "Responses": 70,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 3",
+          "Revenue": 69567,
+          "Change": -0.24,
+          "Responses": 73,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 3",
+          "Revenue": 59273,
+          "Change": -0.129,
+          "Responses": 76,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 3",
+          "Revenue": 40175,
+          "Change": 0.101,
+          "Responses": 79,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 3",
+          "Revenue": 22007,
+          "Change": 0.238,
+          "Responses": 82,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 4",
+          "Revenue": 14029,
+          "Change": 0.156,
+          "Responses": 85,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 4",
+          "Revenue": 20306,
+          "Change": -0.069,
+          "Responses": 88,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 4",
+          "Revenue": 37639,
+          "Change": -0.231,
+          "Responses": 91,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 4",
+          "Revenue": 57195,
+          "Change": -0.18,
+          "Responses": 94,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Waikato 4",
+          "Revenue": 69007,
+          "Change": 0.036,
+          "Responses": 97,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 5",
+          "Revenue": 67054,
+          "Change": 0.219,
+          "Responses": 100,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 5",
+          "Revenue": 52333,
+          "Change": 0.201,
+          "Responses": 103,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 5",
+          "Revenue": 32345,
+          "Change": -0.002,
+          "Responses": 106,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 5",
+          "Revenue": 17278,
+          "Change": -0.203,
+          "Responses": 109,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 5",
+          "Revenue": 14811,
+          "Change": -0.217,
+          "Responses": 112,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 6",
+          "Revenue": 26200,
+          "Change": -0.032,
+          "Responses": 115,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 6",
+          "Revenue": 45642,
+          "Change": 0.183,
+          "Responses": 118,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 6",
+          "Revenue": 63228,
+          "Change": 0.23,
+          "Responses": 121,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Otago 6",
+          "Revenue": 69995,
+          "Change": 0.065,
+          "Responses": 124,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 6",
+          "Revenue": 62494,
+          "Change": -0.159,
+          "Responses": 127,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 7",
+          "Revenue": 44549,
+          "Change": -0.237,
+          "Responses": 130,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 7",
+          "Revenue": 25304,
+          "Change": -0.097,
+          "Responses": 133,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 7",
+          "Revenue": 14569,
+          "Change": 0.132,
+          "Responses": 136,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 7",
+          "Revenue": 17814,
+          "Change": 0.24,
+          "Responses": 139,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 7",
+          "Revenue": 33385,
+          "Change": 0.127,
+          "Responses": 142,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 8",
+          "Revenue": 53347,
+          "Change": -0.103,
+          "Responses": 145,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 8",
+          "Revenue": 67526,
+          "Change": -0.238,
+          "Responses": 148,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Canterbury 8",
+          "Revenue": 68695,
+          "Change": -0.154,
+          "Responses": 151,
+          "Note": "Reviewed"
+        }
+      ],
+      "calculations": [],
+      "columns": [
+        "Region",
+        "Revenue",
+        "Change",
+        "Responses",
+        "Note"
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "tablePageSize": 10,
+      "tableColumnStyles": [
+        {
+          "field": "Revenue",
+          "format": "currency",
+          "decimals": 0,
+          "visual": "bar"
+        },
+        {
+          "field": "Change",
+          "format": "percent",
+          "decimals": 1,
+          "visual": "bar"
+        },
+        {
+          "field": "Responses",
+          "format": "number",
+          "decimals": 0,
+          "visual": "heat"
+        }
+      ],
+      "geoToLatField": "",
+      "geoToLonField": "",
+      "routeAggregation": "rows",
+      "routeSeparateReciprocal": false,
+      "routeDomainMax": null,
+      "routeShape": "curve",
+      "routeCurve": 0.18,
+      "routeWidthMode": "uniform",
+      "routeWidth": 2,
+      "routeMaxWidth": 10,
+      "routeOpacity": 0.7,
+      "routeArrows": true,
+      "routeEndpoints": true,
+      "geoNavigationEnabled": false,
+      "geoExploreEnabled": false,
+      "geoTooltipFields": [],
+      "geoTooltipMode": "auto",
+      "geoTooltipNameLabel": "",
+      "geoTooltipValueLabel": "",
+      "geoTooltipNumberFormat": "auto",
+      "geoTooltipDecimals": 2,
+      "geoTooltipPrefix": "",
+      "geoTooltipSuffix": "",
+      "geoTooltipShowValue": true,
+      "geoTooltipShowExact": true,
+      "geoTooltipShowCount": true,
+      "geoTooltipShowAggregation": true,
+      "geoTooltipShowPeriod": true,
+      "geoTooltipShowCoordinates": false,
+      "geoTooltipNoDataText": "No data",
+      "type": "editorial-table",
+      "x": "Region",
+      "y": "Revenue",
+      "aggregation": "sum",
+      "title": "Regional performance",
+      "subtitle": "Fictional figures · selected source records",
+      "showTitle": true,
+      "showSubtitle": true,
+      "showLegend": false,
+      "showGrid": true,
+      "showAxes": true,
+      "showLabels": false,
+      "showXAxisLabel": false,
+      "showYAxisLabel": false,
+      "xAxisLabel": "",
+      "yAxisLabel": "",
+      "color": "#0d9488",
+      "secondary": "#f2aa64",
+      "background": "#ffffff",
+      "textColor": "#1c2c3e",
+      "gridColor": "#e0e6ec",
+      "font": "Inter, Arial, sans-serif",
+      "titleSize": 26,
+      "labelSize": 12,
+      "titleAlign": "left",
+      "titleColor": null,
+      "titleWeight": 700,
+      "xLabelRotation": 0,
+      "barWidthRatio": 0.68,
+      "lineWidth": 3,
+      "pointSize": 5,
+      "barRadius": 3,
+      "padding": 40,
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "marginTop": null,
+      "marginRight": null,
+      "marginBottom": null,
+      "marginLeft": null,
+      "yMin": null,
+      "yMax": null,
+      "tickCount": 5,
+      "valueFormat": "compact",
+      "decimalPlaces": 2,
+      "axisColor": "#718293",
+      "axisLineWidth": 1,
+      "axisFontSize": 12,
+      "gridWidth": 1,
+      "gridDash": "dashed",
+      "labelColor": "#1c2c3e",
+      "legendPosition": "top-right",
+      "legendFontSize": 12,
+      "showXAxis": true,
+      "showYAxis": true,
+      "publicationStyle": "none",
+      "pointColors": {},
+      "figureNumber": "Figure 1",
+      "figureTitle": "",
+      "figureNote": "",
+      "showFigureNumber": true,
+      "showFigureTitle": true,
+      "showFigureNote": true,
+      "seriesField": "",
+      "bubbleSizeField": "",
+      "bubbleMaxRadius": 26,
+      "violinBandwidth": 0,
+      "histBins": 10,
+      "textOffsets": {},
+      "valueLabelOffsets": {},
+      "endField": "",
+      "labelField": "",
+      "parallelFields": [
+        "Region",
+        "Revenue",
+        "Change",
+        "Responses",
+        "Note"
+      ],
+      "networkLayout": "force",
+      "networkNodeRadius": 12,
+      "nodeGap": 12,
+      "nodeWidth": 17,
+      "nodePositions": {},
+      "linkOpacity": 0.48,
+      "timelineZoom": 1,
+      "geoLegendAlign": "left",
+      "geoLegendLayout": "auto",
+      "geoLegendWidth": 100,
+      "geoLegendFontSize": 9,
+      "geoLegendNumberFormat": "auto",
+      "geoLegendDecimals": 2,
+      "geoLegendPrefix": "",
+      "geoLegendSuffix": "",
+      "geoScaleType": "linear",
+      "geoSymlogConstant": 1,
+      "geoDomainMode": "auto",
+      "geoDomainMin": null,
+      "geoDomainMax": null,
+      "geoColorMode": "sequential",
+      "geoMidpoint": 0,
+      "geoDivergingRange": "independent",
+      "geoLowColor": "#b35806",
+      "geoMidColor": "#f7f7f7",
+      "geoHighColor": "#2166ac",
+      "geoClassification": "continuous",
+      "geoClassCount": 5,
+      "geoClassBreaks": [],
+      "geoLegendTitle": "",
+      "geoLegendNoData": true,
+      "geoNoDataLabel": "No data",
+      "geoNoDataColor": "#d8e2e8",
+      "geoProjection": "local",
+      "geoFramePadding": 0,
+      "geoExtent": null,
+      "geoLabelPositions": {},
+      "geoSymbolAnchors": {},
+      "geoAnnotations": [],
+      "geoShowLabels": false,
+      "geoLabelSize": 11,
+      "geoLabelColor": "",
+      "geoShowLocator": false,
+      "geoLocatorColor": "#e65c37",
+      "geoCustom": null,
+      "geoBoundaryKey": "",
+      "geoBoundaryLabel": "",
+      "geoJoinMode": "exact",
+      "geoView": "world",
+      "geoLatField": "",
+      "geoLonField": "",
+      "geoPalette": "teal",
+      "geoLocationMode": "auto",
+      "lowerField": "",
+      "upperField": "",
+      "likertOrder": [
+        "Strongly disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly agree"
+      ],
+      "likertNeutral": "Neutral",
+      "likertNeutralMode": "split",
+      "calendarYear": 0,
+      "intervalLabel": "Supplied interval",
+      "intervalReference": null,
+      "assumptionBaseline": "average",
+      "assumptionAlternative": "median",
+      "assumptionMissing": "exclude",
+      "timeEnabled": false,
+      "timeField": "",
+      "timeEntityField": "",
+      "timeIndex": 0,
+      "raceIndex": 0,
+      "raceTopN": 10,
+      "raceStepMs": 1600,
+      "raceMissing": "hide",
+      "raceLoop": false,
+      "raceLoopPauseMs": 1000,
+      "raceTimeline": true,
+      "raceTimelineEntity": "",
+      "raceCaptions": {},
+      "raceAssets": {},
+      "raceShowImages": true,
+      "raceImagePosition": "before-label",
+      "raceImageShape": "contain",
+      "raceImageSize": 24,
+      "raceBarRoundness": 2,
+      "raceBarOpacity": 1,
+      "raceRowSpacing": 0.66,
+      "raceLabelSize": 11,
+      "raceValueLabels": true,
+      "altText": "",
+      "sourceNote": "Illustrative data, not official regional statistics",
+      "includeDataTable": false,
+      "geoShowLegend": true,
+      "geoShowBoundaryNote": false,
+      "geoBorders": true,
+      "geoBorderWidth": 0.65,
+      "geoOpacity": 0.6,
+      "geoMinRadius": 4,
+      "geoMaxRadius": 32,
+      "geoRadius": 35,
+      "geoHeatGamma": 0.85,
+      "geoOcean": "#eff6f9",
+      "rows": [
+        {
+          "Region": "Auckland 1",
+          "Revenue": 42000,
+          "Change": 0,
+          "Responses": 40,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Wellington 1",
+          "Revenue": 60672,
+          "Change": 0.202,
+          "Responses": 43,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 1",
+          "Revenue": 69828,
+          "Change": 0.218,
+          "Responses": 46,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 1",
+          "Revenue": 64802,
+          "Change": 0.034,
+          "Responses": 49,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 1",
+          "Revenue": 48154,
+          "Change": -0.182,
+          "Responses": 52,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 2",
+          "Revenue": 28370,
+          "Change": null,
+          "Responses": 55,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 2",
+          "Revenue": 15533,
+          "Change": -0.067,
+          "Responses": 58,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 2",
+          "Revenue": 16184,
+          "Change": 0.158,
+          "Responses": null,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 2",
+          "Revenue": 29993,
+          "Change": 0.237,
+          "Responses": 64,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 2",
+          "Revenue": 49921,
+          "Change": 0.099,
+          "Responses": 67,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Auckland 3",
+          "Revenue": 65812,
+          "Change": -0.131,
+          "Responses": 70,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 3",
+          "Revenue": 69567,
+          "Change": -0.24,
+          "Responses": 73,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 3",
+          "Revenue": 59273,
+          "Change": -0.129,
+          "Responses": 76,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 3",
+          "Revenue": 40175,
+          "Change": 0.101,
+          "Responses": 79,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 3",
+          "Revenue": 22007,
+          "Change": 0.238,
+          "Responses": 82,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 4",
+          "Revenue": 14029,
+          "Change": 0.156,
+          "Responses": 85,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 4",
+          "Revenue": 20306,
+          "Change": -0.069,
+          "Responses": 88,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 4",
+          "Revenue": 37639,
+          "Change": -0.231,
+          "Responses": 91,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 4",
+          "Revenue": 57195,
+          "Change": -0.18,
+          "Responses": 94,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Waikato 4",
+          "Revenue": 69007,
+          "Change": 0.036,
+          "Responses": 97,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 5",
+          "Revenue": 67054,
+          "Change": 0.219,
+          "Responses": 100,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 5",
+          "Revenue": 52333,
+          "Change": 0.201,
+          "Responses": 103,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 5",
+          "Revenue": 32345,
+          "Change": -0.002,
+          "Responses": 106,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 5",
+          "Revenue": 17278,
+          "Change": -0.203,
+          "Responses": 109,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 5",
+          "Revenue": 14811,
+          "Change": -0.217,
+          "Responses": 112,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 6",
+          "Revenue": 26200,
+          "Change": -0.032,
+          "Responses": 115,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 6",
+          "Revenue": 45642,
+          "Change": 0.183,
+          "Responses": 118,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 6",
+          "Revenue": 63228,
+          "Change": 0.23,
+          "Responses": 121,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Otago 6",
+          "Revenue": 69995,
+          "Change": 0.065,
+          "Responses": 124,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 6",
+          "Revenue": 62494,
+          "Change": -0.159,
+          "Responses": 127,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 7",
+          "Revenue": 44549,
+          "Change": -0.237,
+          "Responses": 130,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 7",
+          "Revenue": 25304,
+          "Change": -0.097,
+          "Responses": 133,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 7",
+          "Revenue": 14569,
+          "Change": 0.132,
+          "Responses": 136,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 7",
+          "Revenue": 17814,
+          "Change": 0.24,
+          "Responses": 139,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 7",
+          "Revenue": 33385,
+          "Change": 0.127,
+          "Responses": 142,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 8",
+          "Revenue": 53347,
+          "Change": -0.103,
+          "Responses": 145,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 8",
+          "Revenue": 67526,
+          "Change": -0.238,
+          "Responses": 148,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Canterbury 8",
+          "Revenue": 68695,
+          "Change": -0.154,
+          "Responses": 151,
+          "Note": "Reviewed"
+        }
+      ],
+      "id": "editorial-light",
+      "datasetId": "editorial-data"
+    },
+    {
+      "tablePageSize": 10,
+      "tableColumnStyles": [
+        {
+          "field": "Revenue",
+          "format": "currency",
+          "decimals": 0,
+          "visual": "bar"
+        },
+        {
+          "field": "Change",
+          "format": "percent",
+          "decimals": 1,
+          "visual": "bar"
+        },
+        {
+          "field": "Responses",
+          "format": "number",
+          "decimals": 0,
+          "visual": "heat"
+        }
+      ],
+      "geoToLatField": "",
+      "geoToLonField": "",
+      "routeAggregation": "rows",
+      "routeSeparateReciprocal": false,
+      "routeDomainMax": null,
+      "routeShape": "curve",
+      "routeCurve": 0.18,
+      "routeWidthMode": "uniform",
+      "routeWidth": 2,
+      "routeMaxWidth": 10,
+      "routeOpacity": 0.7,
+      "routeArrows": true,
+      "routeEndpoints": true,
+      "geoNavigationEnabled": false,
+      "geoExploreEnabled": false,
+      "geoTooltipFields": [],
+      "geoTooltipMode": "auto",
+      "geoTooltipNameLabel": "",
+      "geoTooltipValueLabel": "",
+      "geoTooltipNumberFormat": "auto",
+      "geoTooltipDecimals": 2,
+      "geoTooltipPrefix": "",
+      "geoTooltipSuffix": "",
+      "geoTooltipShowValue": true,
+      "geoTooltipShowExact": true,
+      "geoTooltipShowCount": true,
+      "geoTooltipShowAggregation": true,
+      "geoTooltipShowPeriod": true,
+      "geoTooltipShowCoordinates": false,
+      "geoTooltipNoDataText": "No data",
+      "type": "editorial-table",
+      "x": "Region",
+      "y": "Revenue",
+      "aggregation": "sum",
+      "title": "Regional performance · dark",
+      "subtitle": "Fictional figures · selected source records",
+      "showTitle": true,
+      "showSubtitle": true,
+      "showLegend": false,
+      "showGrid": true,
+      "showAxes": true,
+      "showLabels": false,
+      "showXAxisLabel": false,
+      "showYAxisLabel": false,
+      "xAxisLabel": "",
+      "yAxisLabel": "",
+      "color": "#43c5b7",
+      "secondary": "#f2aa64",
+      "background": "#17252f",
+      "textColor": "#e6eef4",
+      "gridColor": "#e0e6ec",
+      "font": "Inter, Arial, sans-serif",
+      "titleSize": 26,
+      "labelSize": 12,
+      "titleAlign": "left",
+      "titleColor": null,
+      "titleWeight": 700,
+      "xLabelRotation": 0,
+      "barWidthRatio": 0.68,
+      "lineWidth": 3,
+      "pointSize": 5,
+      "barRadius": 3,
+      "padding": 40,
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "marginTop": null,
+      "marginRight": null,
+      "marginBottom": null,
+      "marginLeft": null,
+      "yMin": null,
+      "yMax": null,
+      "tickCount": 5,
+      "valueFormat": "compact",
+      "decimalPlaces": 2,
+      "axisColor": "#718293",
+      "axisLineWidth": 1,
+      "axisFontSize": 12,
+      "gridWidth": 1,
+      "gridDash": "dashed",
+      "labelColor": "#1c2c3e",
+      "legendPosition": "top-right",
+      "legendFontSize": 12,
+      "showXAxis": true,
+      "showYAxis": true,
+      "publicationStyle": "none",
+      "pointColors": {},
+      "figureNumber": "Figure 1",
+      "figureTitle": "",
+      "figureNote": "",
+      "showFigureNumber": true,
+      "showFigureTitle": true,
+      "showFigureNote": true,
+      "seriesField": "",
+      "bubbleSizeField": "",
+      "bubbleMaxRadius": 26,
+      "violinBandwidth": 0,
+      "histBins": 10,
+      "textOffsets": {},
+      "valueLabelOffsets": {},
+      "endField": "",
+      "labelField": "",
+      "parallelFields": [
+        "Region",
+        "Revenue",
+        "Change",
+        "Responses",
+        "Note"
+      ],
+      "networkLayout": "force",
+      "networkNodeRadius": 12,
+      "nodeGap": 12,
+      "nodeWidth": 17,
+      "nodePositions": {},
+      "linkOpacity": 0.48,
+      "timelineZoom": 1,
+      "geoLegendAlign": "left",
+      "geoLegendLayout": "auto",
+      "geoLegendWidth": 100,
+      "geoLegendFontSize": 9,
+      "geoLegendNumberFormat": "auto",
+      "geoLegendDecimals": 2,
+      "geoLegendPrefix": "",
+      "geoLegendSuffix": "",
+      "geoScaleType": "linear",
+      "geoSymlogConstant": 1,
+      "geoDomainMode": "auto",
+      "geoDomainMin": null,
+      "geoDomainMax": null,
+      "geoColorMode": "sequential",
+      "geoMidpoint": 0,
+      "geoDivergingRange": "independent",
+      "geoLowColor": "#b35806",
+      "geoMidColor": "#f7f7f7",
+      "geoHighColor": "#2166ac",
+      "geoClassification": "continuous",
+      "geoClassCount": 5,
+      "geoClassBreaks": [],
+      "geoLegendTitle": "",
+      "geoLegendNoData": true,
+      "geoNoDataLabel": "No data",
+      "geoNoDataColor": "#d8e2e8",
+      "geoProjection": "local",
+      "geoFramePadding": 0,
+      "geoExtent": null,
+      "geoLabelPositions": {},
+      "geoSymbolAnchors": {},
+      "geoAnnotations": [],
+      "geoShowLabels": false,
+      "geoLabelSize": 11,
+      "geoLabelColor": "",
+      "geoShowLocator": false,
+      "geoLocatorColor": "#e65c37",
+      "geoCustom": null,
+      "geoBoundaryKey": "",
+      "geoBoundaryLabel": "",
+      "geoJoinMode": "exact",
+      "geoView": "world",
+      "geoLatField": "",
+      "geoLonField": "",
+      "geoPalette": "teal",
+      "geoLocationMode": "auto",
+      "lowerField": "",
+      "upperField": "",
+      "likertOrder": [
+        "Strongly disagree",
+        "Disagree",
+        "Neutral",
+        "Agree",
+        "Strongly agree"
+      ],
+      "likertNeutral": "Neutral",
+      "likertNeutralMode": "split",
+      "calendarYear": 0,
+      "intervalLabel": "Supplied interval",
+      "intervalReference": null,
+      "assumptionBaseline": "average",
+      "assumptionAlternative": "median",
+      "assumptionMissing": "exclude",
+      "timeEnabled": false,
+      "timeField": "",
+      "timeEntityField": "",
+      "timeIndex": 0,
+      "raceIndex": 0,
+      "raceTopN": 10,
+      "raceStepMs": 1600,
+      "raceMissing": "hide",
+      "raceLoop": false,
+      "raceLoopPauseMs": 1000,
+      "raceTimeline": true,
+      "raceTimelineEntity": "",
+      "raceCaptions": {},
+      "raceAssets": {},
+      "raceShowImages": true,
+      "raceImagePosition": "before-label",
+      "raceImageShape": "contain",
+      "raceImageSize": 24,
+      "raceBarRoundness": 2,
+      "raceBarOpacity": 1,
+      "raceRowSpacing": 0.66,
+      "raceLabelSize": 11,
+      "raceValueLabels": true,
+      "altText": "",
+      "sourceNote": "Illustrative data, not official regional statistics",
+      "includeDataTable": false,
+      "geoShowLegend": true,
+      "geoShowBoundaryNote": false,
+      "geoBorders": true,
+      "geoBorderWidth": 0.65,
+      "geoOpacity": 0.6,
+      "geoMinRadius": 4,
+      "geoMaxRadius": 32,
+      "geoRadius": 35,
+      "geoHeatGamma": 0.85,
+      "geoOcean": "#eff6f9",
+      "rows": [
+        {
+          "Region": "Auckland 1",
+          "Revenue": 42000,
+          "Change": 0,
+          "Responses": 40,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Wellington 1",
+          "Revenue": 60672,
+          "Change": 0.202,
+          "Responses": 43,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 1",
+          "Revenue": 69828,
+          "Change": 0.218,
+          "Responses": 46,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 1",
+          "Revenue": 64802,
+          "Change": 0.034,
+          "Responses": 49,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 1",
+          "Revenue": 48154,
+          "Change": -0.182,
+          "Responses": 52,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 2",
+          "Revenue": 28370,
+          "Change": null,
+          "Responses": 55,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 2",
+          "Revenue": 15533,
+          "Change": -0.067,
+          "Responses": 58,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 2",
+          "Revenue": 16184,
+          "Change": 0.158,
+          "Responses": null,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 2",
+          "Revenue": 29993,
+          "Change": 0.237,
+          "Responses": 64,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 2",
+          "Revenue": 49921,
+          "Change": 0.099,
+          "Responses": 67,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Auckland 3",
+          "Revenue": 65812,
+          "Change": -0.131,
+          "Responses": 70,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 3",
+          "Revenue": 69567,
+          "Change": -0.24,
+          "Responses": 73,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 3",
+          "Revenue": 59273,
+          "Change": -0.129,
+          "Responses": 76,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 3",
+          "Revenue": 40175,
+          "Change": 0.101,
+          "Responses": 79,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 3",
+          "Revenue": 22007,
+          "Change": 0.238,
+          "Responses": 82,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 4",
+          "Revenue": 14029,
+          "Change": 0.156,
+          "Responses": 85,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 4",
+          "Revenue": 20306,
+          "Change": -0.069,
+          "Responses": 88,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 4",
+          "Revenue": 37639,
+          "Change": -0.231,
+          "Responses": 91,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 4",
+          "Revenue": 57195,
+          "Change": -0.18,
+          "Responses": 94,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Waikato 4",
+          "Revenue": 69007,
+          "Change": 0.036,
+          "Responses": 97,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 5",
+          "Revenue": 67054,
+          "Change": 0.219,
+          "Responses": 100,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 5",
+          "Revenue": 52333,
+          "Change": 0.201,
+          "Responses": 103,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 5",
+          "Revenue": 32345,
+          "Change": -0.002,
+          "Responses": 106,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 5",
+          "Revenue": 17278,
+          "Change": -0.203,
+          "Responses": 109,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 5",
+          "Revenue": 14811,
+          "Change": -0.217,
+          "Responses": 112,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 6",
+          "Revenue": 26200,
+          "Change": -0.032,
+          "Responses": 115,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 6",
+          "Revenue": 45642,
+          "Change": 0.183,
+          "Responses": 118,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 6",
+          "Revenue": 63228,
+          "Change": 0.23,
+          "Responses": 121,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Otago 6",
+          "Revenue": 69995,
+          "Change": 0.065,
+          "Responses": 124,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 6",
+          "Revenue": 62494,
+          "Change": -0.159,
+          "Responses": 127,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 7",
+          "Revenue": 44549,
+          "Change": -0.237,
+          "Responses": 130,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 7",
+          "Revenue": 25304,
+          "Change": -0.097,
+          "Responses": 133,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Canterbury 7",
+          "Revenue": 14569,
+          "Change": 0.132,
+          "Responses": 136,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Otago 7",
+          "Revenue": 17814,
+          "Change": 0.24,
+          "Responses": 139,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Waikato 7",
+          "Revenue": 33385,
+          "Change": 0.127,
+          "Responses": 142,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Auckland 8",
+          "Revenue": 53347,
+          "Change": -0.103,
+          "Responses": 145,
+          "Note": "Reviewed"
+        },
+        {
+          "Region": "Wellington 8",
+          "Revenue": 67526,
+          "Change": -0.238,
+          "Responses": 148,
+          "Note": "Provisional"
+        },
+        {
+          "Region": "Canterbury 8",
+          "Revenue": 68695,
+          "Change": -0.154,
+          "Responses": 151,
+          "Note": "Reviewed"
+        }
+      ],
+      "id": "editorial-dark",
+      "datasetId": "editorial-data"
+    }
+  ],
+  "dashboards": [
+    {
+      "id": "editorial-dashboard",
+      "name": "Static table pages",
+      "chartIds": [
+        "editorial-light",
+        "editorial-dark"
+      ],
+      "mode": "grid"
+    }
+  ],
+  "slides": [],
+  "stories": [],
+  "versions": []
+}

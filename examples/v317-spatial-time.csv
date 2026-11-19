@@ -1,0 +1,12 @@
+Period,Entity,Country,Capacity,Score,Size,Value,Latitude,Longitude
+2020,New Zealand,NZ,20,-8,0,0,-41,175
+2020,Japan,JP,34,4,50,24,36,138
+2020,Canada,CA,48,16,80,33,56,-106
+2020,Australia,AU,62,28,110,42,-25,134
+2024,New Zealand,NZ,30,8,60,39,-40.4,176
+2024,Japan,JP,46,18,90,46,36.6,139
+2024,Canada,CA,62,28,120,53,56.6,-105
+2024,Australia,AU,78,38,150,60,-24.4,135
+2021,Australia,AU,70,33,130,51,-24.7,134.5
+2021,Japan,JP,40,11,70,35,36.3,138.5
+2021,New Zealand,NZ,25,0,40,27,-40.7,175.5

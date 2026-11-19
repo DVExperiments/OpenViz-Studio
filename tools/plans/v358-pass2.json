@@ -1,0 +1,4 @@
+[{"name":"dashboard-ui","title":"Dashboards: cross-filter selection, layout items, guides and the dashboard inspector.","start":"function dashboardSelectionField(dash)","end":"function fitSlideChartToContent("},
+ {"name":"help-ui","title":"In-app help topics.","start":"const HELP","end":"function selectOptions("},
+ {"name":"map-inspector","title":"Map inspector panels: route maps and choropleth/symbol/density map styling.","start":"function routeChartProperties(","end":"function advancedChartProperties("},
+ {"name":"export-ui","title":"Export dialogs: PPTX compatibility, PDF export, PPTX report and the export menu.","start":"function pptxCompatibility(","end":"function showVersionCompare("}]

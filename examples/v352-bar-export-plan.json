@@ -1,0 +1,39 @@
+{
+  "format": "gif",
+  "startIndex": 0,
+  "endIndex": 2,
+  "periodStart": "2020",
+  "periodEnd": "2024",
+  "periodMs": 600,
+  "endHoldMs": 600,
+  "durationMs": 2400,
+  "samples": [
+    {
+      "index": 0,
+      "period": "2020",
+      "timeMs": 0,
+      "delayMs": 600
+    },
+    {
+      "index": 1,
+      "period": "2021",
+      "timeMs": 600,
+      "delayMs": 600
+    },
+    {
+      "index": 2,
+      "period": "2024",
+      "timeMs": 1200,
+      "delayMs": 1200
+    }
+  ],
+  "width": 480,
+  "height": 300,
+  "svgWidth": 960,
+  "svgHeight": 600,
+  "fps": 24,
+  "loop": true,
+  "frameBudgetBytes": 100663296,
+  "frameBufferBytes": 1728000,
+  "sourcePeriods": 3
+}

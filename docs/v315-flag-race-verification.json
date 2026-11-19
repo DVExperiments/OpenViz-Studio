@@ -1,0 +1,18 @@
+{
+  "frames": 7,
+  "dimensions": [
+    480,
+    360
+  ],
+  "duration_ms": 1400,
+  "delays_ms": [
+    170,
+    160,
+    170,
+    170,
+    160,
+    170,
+    400
+  ],
+  "flag_credit_in_comment": true
+}

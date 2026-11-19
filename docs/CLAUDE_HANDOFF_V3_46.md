@@ -1,0 +1,13 @@
+# V3.46 handoff
+
+Signed stacked-horizontal snapshot playback added. 44 chart options/fifteen snapshot types/47 passing suites. Native Chromium exits before opening a page; browser/touch/Windows/screen reader acceptance pending.
+
+New horizontal-stack-time.js wraps stackedTimeMatrix/stackedTimeDomain; the wrapper changes domain.kind to stacked-hbar and adjusts error wording, preserving existing stacked-column behaviour. Renderer uses fixed complete positive/negative totals, category rows, stable palette/full legend and full-timeline label margins. Signed cells stack independently about zero; zero has a boundary marker, absent cells no mark and empty periods a centered message. Details include values/exact formatted values/totals/counts/period. Plot space reserves a fixed line for optional clipping notice so filtered states don't shift geometry.
+
+Filtering can remove cancellation and exceed unfiltered bounds. Renderer clamps both segment endpoints to fixed limits, discloses clipped categories/marks and retains raw values. Filtered cell/stack overflow stops with a message, never partial stacks. Domain/caps remain source-timeline-based. Compiler-only horizontalStackTimeSourceRows passed by editor/export dashboards retains saved period/full domains before row-reference intersection; not persisted or injected as raw publication data.
+
+time-controls.js includes stacked-hbar in validation/domain/settings/notes/warnings; charts.js uses timed cell data and dedicated rendering before static expanded templates, with full-domain horizontal margins and independent empty state. Data contracts separate period/series; time example reuses fictional signed cells with a late long category. UI exposes reusable player/period capture. Existing static hbar/stacked-column paths unchanged.
+
+New test-horizontal-stack-time-v346.mjs plus studio extension cover totals/signed/zero/missing/empty/count, limits/overflow, filtered cancellation clipping, huge finite measures, fixed geometry/colours, portable/rename/story and executed export keyboard/runtime/source safety. Previous supported-type count checks updated to fifteen. Generator produces validated JSON/six HTML examples/48 SVG fixtures; docs/v346-horizontal-stack-time.png inspected.
+
+Next: multi-series line snapshot playback with fixed X/Y domains and consistent missing-data gaps. Use a separate snapshot period plus ordered X dimension, preserve exact per-period series cells, distinguish gaps/zero and avoid drawing through absent observations. Keep saved-period dashboard filtering/source invariance explicit. Do not claim parity without matched-data native acceptance.

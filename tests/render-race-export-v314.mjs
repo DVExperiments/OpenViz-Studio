@@ -1,0 +1,10 @@
+import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+import {join} from 'node:path';
+import {DEFAULT_CHART} from '../src/charts.js';
+import {raceExportPlan,raceExportSvgAt,exportRaceGif} from '../src/race-export.js';
+const directory=process.argv[2]||'race-export-fixtures';mkdirSync(directory,{recursive:true});
+const rows=[{Year:2020,Team:'Kauri',Value:12},{Year:2020,Team:'Tui',Value:34},{Year:2020,Team:'Kea',Value:22},{Year:2021,Team:'Kauri',Value:30},{Year:2021,Team:'Tui',Value:24},{Year:2021,Team:'Kea',Value:27},{Year:2022,Team:'Kauri',Value:45},{Year:2022,Team:'Tui',Value:28},{Year:2022,Team:'Kea',Value:38}];
+const chart={...DEFAULT_CHART,type:'bar-race',x:'Year',seriesField:'Team',y:'Value',width:960,height:720,title:'Changing team performance',subtitle:'Illustrative data · exported race timeline',showSubtitle:true,sourceNote:'OpenViz example',raceStepMs:500,raceTimeline:true,raceCaptions:{2020:'Tui leads at the beginning.',2022:'Kauri leads at the final observation.'}},options={format:'gif',startIndex:0,endIndex:2,fps:6,longEdge:480,endHoldMs:400,loop:true};
+const plan=raceExportPlan(rows,chart,options);
+if(process.argv.includes('--encode')){const result=await exportRaceGif(rows,chart,{...options,rasterize:async(svg,width,height,index)=>{const expected=readFileSync(join(directory,'frame-'+index+'.svg'),'utf8');if(svg!==expected)throw Error('SVG fixture does not match the exporter frame');const rgba=new Uint8Array(readFileSync(join(directory,'frame-'+index+'.rgba')));if(rgba.length!==width*height*4)throw Error('Bad raster fixture dimensions');return rgba;}});writeFileSync(join(directory,'race-export.gif'),new Uint8Array(await result.blob.arrayBuffer()));console.log('Encoded actual GIF with verified raster fixtures');}
+else{plan.samples.forEach((f,i)=>writeFileSync(join(directory,'frame-'+i+'.svg'),raceExportSvgAt(rows,chart,plan,f.timeMs)));writeFileSync(join(directory,'plan.json'),JSON.stringify({width:plan.width,height:plan.height,durationMs:plan.durationMs,samples:plan.samples},null,2));console.log('Wrote '+plan.samples.length+' exact SVG export frames');}

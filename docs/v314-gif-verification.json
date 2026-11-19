@@ -1,0 +1,19 @@
+{
+  "decoded_frames": 7,
+  "dimensions": [
+    480,
+    360
+  ],
+  "delays_ms": [
+    170,
+    160,
+    170,
+    170,
+    160,
+    170,
+    400
+  ],
+  "duration_ms": 1400,
+  "loop": 0,
+  "different_first_last": true
+}

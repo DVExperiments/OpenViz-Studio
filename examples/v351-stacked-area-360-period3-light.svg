@@ -1,0 +1,61 @@
+<svg  data-viz-chart-type="stacked-area" data-viz-plot="94,146.8,308,546" data-time-domain="{&quot;x&quot;:{&quot;kind&quot;:&quot;numeric&quot;,&quot;lo&quot;:1,&quot;hi&quot;:7},&quot;y&quot;:{&quot;lo&quot;:0,&quot;hi&quot;:110}}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Team contributions by snapshot — Stacked areas of Value by Day" viewBox="0 0 360 640" width="360" height="640"><title>Team contributions by snapshot</title><desc>Stacked areas of Value by Day; 12 visualised data points.</desc><rect width="360" height="640" fill="#ffffff" data-viz-part="background"/><g data-viz-drag="chart-text" data-text-key="title" transform="translate(0 0)"><text x="40" y="59.5" font-size="26" text-anchor="start" font-weight="700" data-viz-part="title" fill="#1c2c3e" font-family="Inter, Arial, sans-serif"><title>Team contributions by snapshot</title><tspan x="40" dy="0">Team contributions by</tspan><tspan x="40" dy="31.2">snapshot</tspan></text></g><g data-viz-drag="chart-text" data-text-key="subtitle" transform="translate(0 0)"><text x="40" y="121.2" font-size="13" opacity=".68" data-viz-part="subtitle" fill="#1c2c3e" font-family="Inter, Arial, sans-serif"><title>Fictional values · missing components break upper layers · Period: 2024</title><tspan x="40" dy="0">Fictional values · missing components break</tspan><tspan x="40" dy="15.6">upper layers · Period: 2024</tspan></text></g><g data-stacked-area-time="" data-stack-period="2024" data-stack-plot="94,267.8,214,278.2" data-stack-y-min="0" data-stack-y-max="110"><title>Nonnegative stacked areas. A missing component breaks its layer and every layer above it; known lower layers remain visible. Incomplete stack totals are unknown.</title></g><g data-stack-legend="North"><title>North</title><rect x="94" y="146.8" width="9" height="9" fill="#0d9488"/><text x="107" y="155.8" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" >North</text></g><g data-stack-legend="South"><title>South</title><rect x="94" y="164.8" width="9" height="9" fill="#f2aa64"/><text x="107" y="173.8" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" >South</text></g><g data-stack-legend="Pilot"><title>Pilot</title><rect x="94" y="182.8" width="9" height="9" fill="#5779a3"/><text x="107" y="191.8" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" >Pilot</text></g><text x="94" y="229.8" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="10" data-stack-gap-note="">Missing component → gap in its layer and …</text><line x1="94" y1="546" x2="308" y2="546" stroke="#e0e6ec"/><text x="86" y="550" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="end" data-viz-part="y-axis">0</text><line x1="94" y1="476.45" x2="308" y2="476.45" stroke="#e0e6ec"/><text x="86" y="480.45" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="end" data-viz-part="y-axis">27.5</text><line x1="94" y1="406.9" x2="308" y2="406.9" stroke="#e0e6ec"/><text x="86" y="410.9" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="end" data-viz-part="y-axis">55</text><line x1="94" y1="337.35" x2="308" y2="337.35" stroke="#e0e6ec"/><text x="86" y="341.35" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="end" data-viz-part="y-axis">82.5</text><line x1="94" y1="267.8" x2="308" y2="267.8" stroke="#e0e6ec"/><text x="86" y="271.8" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="end" data-viz-part="y-axis">110</text><g><title>1</title><text x="94" y="566" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="middle" data-viz-part="x-axis">1</text></g><g><title>4</title><text x="201" y="566" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="middle" data-viz-part="x-axis">4</text></g><g><title>7</title><text x="308" y="566" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" font-size="11" text-anchor="middle" data-viz-part="x-axis">7</text></g><line x1="94" y1="546" x2="308" y2="546" stroke="#1c2c3e"/><path d="M94,495.41818181818184 L129.66666666666666,470.1272727272727 L201,419.54545454545456 L308,394.25454545454545 L308,546 L201,546 L129.66666666666666,546 L94,546 Z" fill="#0d9488" fill-opacity=".7" stroke="none" data-stack-area-fill="North" data-stack-run-points="4"/><path d="M94,444.83636363636367 L129.66666666666666,444.83636363636367 L201,419.54545454545456 L308,368.9636363636364 L308,394.25454545454545 L201,419.54545454545456 L129.66666666666666,470.1272727272727 L94,495.41818181818184 Z" fill="#f2aa64" fill-opacity=".7" stroke="none" data-stack-area-fill="South" data-stack-run-points="4"/><path d="M94,419.54545454545456 L129.66666666666666,444.83636363636367 L201,356.31818181818187 L308,267.8 L308,368.9636363636364 L201,419.54545454545456 L129.66666666666666,444.83636363636367 L94,444.83636363636367 Z" fill="#5779a3" fill-opacity=".7" stroke="none" data-stack-area-fill="Pilot" data-stack-run-points="4"/><path d="M94,495.41818181818184 L129.66666666666666,470.1272727272727 L201,419.54545454545456 L308,394.25454545454545" fill="none" stroke="#0d9488" stroke-width="3" data-viz-part="series"><title>North · Period: 2024</title></path><path d="M94,444.83636363636367 L129.66666666666666,444.83636363636367 L201,419.54545454545456 L308,368.9636363636364" fill="none" stroke="#f2aa64" stroke-width="3" data-viz-part="series"><title>South · Period: 2024</title></path><path d="M94,419.54545454545456 L129.66666666666666,444.83636363636367 L201,356.31818181818187 L308,267.8" fill="none" stroke="#5779a3" stroke-width="3" data-viz-part="series"><title>Pilot · Period: 2024</title></path><g data-viz-part="point" data-viz-key="%5B%221%22%2C%22North%22%5D" data-stack-cell="" data-stack-value="20" data-stack-lower="0" data-stack-upper="20" role="img" aria-label="1 / North&#10;Value: 20&#10;Exact value: 20&#10;Stack from 0 to 20&#10;Contributing records: 1&#10;Period: 2024"><title>1 / North
+Value: 20
+Exact value: 20
+Stack from 0 to 20
+Contributing records: 1
+Period: 2024</title><circle cx="94" cy="495.41818181818184" r="5" fill="#0d9488" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%222%22%2C%22North%22%5D" data-stack-cell="" data-stack-value="30" data-stack-lower="0" data-stack-upper="30" role="img" aria-label="2 / North&#10;Value: 30&#10;Exact value: 30&#10;Stack from 0 to 30&#10;Contributing records: 1&#10;Period: 2024"><title>2 / North
+Value: 30
+Exact value: 30
+Stack from 0 to 30
+Contributing records: 1
+Period: 2024</title><circle cx="129.66666666666666" cy="470.1272727272727" r="5" fill="#0d9488" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%224%22%2C%22North%22%5D" data-stack-cell="" data-stack-value="50" data-stack-lower="0" data-stack-upper="50" role="img" aria-label="4 / North&#10;Value: 50&#10;Exact value: 50&#10;Stack from 0 to 50&#10;Contributing records: 1&#10;Period: 2024"><title>4 / North
+Value: 50
+Exact value: 50
+Stack from 0 to 50
+Contributing records: 1
+Period: 2024</title><circle cx="201" cy="419.54545454545456" r="5" fill="#0d9488" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%227%22%2C%22North%22%5D" data-stack-cell="" data-stack-value="60" data-stack-lower="0" data-stack-upper="60" role="img" aria-label="7 / North&#10;Value: 60&#10;Exact value: 60&#10;Stack from 0 to 60&#10;Contributing records: 1&#10;Period: 2024"><title>7 / North
+Value: 60
+Exact value: 60
+Stack from 0 to 60
+Contributing records: 1
+Period: 2024</title><circle cx="308" cy="394.25454545454545" r="5" fill="#0d9488" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%221%22%2C%22South%22%5D" data-stack-cell="" data-stack-value="20" data-stack-lower="20" data-stack-upper="40" role="img" aria-label="1 / South&#10;Value: 20&#10;Exact value: 20&#10;Stack from 20 to 40&#10;Contributing records: 1&#10;Period: 2024"><title>1 / South
+Value: 20
+Exact value: 20
+Stack from 20 to 40
+Contributing records: 1
+Period: 2024</title><circle cx="94" cy="444.83636363636367" r="5" fill="#f2aa64" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%222%22%2C%22South%22%5D" data-stack-cell="" data-stack-value="10" data-stack-lower="30" data-stack-upper="40" role="img" aria-label="2 / South&#10;Value: 10&#10;Exact value: 10&#10;Stack from 30 to 40&#10;Contributing records: 1&#10;Period: 2024"><title>2 / South
+Value: 10
+Exact value: 10
+Stack from 30 to 40
+Contributing records: 1
+Period: 2024</title><circle cx="129.66666666666666" cy="444.83636363636367" r="5" fill="#f2aa64" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%224%22%2C%22South%22%5D" data-stack-cell="" data-stack-value="0" data-stack-lower="50" data-stack-upper="50" role="img" aria-label="4 / South&#10;Value: 0&#10;Exact value: 0&#10;Stack from 50 to 50&#10;Contributing records: 1&#10;Period: 2024"><title>4 / South
+Value: 0
+Exact value: 0
+Stack from 50 to 50
+Contributing records: 1
+Period: 2024</title><circle cx="201" cy="419.54545454545456" r="5" fill="#f2aa64" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%227%22%2C%22South%22%5D" data-stack-cell="" data-stack-value="10" data-stack-lower="60" data-stack-upper="70" role="img" aria-label="7 / South&#10;Value: 10&#10;Exact value: 10&#10;Stack from 60 to 70&#10;Contributing records: 1&#10;Period: 2024"><title>7 / South
+Value: 10
+Exact value: 10
+Stack from 60 to 70
+Contributing records: 1
+Period: 2024</title><circle cx="308" cy="368.9636363636364" r="5" fill="#f2aa64" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%221%22%2C%22Pilot%22%5D" data-stack-cell="" data-stack-value="10" data-stack-lower="40" data-stack-upper="50" role="img" aria-label="1 / Pilot&#10;Value: 10&#10;Exact value: 10&#10;Stack from 40 to 50&#10;Contributing records: 1&#10;Period: 2024"><title>1 / Pilot
+Value: 10
+Exact value: 10
+Stack from 40 to 50
+Contributing records: 1
+Period: 2024</title><circle cx="94" cy="419.54545454545456" r="5" fill="#5779a3" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%222%22%2C%22Pilot%22%5D" data-stack-cell="" data-stack-value="0" data-stack-lower="40" data-stack-upper="40" role="img" aria-label="2 / Pilot&#10;Value: 0&#10;Exact value: 0&#10;Stack from 40 to 40&#10;Contributing records: 1&#10;Period: 2024"><title>2 / Pilot
+Value: 0
+Exact value: 0
+Stack from 40 to 40
+Contributing records: 1
+Period: 2024</title><circle cx="129.66666666666666" cy="444.83636363636367" r="5" fill="#5779a3" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%224%22%2C%22Pilot%22%5D" data-stack-cell="" data-stack-value="25" data-stack-lower="50" data-stack-upper="75" role="img" aria-label="4 / Pilot&#10;Value: 25&#10;Exact value: 25&#10;Stack from 50 to 75&#10;Contributing records: 1&#10;Period: 2024"><title>4 / Pilot
+Value: 25
+Exact value: 25
+Stack from 50 to 75
+Contributing records: 1
+Period: 2024</title><circle cx="201" cy="356.31818181818187" r="5" fill="#5779a3" stroke="#1c2c3e" stroke-width=".6"/></g><g data-viz-part="point" data-viz-key="%5B%227%22%2C%22Pilot%22%5D" data-stack-cell="" data-stack-value="40" data-stack-lower="70" data-stack-upper="110" role="img" aria-label="7 / Pilot&#10;Value: 40&#10;Exact value: 40&#10;Stack from 70 to 110&#10;Contributing records: 1&#10;Period: 2024"><title>7 / Pilot
+Value: 40
+Exact value: 40
+Stack from 70 to 110
+Contributing records: 1
+Period: 2024</title><circle cx="308" cy="267.8" r="5" fill="#5779a3" stroke="#1c2c3e" stroke-width=".6"/></g><text x="40" y="630" font-size="10" fill="#1c2c3e" font-family="Inter, Arial, sans-serif" data-viz-part="source-note"><title>Source: Available component scale · incomplete totals remain unknown</title><tspan x="40" dy="0">Source: Available component scale · incomplete totals…</tspan></text></svg>

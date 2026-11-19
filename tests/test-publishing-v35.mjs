@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import {createPublication,embedCode,safePublishUrl,publicationAssets,publishingReadme,PUBLISH_PRESETS} from '../src/publishing.js';
+const rows=[{Region:'North',Revenue:12},{Region:'South',Revenue:25},{Region:'East',Revenue:16}];
+const c={id:'chart1',datasetId:'data1',type:'bar',title:'Revenue by region',x:'Region',y:'Revenue',width:960,height:540,background:'#ffffff',color:'#0d9488',textColor:'#1c2c3e'};
+const project={name:'Demo',datasets:[{id:'data1',rows}],charts:[c],dashboards:[{id:'dash1',name:'Regional dashboard',chartIds:['chart1'],mode:'grid',interactionMode:'highlight',sharedFilterField:'Region'}],stories:[]};
+assert.equal(Object.keys(PUBLISH_PRESETS).length,4);
+assert.equal(publicationAssets(project).chart.length,1);
+assert.equal(safePublishUrl('javascript:alert(1)'),null);
+assert.equal(safePublishUrl('file:///private/report.html'),null);
+assert.equal(safePublishUrl('http://example.com/data.html'),null);
+assert.equal(safePublishUrl('https://example.com/path?token=1'),'https://example.com/path?token=1');
+const code=embedCode('https://my-site.example/report.html','A "public" & safe title');
+assert(code.includes('title="A &quot;public&quot; &amp; safe title"'));
+assert(code.includes('loading="lazy"'));
+assert(!code.includes('<script'));
+for(const kind of ['chart','dashboard'])for(const interactive of [true,false]){
+ const assetId=kind==='chart'?'chart1':'dash1',pub=createPublication(project,{kind,assetId,interactive,preset:'responsive',showTitle:true});
+ assert(pub.html.includes('<svg'));
+ assert(pub.html.includes('openviz-publisher-css'));
+ assert(!pub.html.includes('https://cdn.'));
+ assert(!pub.html.includes('google-analytics'));
+ assert(pub.filename.endsWith('-publish.html'));
+ if(!interactive)assert(!pub.html.includes('<script'),'static publication must contain no executable JavaScript');
+ else assert(pub.html.includes('<script'),'interactive publication must retain its controls');
+ const readme=publishingReadme(pub);
+ assert(readme.includes('does not upload files'));
+}
+const wideDash={...project,dashboards:[{...project.dashboards[0],mode:'free',canvasHeight:900,items:[{chartId:'chart1',x:5,y:40,w:45,h:270}]}]};
+const free=createPublication(wideDash,{kind:'dashboard',assetId:'dash1',interactive:true,preset:'portrait'}).html;
+assert(free.includes('min-width:780px') && free.includes('overflow-x:auto'),'free canvas preserves coordinates and scrolls');
+console.log('PASS: chart and dashboard static/interactive HTML, styles, safety, embeds, free-canvas layout and privacy guide');

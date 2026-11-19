@@ -1,0 +1,9 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {DEFAULT_CHART,buildChart} from '../src/charts.js';
+import {editorialTableExample,editorialTableHtml} from '../src/editorial-table.js';
+import {validatePortableProject} from '../src/exports.js';
+const ex=editorialTableExample(),rows=ex.rows,c={...structuredClone(DEFAULT_CHART),...ex,id:'editorial-light',datasetId:'editorial-data',type:'editorial-table',title:'Regional performance',subtitle:'Fictional figures · selected source records',sourceNote:'Illustrative data, not official regional statistics',tablePageSize:10},dark={...structuredClone(c),id:'editorial-dark',title:'Regional performance · dark',background:'#17252f',textColor:'#e6eef4',color:'#43c5b7'};
+const p={id:'editorial-example',name:'Editorial table examples',datasets:[{id:'editorial-data',name:'Fictional regional figures',source:'OpenViz illustrative example',rows:structuredClone(rows),rawRows:structuredClone(rows),calculations:[],columns:Object.keys(rows[0])}],charts:[c,dark],dashboards:[{id:'editorial-dashboard',name:'Static table pages',chartIds:[c.id,dark.id],mode:'grid'}],slides:[],stories:[],versions:[]};validatePortableProject(p);
+const dest=new URL('../examples/',import.meta.url);mkdirSync(dest,{recursive:true});writeFileSync(new URL('v349-editorial-tables.json',dest),JSON.stringify(p,null,2));
+for(const [key,chart] of [['light',c],['dark',dark]]){writeFileSync(new URL(`v349-editorial-table-${key}.html`,dest),editorialTableHtml(rows,chart,true));writeFileSync(new URL(`v349-editorial-table-${key}-static.html`,dest),editorialTableHtml(rows,chart,false));writeFileSync(new URL(`v349-editorial-table-${key}.svg`,dest),buildChart(rows,chart,undefined,{width:960,height:600}));}
+console.log('Generated portable table project, light/dark interactive and static HTML, and two static SVG pages.');

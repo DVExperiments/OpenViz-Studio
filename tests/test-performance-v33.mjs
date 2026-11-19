@@ -1,0 +1,45 @@
+import assert from 'node:assert/strict';
+import {performance} from 'node:perf_hooks';
+import {parseDelimited,profile,MAX_ROWS,getFields} from '../src/data.js';
+import {buildChart,chartWarnings,DEFAULT_CHART} from '../src/charts.js';
+import {aggregateEdges,scatterSample} from '../src/performance.js';
+
+const t0=performance.now();
+const source=Array.from({length:100000},(_,i)=>({Year:2020+i%20,X:i,Y:i===99999?99999:Math.sin(i*.015)*30+Math.cos(i*.03)*40,Region:i%10===0?'North':'South',Name:'Name '+i,Measure:i*2,Unused:null,Date:'2025-01-01'}));
+const pr=profile(source);
+assert.equal(pr.rowCount,100000);assert.equal(pr.colCount,8);assert.equal(pr.fields.find(f=>f.name==='Unused').missing,100000);
+assert.equal(pr.fields.find(f=>f.name==='X').type,'number');
+const elapsedProfile=performance.now()-t0;
+const sampled=scatterSample(source.map(({X,Y})=>({x:X,y:Y})),400);
+assert(sampled.length<=400);assert(sampled.some(p=>p.y===99999),'Critical y maximum must be preserved');
+assert(sampled.some(p=>p.x===0)&&sampled.some(p=>p.x===99999),'X endpoints must be retained');
+const scatterStart=performance.now();
+const scatterSvg=buildChart(source,{...DEFAULT_CHART,type:'scatter',x:'X',y:'Y'},'scatter');
+assert(scatterSvg.includes('sampled from 100000 observations'));
+assert(!scatterSvg.includes('Infinity')&&!scatterSvg.includes('NaN'));
+assert((scatterSvg.match(/data-viz-part="point"/g)||[]).length<=400);
+assert(chartWarnings(source,{...DEFAULT_CHART,type:'scatter',x:'X',y:'Y'},'scatter').some(x=>x.includes('sampled observations')));
+const elapsedScatter=performance.now()-scatterStart;
+// Late heavy edges must contribute: V3.2 ignored every link after its first 180/220 rows.
+const edges=[];for(let i=0;i<20000;i++)edges.push({From:'A',To:'B',Flow:1});edges.push({From:'C',To:'D',Flow:10000});
+let summary=aggregateEdges(edges,'From','To','Flow','sankey',52,180);
+assert.equal(summary.eligible,20001);assert.equal(summary.totalWeight,30000);assert.equal(summary.shownWeight,30000);
+assert.equal(summary.edges.find(e=>e.source==='C').w,10000);
+const sankey=buildChart(edges,{...DEFAULT_CHART,type:'sankey',x:'From',seriesField:'To',y:'Flow'},'sankey');
+assert(sankey.includes('10,000')&&sankey.includes('20,000'),'Late and aggregate weights must be represented');
+// Display limits cannot masquerade as complete flows.
+const dense=Array.from({length:500},(_,i)=>({From:'Source'+i,To:'Target'+i,Flow:1}));
+summary=aggregateEdges(dense,'From','To','Flow','sankey',52,180);
+assert(summary.reduced&&summary.shownWeight<summary.totalWeight);
+assert(chartWarnings(dense,{...DEFAULT_CHART,type:'sankey',x:'From',seriesField:'To',y:'Flow'},'sankey').some(x=>x.includes('account for')));
+const network=buildChart(edges,{...DEFAULT_CHART,type:'network',x:'From',seriesField:'To',y:'Flow'},'network');
+assert(network.includes('10,000'));
+const csv=['Id,Region,Sales','1,"North, West",3','2,"line\nwrapped",4','3,,6'].join('\r\n');
+const parsed=parseDelimited(csv);assert.equal(parsed[1].Region,'line\nwrapped');assert.equal(parsed[2].Region,null);
+assert.deepEqual(getFields(parsed),['Id','Region','Sales']);
+const largeCsv='A,B\n'+Array.from({length:50000},(_,i)=>`${i},${i%31}\n`).join('');
+const importStart=performance.now();const loaded=parseDelimited(largeCsv);const elapsedImport=performance.now()-importStart;
+assert.equal(loaded.length,50000);assert.equal(loaded[49999].A,49999);
+assert.equal(MAX_ROWS,100000);
+const report={scope:'Node 22 local performance and accuracy smoke, synthetic data, not user-machine latency guarantee',runs:{profile100kMs:+elapsedProfile.toFixed(2),scatter100kMs:+elapsedScatter.toFixed(2),csv50kMs:+elapsedImport.toFixed(2)},scatter:{sourceRows:source.length,shownPoints:sampled.length,svgBytes:Buffer.byteLength(scatterSvg)},graph:{sourceRows:edges.length,eligibleRows:20001,weightAccountedFor:30000},passed:true};
+console.log(JSON.stringify(report,null,2));

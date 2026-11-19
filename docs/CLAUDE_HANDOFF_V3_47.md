@@ -1,0 +1,13 @@
+# V3.47 handoff
+
+Multi-series line snapshots added. 44 chart options/sixteen snapshot types/48 passing suites. Native Chromium exits before a page opens; browser/touch/Windows/screen-reader acceptance pending.
+
+New multi-line-time.js exports lineTimeMatrix (exact shared per-period cells), lineTimeDomain and renderLineTime. Domain gathers all valid X/series labels including missing-measure rows, then y bounds from valid per-snapshot aggregates. X uses all-numeric or valid ISO date-only order/spacing, otherwise observed categorical order. Numeric aliases at one coordinate reject. Caps: 60 X positions/10 series; invalid ranges/overflow reject. Singleton X centers, all-zero Y uses 0–1. Full-known-X missing cells flush path runs; zero remains a measured marker. Isolated observations remain dots. Series palette/full legend/plot domains stay fixed.
+
+Renderer uses no global clip IDs; all ordinary path endpoints stay in-domain. Filtered out-of-range values flush paths and draw disclosed boundary markers, retaining raw values. Filtered aggregation errors stop rather than partial paths. Details include exact formatted-value fallback, count/period. Sparse labels and compact date ticks/year caption/full ISO titles are supported. Marker colour overrides do not recolour series paths.
+
+time-controls.js includes multi-line in distinct snapshot/X/series/value validation/domain/settings/notes/warnings. charts.js returns active timed cell data and uses the new renderer before static expanded templates. Compiler-only lineTimeSourceRows is supplied by editor/export dashboards to retain saved period/full domains before visible-row intersection; not persisted/injected. Data contracts and UI explain separate snapshot period and X. Example has uneven daily X, gaps, zero/signed values, returning series and invalid-only 2022 measures. Static template path unchanged.
+
+New test-multi-line-time-v347.mjs plus studio extension cover math/spacing/gaps, date/categorical/singleton X, known invalid-only X, aliases/limits/extreme values, colours/axes, filter gaps/caps, portable/rename/story and executed export keyboard/runtime/source safety. Supported-type counts updated to sixteen. Final targeted checks and 48 fixtures rerun after date-label presentation refinement. Generator supplies numeric/date/categorical JSON/six HTML files; docs/v347-multi-line-time.png inspected.
+
+Next: multi-series area time playback. Define nonnegative/signed policy explicitly, preserve known-X gaps in both fills/lines and avoid filling through absent observations. Keep fixed domains/series order, disclose overlap (not stacking), retain source/count/period details and saved-period filter behaviour. No parity claim without matched-data native acceptance.
