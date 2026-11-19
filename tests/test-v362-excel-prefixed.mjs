@@ -24,3 +24,12 @@ for(const prefixed of [true,false]){const sheets=await parseExcel(await workbook
  assert.deepEqual(Object.keys(sheets[0].rows[0]),['OBJECTID','DistrictName','Shape__Area']);
  assert.equal(sheets[0].rows.length,2);assert.equal(sheets[0].rows[0].DistrictName,'Central Otago');assert.equal(sheets[0].rows[1].OBJECTID,185);assert.ok(Math.abs(sheets[0].rows[0].Shape__Area-14309005479.77246)<1e-3);}
 console.log('PASS v3.62 Excel files with prefixed XML');
+
+// V3.63: sensible default fields for a new chart: names over codes, real measures over IDs and geometry.
+{const {suggestDefaultFields}=await import('../src/data.js');
+ const gis=[{OBJECTID:184,DistrictName:'Central Otago',DistrictCode:'H01070',RegionCode:'R00480',RegionName:'Southern South Island',Shape__Area:14309005479.8,Shape__Length:873664},{OBJECTID:185,DistrictName:'Aoraki Mt Cook',DistrictCode:'H00950',RegionCode:'R00470',RegionName:'Eastern South Island',Shape__Area:547546866.5,Shape__Length:133078},{OBJECTID:186,DistrictName:'South Marlborough',DistrictCode:'H00940',RegionCode:'R00450',RegionName:'Northern South Island',Shape__Area:13956115777.3,Shape__Length:9}];
+ assert.deepEqual(suggestDefaultFields(gis),{x:'DistrictName',y:'Shape__Area'});
+ assert.deepEqual(suggestDefaultFields([{Year:2020,Sales:5,ID:1},{Year:2021,Sales:7,ID:2},{Year:2022,Sales:3,ID:3}]),{x:'Year',y:'Sales'});
+ assert.deepEqual(suggestDefaultFields([{Country:'NZ',ISO:'NZL',Population:5},{Country:'AU',ISO:'AUS',Population:26}]),{x:'Country',y:'Population'});
+ assert.deepEqual(suggestDefaultFields([{Region:'North',Shape_Area:9,Visitors:4},{Region:'South',Shape_Area:3,Visitors:8}]),{x:'Region',y:'Visitors'},'real measures before geometry columns');
+ console.log('PASS v3.63 default fields');}

@@ -1,4 +1,12 @@
-# OpenViz Studio V3.62: Excel import fix
+# OpenViz Studio V3.63: choosing what a chart shows
+
+- **Data & axes** now sits at the top of the Settings panel for every chart. It has the chart's column choices (for example *Category / X axis* and *Value / Y axis*) and how rows with the same category are combined (sum, average, count, minimum, maximum). **More data options and the data table →** opens the Data view with every field option.
+- **Better first guesses** when you create a chart from your data. Readable names are preferred over codes (DistrictName rather than RegionCode). Real measures are preferred over identifier columns such as OBJECTID or FID, which are numbers but meaningless to add up. GIS geometry columns (Shape__Area, Shape__Length) are used only when there is nothing better. Years and dates are still preferred as the category.
+- **Automatic titles keep up.** A title like "Column chart · Sales by Region" now updates when you change those fields. A title you wrote yourself is never changed.
+
+---
+
+## OpenViz Studio V3.62: Excel import fix
 
 Excel files exported from ArcGIS Online / ArcGIS Hub (and other tools built on .NET's packaging library) were rejected with "No usable worksheets found" or "Cannot read relationships inside Excel workbook". These files are valid but written differently from Excel's own: every element carries a namespace prefix (`<x:row>`), each XML part starts with a byte-order mark, links between parts use absolute paths, and text is stored in the cells rather than a shared string table. The importer now reads them. Files saved by Excel, Google Sheets and LibreOffice are unaffected.
 

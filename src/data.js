@@ -135,3 +135,23 @@ function aggregateUncached(rows,x,y,aggregation='sum',type='bar'){const scatter=
  return [...by.values()].map(item=>({...item,y:aggregation==='count'?item.n:aggregation==='average'?item.y/item.n:aggregation==='min'?item.min:aggregation==='max'?item.max:item.y})).slice(0,400);
 }
 export function refreshImpact(oldRows,newRows,charts){const before=getFields(oldRows),after=getFields(newRows);const removed=before.filter(f=>!after.includes(f)),added=after.filter(f=>!before.includes(f)),affected=charts.filter(c=>chartFieldNames(c).some(field=>removed.includes(field))).map(c=>c.title);return {before:oldRows.length,after:newRows.length,removed,added,affected};}
+
+// Default fields for a new chart. Prefer a readable category (names over codes) and a real measure:
+// identifier columns such as OBJECTID, FID or *_ID are numbers but summing them is meaningless, and
+// GIS geometry columns (Shape__Area, Shape_Leng) are only used when nothing better exists.
+const ID_NAME=/^(object_?id|fid|ogc_fid|gid|id|row_?id|index|rank)$|(^|_|[a-z])(id|ID)$|_id$|^id_/;
+const GEOM_NAME=/^shape_{0,2}(area|length|leng|len)$|^(st_)?(area|length|perimeter)\(?shape\)?$/i;
+const CODE_NAME=/(^|_|\b)(code|cd|iso|fips|abbr|abbrev)$|code/i;
+function looksLikeIdValues(rows,f){const v=rows.map(r=>r[f]).filter(x=>x!==null&&x!==''&&x!==undefined);if(v.length<3)return false;if(!v.every(x=>Number.isInteger(Number(x))))return false;return new Set(v).size===v.length&&/id|num|no$|key|index/i.test(f);}
+function looksLikeCodes(rows,f){const v=rows.slice(0,200).map(r=>r[f]).filter(x=>x!==null&&x!==''&&x!==undefined).map(String);return v.length>0&&v.every(x=>/^[A-Z]{0,4}[-_]?\d{2,}[A-Z]?$/.test(x)||/^[A-Z]{2,3}(-[A-Z0-9]{1,3})?$/.test(x));}
+export function suggestDefaultFields(rows=[],numeric=numericFields(rows),fields=getFields(rows)){
+ const isId=f=>ID_NAME.test(f)||looksLikeIdValues(rows,f);
+
+ const distinct=f=>new Set(rows.slice(0,5000).map(r=>r[f])).size;
+ const timeLike=f=>/^(year|yr|date|month|quarter|week|period|time|fiscal ?year)$|year|date|month/i.test(f);
+ const textual=fields.filter(f=>(!numeric.includes(f)||timeLike(f))&&!isId(f));
+ const score=f=>{let s=0;if(/year|date|month|quarter|week|period|time/i.test(f))s+=6;if(/name|title|label|country|region|district|category|area|city|place|state|province|sector|group|type/i.test(f))s+=4;if(/name|title|label/i.test(f))s+=2;if(CODE_NAME.test(f)||looksLikeCodes(rows,f))s-=5;const n=distinct(f);if(n<2)s-=8;else if(n<=60)s+=2;return s;};
+ const x=[...textual].sort((a,b)=>score(b)-score(a))[0]||fields.find(f=>!numeric.includes(f))||fields[0];
+ const measures=[...numeric.filter(f=>!isId(f)&&!GEOM_NAME.test(f)&&!timeLike(f)),...numeric.filter(f=>!isId(f)&&GEOM_NAME.test(f))];
+ const y=measures.find(f=>f!==x)||numeric.find(f=>f!==x)||numeric[0]||fields[0];
+ return {x,y};}
