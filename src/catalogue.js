@@ -39,8 +39,26 @@ export const CATALOGUE = [
  ...Object.entries(PRO_META).map(([id,m])=>({id,category:m.category,name:m.name,example:m.example,use:m.use,needs:m.needs,status:'available',tags:[...m.tags,EXTRA_META[id]?'new in 3.60':'new in 3.53'],isNew:true}))
 ];
 export const CATEGORIES=['All categories',...new Set(CATALOGUE.map(c=>c.category))];
-export function catalogueSearch(query='',category='All categories',show='all'){
- const q=query.trim().toLowerCase();return CATALOGUE.filter(c=>(category==='All categories'||c.category===category)&&(show!=='available'||c.status==='available')&&(!q||[c.name,c.category,c.example,c.use,c.needs,...c.tags].some(t=>t.toLowerCase().includes(q))));
+// Chip groups in the template library. Each group is a set of categories (or a test), so the chips
+// always lead somewhere and "All" always returns to the full catalogue.
+export const CATALOGUE_GROUPS=Object.freeze([
+ {id:'all',label:'All'},
+ {id:'new',label:'New',test:c=>c.isNew||c.tags.some(t=>/^new in 3\.(5[3-9]|6\d)$/.test(t))},
+ {id:'comparison',label:'Comparison',categories:['Comparison']},
+ {id:'trends',label:'Trends over time',categories:['Time & trends']},
+ {id:'parts',label:'Part-to-whole',categories:['Part-to-whole']},
+ {id:'distribution',label:'Distribution',categories:['Distribution','Research & uncertainty','Survey']},
+ {id:'relationships',label:'Relationships',categories:['Relationships']},
+ {id:'maps',label:'Maps',categories:['Geographic']},
+ {id:'flows',label:'Flows & hierarchy',categories:['Flows & networks','Hierarchy','Hierarchy & flow']},
+ {id:'tables',label:'Tables',categories:['Tables']},
+ {id:'story',label:'Storytelling & animation',categories:['Interactive & storytelling','Animation & ranking']},
+ {id:'specialised',label:'Specialised',categories:['Financial & specialised']},
+ {id:'experimental',label:'Experimental',categories:['Experimental']}
+].map(Object.freeze));
+export function catalogueGroupTest(id='all'){const g=CATALOGUE_GROUPS.find(g=>g.id===id);if(!g||g.id==='all')return ()=>true;return g.test||(c=>g.categories.includes(c.category));}
+export function catalogueSearch(query='',category='All categories',show='all',group='all'){
+ const q=query.trim().toLowerCase(),inGroup=catalogueGroupTest(group);return CATALOGUE.filter(c=>inGroup(c)&&(category==='All categories'||c.category===category)&&(show!=='available'||c.status==='available')&&(!q||[c.name,c.category,c.example,c.use,c.needs,...c.tags].some(t=>t.toLowerCase().includes(q))));
 }
 export function illustrativePreview(id){
  if(id==='geo-spike')return `<svg viewBox="0 0 160 100" role="img" aria-label="Spike map preview"><path d="M10 82C40 60 70 88 100 70S140 76 152 60" fill="none" stroke="#c9d4dc" stroke-width="8"/>${[[30,80,40],[52,76,22],[74,82,55],[96,72,30],[118,74,16],[138,66,44]].map(([x,y,h])=>`<path d="M${x-4} ${y}L${x} ${y-h}L${x+4} ${y}Z" fill="#27a49b" fill-opacity=".85"/>`).join('')}</svg>`;

@@ -16,7 +16,7 @@ import {markerStyle,markerSVG,dotDensitySVG,niceDotValue,dotLegendSVG,DOT_BUDGET
 export const GEO_TYPES=new Set(['geo-choropleth','geo-symbol','geo-heat','geo-route']);
 export const GEO_VIEWS={world:[-180,-60,180,85],oceania:[108,-50,180,5],nz:[165,-49,180,-32],northamerica:[-170,5,-50,76],southamerica:[-84,-58,-32,15],europe:[-13,34,45,74],africa:[-20,-36,54,39],asia:[25,-13,180,80],fit:null};
 export const GEO_PALETTES={teal:['#e8f6f3','#0f827c'],blue:['#e9f2fc','#215da8'],sunset:['#ffe8bd','#c44b42'],purple:['#f0eafb','#693a9a'],gray:['#eeeeee','#414a55']};
-const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const finite=v=>(typeof v==='number'||typeof v==='string')&&String(v).trim()!==''&&Number.isFinite(Number(v));
 const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const aliases={unitedstates:'unitedstatesofamerica',usa:'unitedstatesofamerica',us:'unitedstatesofamerica',america:'unitedstatesofamerica',uk:'unitedkingdom',greatbritain:'unitedkingdom',britain:'unitedkingdom',southkorea:'southkorea',republicofkorea:'southkorea',northkorea:'northkorea',russianfederation:'russia',czechia:'czechrepublic',ivorycoast:'cotedivoire',drcongo:'demrepcogo',democraticrepublicofthecongo:'demrepcogo',tanzania:'unitedrepublicoftanzania'};

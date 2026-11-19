@@ -1,4 +1,32 @@
-# OpenViz Studio V3.60: interactive templates, boundary library, globe, spike and dot maps, right-to-left text
+# OpenViz Studio V3.61: maps for every country, template groups
+
+## Map library: starting points for any country
+
+Open **Map library → Starting points** and choose a country in **Country or area** (221 countries and areas), or type a country name into the search box. Each country gets its own editable starting points:
+
+- **Compare regions**: a choropleth of its states, provinces or regions (213 countries), with a legend.
+- **Places**: proportional circles at well-spread points across the country.
+- **Locator map**: labelled pins with an overview inset.
+- **Point density** and **Hexagon density**.
+
+Maps are framed on the main territory (for example mainland France, or the US lower 48), use detailed borders, and the example values are fictional and labelled as such. The New Zealand and Pacific starters are still there, now marked as examples.
+
+## Template library groups
+
+The chips at the top of the template library are now groups that filter the whole catalogue, with counts: **All**, New, Comparison, Trends over time, Part-to-whole, Distribution, Relationships, Maps, Flows & hierarchy, Tables, Storytelling & animation, Specialised and Experimental. The selected group is highlighted, and **All** always returns to every template. Every template belongs to at least one group.
+
+**Map library ↗** opens the map library with a **← Back to templates** link that returns you to the group and search you had.
+
+## Fixes
+
+- Map tooltips turned apostrophes into "undefined" (e.g. "Côte d'Ivoire", "Hawke's Bay").
+- "New chart types" only showed the V3.53 templates; it now includes V3.60's.
+- Dark mode: the "Import and create" button text had too little contrast.
+- The status bar showed v3.59.
+
+---
+
+## OpenViz Studio V3.60: interactive templates, boundary library, globe, spike and dot maps, right-to-left text
 
 This release adds the newsroom and storytelling formats that were still missing, a large ready-made map library, and text features for more languages. Everything still runs locally. Nothing in this release uses AI or sends data anywhere.
 

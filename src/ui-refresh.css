@@ -280,3 +280,17 @@ input[type=text],input[type=search]:not(#catalogueQuery),textarea,[contenteditab
 .auto-description{border:1px dashed var(--line-strong,#c9d4dc);border-radius:8px;padding:8px 10px;margin:6px 0 10px;display:grid;gap:6px}
 .auto-description p{margin:0}.auto-description-text{font-size:12.5px;line-height:1.45;color:var(--ink)}
 .auto-description button{justify-self:start}
+
+/* V3.61: template groups and map library navigation */
+.catalogue-groups{flex-wrap:wrap;row-gap:8px}
+.catalogue-groups .v36-popular-chip{display:inline-flex;align-items:center;gap:6px}
+.catalogue-groups .v36-popular-chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.catalogue-group-count{font-size:10px;font-variant-numeric:tabular-nums;opacity:.7}
+.catalogue-groups .v36-popular-chip[aria-pressed="true"] .catalogue-group-count{opacity:.9}
+.catalogue-map-library-link{margin-left:auto}
+.map-library-back{margin:-4px 0 6px;padding-left:0}
+.map-library-country-pick .map-library-card-body{display:flex;flex-direction:column;gap:6px;height:100%}
+.map-library-country-pick button{margin-top:auto;align-self:flex-start}
+:root[data-theme="dark"] .catalogue-groups .v36-popular-chip[aria-pressed="true"]{color:#06201d}
+:root[data-theme="dark"] .action-cta-primary,:root[data-theme="dark"] .home-action-featured:hover .action-cta-primary{color:#06201d}
+:root[data-theme="dark"] .home-action-featured:hover .action-cta-primary{background:#5fd0c3!important}

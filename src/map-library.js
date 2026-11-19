@@ -3,6 +3,7 @@ import {normalizeBoundaryAsset} from './regional-map.js';
 import {regionalExample} from './regional-example.js';
 import {chartExample} from './catalogue.js';
 import {BOUNDARY_SETS} from './boundaries/index.js';
+import {shortestLongitudeBounds} from './map-projection.js';
 // Resources reuse the shipped simplified Natural Earth snapshot; no network fetch.
 export const MAP_PROVENANCE=Object.freeze({provider:'Natural Earth',scale:'Simplified 1:110m snapshot bundled with OpenViz',license:'Public domain',url:'https://www.naturalearthdata.com/about/terms-of-use/',limitations:'Country/area outlines, not internal administrative divisions. Simplified coastlines, disputed boundaries and missing small islands require review. This bundled snapshot is not a current official boundary register.'});
 function prepareWorld(){let droppedRings=0,droppedPolygons=0,droppedFeatures=0;const features=[];
@@ -63,3 +64,67 @@ export async function ensureBoundarySet(id,fetcher=globalThis.fetch){
 export function boundarySetLoaded(id){return boundaryCache.has(id);}
 export function primeBoundarySet(id,json){boundaryCache.set(id,json);}
 function librarySetGeoJSON(set){const g=boundaryCache.get(set.id);if(!g)throw Error('Load this boundary set first.');const p=DETAILED_PROVENANCE[set.source]||DETAILED_PROVENANCE.ne10;return {type:'FeatureCollection',name:set.name,source:p.provider,license:p.license,source_url:p.url,openviz_note:p.note,features:structuredClone(g.features)};}
+
+// ---- V3.61: starting points for any country -------------------------------------------------
+// Every country / area in the bundled snapshot gets its own starting points: a regions map (from the
+// admin-1 boundary library), places, a locator, point density and hexagon density. Point starters use
+// fictional values at representative points inside the country's regions, never invented city data.
+const ISO3_FIX={FR:'FRA',NO:'NOR'};
+export const STARTER_COUNTRIES=(()=>{const m=new Map();
+ for(const r of MAP_RESOURCES){if(r.kind==='outline'){const iso3=r.iso3&&r.iso3!=='-99'?r.iso3:ISO3_FIX[r.iso2]||r.id;const e=m.get(iso3)||{iso3,name:r.name};e.name=r.name;e.outline=r.id;m.set(iso3,e);}}
+ for(const r of MAP_RESOURCES){if(r.kind==='subdivision'){const e=m.get(r.iso3)||{iso3:r.iso3,name:r.country};e.admin1=r.id;e.regions=r.count;m.set(r.iso3,e);}if(r.kind==='county'){const e=m.get('USA');if(e)e.counties=(e.counties||0)+1;}}
+ return Object.freeze([...m.values()].sort((a,b)=>a.name.localeCompare(b.name)).map(Object.freeze));})();
+export function starterCountry(iso3){return STARTER_COUNTRIES.find(c=>c.iso3===iso3)||null;}
+export function searchStarterCountries(query=''){const q=String(query).trim().toLocaleLowerCase();if(q.length<2)return [];return STARTER_COUNTRIES.filter(c=>c.name.toLocaleLowerCase().includes(q)||c.iso3.toLocaleLowerCase()===q);}
+/** Resource that must be loaded before the country's starters can be built. */
+export function countryStarterResource(iso3){const c=starterCountry(iso3);return c?.admin1||c?.outline||null;}
+const COUNTRY_KINDS=[
+ ['regions','Compare regions','geo-choropleth','Colour each state, province or region by a value, with a legend.','Region code or name and a numeric value.'],
+ ['places','Places','geo-symbol','Proportionate circles at places you choose, framed on the country.','Place, longitude, latitude and nonnegative magnitude.'],
+ ['locator','Locator map','geo-symbol','Equal-size labelled pins, framed on the country, with an overview inset.','Place name, longitude and latitude.'],
+ ['density','Point density','geo-heat','Smoothed intensity of many points; intensity is relative.','Longitude, latitude and optional positive weight.'],
+ ['hexbin','Hexagon density','geo-heat','Exact counts of points in equal hexagons.','Longitude, latitude and optional weight.']];
+export function countryStarters(iso3){const c=starterCountry(iso3);if(!c)return [];return COUNTRY_KINDS.filter(([k])=>k!=='regions'||c.admin1).map(([kind,label,type,description,needs])=>Object.freeze({id:`country:${c.iso3}:${kind}`,name:`${c.name} · ${label}`,group:c.name,type,description:kind==='regions'?`${c.regions} ${(MAP_RESOURCES.find(r=>r.id===c.admin1)?.name.split(' · ')[1]||'regions').toLocaleLowerCase()}. ${description}`:description,needs,tags:[c.name,c.iso3,kind],resource:countryStarterResource(c.iso3),country:c.iso3}));}
+const ringArea=r=>{let a=0;for(let i=0,j=r.length-1;i<r.length;j=i++)a+=(r[j][0]+r[i][0])*(r[j][1]-r[i][1]);return a/2;};
+const inRing=([x,y],r)=>{let inside=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const [xi,yi]=r[i],[xj,yj]=r[j];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)inside=!inside;}return inside;};
+// A representative point inside the largest polygon of a feature: its centroid when that lies inside,
+// otherwise the middle of the widest horizontal span through the centroid's latitude.
+function representativePoint(geometry){const polys=geometry.type==='Polygon'?[geometry.coordinates]:geometry.type==='MultiPolygon'?geometry.coordinates:[];let best=null,bestA=0;
+ for(const p of polys){const a=Math.abs(ringArea(p[0]));if(a>bestA){bestA=a;best=p;}}if(!best)return null;const ring=best[0];
+ let cx=0,cy=0,A=0;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const f=ring[j][0]*ring[i][1]-ring[i][0]*ring[j][1];A+=f;cx+=(ring[j][0]+ring[i][0])*f;cy+=(ring[j][1]+ring[i][1])*f;}
+ const c=A?[cx/(3*A),cy/(3*A)]:ring[0];if(inRing(c,ring)&&!best.slice(1).some(h=>inRing(c,h)))return {lon:c[0],lat:c[1],area:bestA};
+ const y=c[1],xs=[];for(let i=0,j=ring.length-1;i<ring.length;j=i++){const [xi,yi]=ring[i],[xj,yj]=ring[j];if((yi>y)!==(yj>y))xs.push((xj-xi)*(y-yi)/(yj-yi)+xi);}xs.sort((a,b)=>a-b);
+ let span=null;for(let i=0;i+1<xs.length;i+=2)if(!span||xs[i+1]-xs[i]>span[1]-span[0])span=[xs[i],xs[i+1]];return span?{lon:(span[0]+span[1])/2,lat:y,area:bestA}:{lon:ring[0][0],lat:ring[0][1],area:bestA};}
+function countryShapes(c){const g=resourceGeoJSON(c.admin1||c.outline);return g.features.filter(f=>f.geometry).map(f=>({name:f.properties.name||c.name,id:f.properties.region_id,geometry:f.geometry,point:representativePoint(f.geometry)})).filter(f=>f.point);}
+// Frame on the main territory: drop far-flung outliers (e.g. overseas departments, Alaska and Hawaii,
+// the Chatham Islands) so the country is readable. Readers can still pan; the regions map keeps every shape.
+function mainShapes(shapes){if(shapes.length<5)return shapes;const ref=shapes.reduce((a,b)=>b.point.area>a.point.area?b:a).point.lon;
+ const wrap=d=>((d+540)%360)-180,pts=shapes.map(s=>({s,x:ref+wrap(s.point.lon-ref),y:s.point.lat})),med=a=>{const v=[...a].sort((p,q)=>p-q);return v[Math.floor(v.length/2)];};
+ const mx=med(pts.map(p=>p.x)),my=med(pts.map(p=>p.y)),d=pts.map(p=>Math.hypot((p.x-mx)*Math.cos(my*Math.PI/180),p.y-my)),R=[...d].sort((a,b)=>a-b)[Math.floor(d.length*.75)];
+ const keep=pts.filter((p,i)=>d[i]<=Math.max(2*R,3)).map(p=>p.s);return keep.length>=Math.ceil(shapes.length*.5)?keep:shapes;}
+function countryExtent(shapes){const lons=[],lats=[];for(const s of shapes){const polys=s.geometry.type==='Polygon'?[s.geometry.coordinates]:s.geometry.coordinates,areas=polys.map(p=>Math.abs(ringArea(p[0]))),big=Math.max(...areas);
+  // Ignore small outlying islands within a region (e.g. sub-Antarctic islands) when framing.
+  polys.forEach((p,i)=>{if(areas[i]>=big*.08)for(const [x,y] of p[0]){lons.push(x);lats.push(y);}});}
+ let [w,e]=shortestLongitudeBounds(lons),s=Math.min(...lats),n=Math.max(...lats);
+ const padX=Math.max((e-w)*.06,.4),padY=Math.max((n-s)*.06,.4);w-=padX;e+=padX;s=Math.max(-89,s-padY);n=Math.min(89,n+padY);
+ if(w<-180){w+=360;e+=360;}if(w>180){w-=360;e-=360;}return [+w.toFixed(3),+s.toFixed(3),+e.toFixed(3),+n.toFixed(3)];}
+// Pick well-spread example places: start from the largest region, then repeatedly add the region
+// farthest from those already chosen (among the larger half), so points cover the whole country.
+function spreadAnchors(shapes){const pool=[...shapes].sort((a,b)=>b.point.area-a.point.area).slice(0,Math.max(8,Math.ceil(shapes.length*.6)));if(!pool.length)return [];const out=[pool.shift()];
+ const dist=(a,b)=>Math.hypot((((a.point.lon-b.point.lon)+540)%360-180)*Math.cos(a.point.lat*Math.PI/180),a.point.lat-b.point.lat);
+ while(pool.length&&out.length<8){let bi=0,bd=-1;pool.forEach((p,i)=>{const d=Math.min(...out.map(o=>dist(o,p)));if(d>bd){bd=d;bi=i;}});out.push(pool.splice(bi,1)[0]);}return out;}
+const wave=(i,k=1)=>.5+.5*Math.sin(i*2.399+k);
+export function countryStarter(id){const [,iso3,kind]=String(id).split(':'),c=starterCountry(iso3);if(!c||!COUNTRY_KINDS.some(([k])=>k===kind)||(kind==='regions'&&!c.admin1))throw Error('Choose a country starting point.');
+ const label=COUNTRY_KINDS.find(([k])=>k===kind)[1],name=`${c.name} · ${label}`;
+ const base={showTitle:true,showSubtitle:true,showLegend:false,geoShowLegend:true,geoShowBoundaryNote:false,geoNavigationEnabled:true,geoExploreEnabled:true,height:640,title:name,subtitle:'Illustrative data · replace with your own measurements',geoOcean:'#f1f5f7',color:'#0d9488',geoNoDataColor:'#dce5e9',geoLegendTitle:'Fictional example value',geoLegendFontSize:11};
+ const all=countryShapes(c),main=mainShapes(all),extent=countryExtent(main);
+ if(kind==='regions'){const ex=resourceStarter(c.admin1);const rows=ex.rows.map((r,i)=>({...r,Value:Math.round(20+70*wave(i))}));return {name,rows,settings:{...ex.settings,...base,type:'geo-choropleth',title:name,geoShowLabels:rows.length<=12,geoExtent:extent,sourceNote:ex.settings.sourceNote.replace('replace placeholder values','fictional example values'),altText:`Choropleth of ${c.name}'s regions with fictional example values.`}};}
+ const anchors=spreadAnchors(main),spread=Math.max(.08,Math.min(1.2,((extent[2]-extent[0])+(extent[3]-extent[1]))*.018));
+ const frame={geoView:'fit',geoExtent:extent,geoProjection:'equalArea',geoFramePadding:0,geoDetail:'detailed',geoLatField:'Latitude',geoLonField:'Longitude',geoLocationMode:'coordinates'};
+ const note=c.admin1?`Points placed inside ${c.name}'s regions · fictional values · Natural Earth`:`Fictional values · Natural Earth`;
+ const near=(a,i,j,k=1)=>({Longitude:+(a.point.lon+Math.sin(j*2.3+i)*spread*k*((j%5)/5+.2)).toFixed(4),Latitude:+(a.point.lat+Math.cos(j*1.7+i)*spread*.8*k*((j%7)/7+.2)).toFixed(4)});
+ if(kind==='places'){const rows=anchors.slice(0,8).map((a,i)=>({Place:a.name,Longitude:+a.point.lon.toFixed(4),Latitude:+a.point.lat.toFixed(4),Value:Math.round(15+85*wave(i,2))}));return {name,rows,settings:{...base,...frame,type:'geo-symbol',x:'Place',y:'Value',geoShowLabels:true,geoMaxRadius:22,geoMinRadius:0,geoShowLocator:true,geoLegendTitle:'Fictional count',sourceNote:note}};}
+ if(kind==='locator'){const rows=anchors.slice(0,5).map((a,i)=>({Place:a.name,Longitude:+a.point.lon.toFixed(4),Latitude:+a.point.lat.toFixed(4),Kind:i?'Branch':'Head office',Marker:1}));return {name,rows,settings:{...base,...frame,type:'geo-symbol',x:'Place',y:'Marker',geoShowLabels:true,geoMinRadius:6,geoMaxRadius:6,geoOpacity:.95,geoShowLocator:true,geoShowLegend:false,color:'#c2410c',title:`Where we work in ${c.name}`,subtitle:'Illustrative locations · replace with your own',sourceNote:note}};}
+ const centres=anchors.slice(0,6);
+ if(kind==='density'){const rows=centres.flatMap((a,i)=>Array.from({length:12},(_,j)=>({Place:a.name,...near(a,i,j,.45),Weight:1+(i+j)%4})));return {name,rows,settings:{...base,...frame,type:'geo-heat',x:'Place',y:'Weight',geoRadius:25,geoShowLabels:false,geoLegendTitle:'Relative intensity',sourceNote:'Synthetic points · density is relative, not population'}};}
+ const rows=centres.flatMap((a,i)=>Array.from({length:40+i*12},(_,j)=>({Place:a.name,...near(a,i,j),Weight:1})));return {name,rows,settings:{...base,...frame,type:'geo-heat',x:'Place',y:'',geoHeatMode:'hexbin',geoHexSize:12,geoShowLabels:false,geoLegendTitle:'Points per hexagon',title:`${c.name} · Where reports came from`,subtitle:'Each hexagon counts reports inside it · synthetic data',sourceNote:'Synthetic points inside the country frame'}};}
