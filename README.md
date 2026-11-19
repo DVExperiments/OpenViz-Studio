@@ -1,4 +1,10 @@
-# OpenViz Studio V3.61: maps for every country, template groups
+# OpenViz Studio V3.62: Excel import fix
+
+Excel files exported from ArcGIS Online / ArcGIS Hub (and other tools built on .NET's packaging library) were rejected with "No usable worksheets found" or "Cannot read relationships inside Excel workbook". These files are valid but written differently from Excel's own: every element carries a namespace prefix (`<x:row>`), each XML part starts with a byte-order mark, links between parts use absolute paths, and text is stored in the cells rather than a shared string table. The importer now reads them. Files saved by Excel, Google Sheets and LibreOffice are unaffected.
+
+---
+
+## OpenViz Studio V3.61: maps for every country, template groups
 
 ## Map library: starting points for any country
 
