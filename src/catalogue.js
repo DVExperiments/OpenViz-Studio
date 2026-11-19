@@ -27,8 +27,8 @@ export const CATALOGUE = [
  {id:'timeline',category:'Time & trends',name:'Event timeline',example:'Technological innovations across decades',use:'Place dated events on a labelled timeline with optional lanes and zoom.',needs:'Date, event title, optional lane.',status:'available',tags:['events','history','chronology','milestones']},
  {id:'gantt',category:'Time & trends',name:'Gantt chart',example:'Project design and development schedule',use:'Show task durations and overlapping date ranges.',needs:'Task label, start date and end date; optional group.',status:'available',tags:['project','schedule','tasks','planning']},
  {id:'parallel',category:'Relationships',name:'Parallel coordinates',example:'Compare product performance across six metrics',use:'Compare observations across multiple numerical dimensions.',needs:'Two or more numerical columns and optional label/group.',status:'available',tags:['multivariate','dimensions','features','patterns']},
- {id:'geo-choropleth',category:'Geographic',name:'Choropleth map',example:'Illustrative country-level indicator',use:'Compare numeric values across countries or locally imported GeoJSON regions.',needs:'Country/ISO and measure, or local GeoJSON polygons with an explicit regional join key.',status:'available',tags:['map','country','choropleth','regional','spatial','geojson','boundaries','district']},
- {id:'geo-symbol',category:'Geographic',name:'Proportional-symbol map',example:'Population or activity by city',use:'Show quantities as proportional circle areas at places.',needs:'Latitude/longitude, country or imported GeoJSON region key, plus nonnegative measure.',status:'available',tags:['map','bubble','circles','latitude','longitude','location','geojson','regions','boundaries']},
+ {id:'geo-choropleth',category:'Geographic',name:'Shaded map (choropleth)',example:'Illustrative country-level indicator',use:'Compare numeric values across countries or locally imported GeoJSON regions.',needs:'Country/ISO and measure, or local GeoJSON polygons with an explicit regional join key.',status:'available',tags:['map','country','choropleth','regional','spatial','geojson','boundaries','district']},
+ {id:'geo-symbol',category:'Geographic',name:'Bubble map (proportional symbols)',example:'Population or activity by city',use:'Show quantities as proportional circle areas at places.',needs:'Latitude/longitude, country or imported GeoJSON region key, plus nonnegative measure.',status:'available',tags:['map','bubble','circles','latitude','longitude','location','geojson','regions','boundaries']},
  {id:'geo-spike',category:'Geographic',name:'Spike map',example:'Cases or population by place',use:'Show quantities as spikes whose height matches the value; avoids the overlap of large circles.',needs:'Latitude/longitude, country or imported region key, plus nonnegative measure.',status:'available',tags:['map','spike','peaks','height','population','density','location'],isNew:true},
  {id:'geo-dots',category:'Geographic',name:'Dot density map',example:'Households or voters by area',use:'Scatter dots inside each area so readers see how a count is distributed.',needs:'Country or imported region key, plus a count.',status:'available',tags:['map','dot','dots','density','distribution','count','population'],isNew:true},
  {id:'geo-globe',category:'Geographic',name:'Globe map',example:'Country values seen on a globe',use:'Colour countries on a turnable 3D-style globe to keep global context.',needs:'Country name or ISO code plus a value.',status:'available',tags:['map','globe','3d','orthographic','world','sphere','countries'],isNew:true},
@@ -42,6 +42,7 @@ export const CATEGORIES=['All categories',...new Set(CATALOGUE.map(c=>c.category
 // Chip groups in the template library. Each group is a set of categories (or a test), so the chips
 // always lead somewhere and "All" always returns to the full catalogue.
 export const CATALOGUE_GROUPS=Object.freeze([
+ {id:'suggested',label:'Suggested for your data',test:c=>suggestedForData.includes(c.id)},
  {id:'all',label:'All'},
  {id:'new',label:'New',test:c=>c.isNew||c.tags.some(t=>/^new in 3\.(5[3-9]|6\d)$/.test(t))},
  {id:'comparison',label:'Comparison',categories:['Comparison']},
@@ -56,9 +57,21 @@ export const CATALOGUE_GROUPS=Object.freeze([
  {id:'specialised',label:'Specialised',categories:['Financial & specialised']},
  {id:'experimental',label:'Experimental',categories:['Experimental']}
 ].map(Object.freeze));
+// "Suggested for your data": a short, ordered list of plain charts that suit the user's columns.
+let suggestedForData=[];
+export function setSuggestedTypes(ids=[]){suggestedForData=ids.filter(id=>CATALOGUE.some(c=>c.id===id&&c.status==='available'));return suggestedForData;}
+export function suggestedTypes(){return suggestedForData;}
+export function suggestTypesForRows(rows,x,y){if(!Array.isArray(rows)||!rows.length||!x)return [];const values=rows.map(r=>r[x]),n=new Set(values.map(String)).size,nums=rows.map(r=>Number(r[y])).filter(Number.isFinite),positive=nums.length&&nums.every(v=>v>=0);
+ const timeLike=/year|date|month|quarter|week|period|time|day/i.test(x)||values.every(v=>/^(\d{4}|\d{4}-\d{2}(-\d{2})?|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i.test(String(v??'')));
+ if(timeLike)return ['line','bar','area','editorial-table','kpi'];
+ if(n<=6&&positive)return ['bar','hbar','donut','pie','editorial-table'];
+ if(n<=40)return ['hbar','bar','lollipop','dot','editorial-table'];
+ return ['hbar','editorial-table','histogram','dot'];}
 export function catalogueGroupTest(id='all'){const g=CATALOGUE_GROUPS.find(g=>g.id===id);if(!g||g.id==='all')return ()=>true;return g.test||(c=>g.categories.includes(c.category));}
+export function catalogueGroupOrder(id){return id==='suggested'?suggestedForData:null;}
 export function catalogueSearch(query='',category='All categories',show='all',group='all'){
- const q=query.trim().toLowerCase(),inGroup=catalogueGroupTest(group);return CATALOGUE.filter(c=>inGroup(c)&&(category==='All categories'||c.category===category)&&(show!=='available'||c.status==='available')&&(!q||[c.name,c.category,c.example,c.use,c.needs,...c.tags].some(t=>t.toLowerCase().includes(q))));
+ const q=query.trim().toLowerCase(),inGroup=catalogueGroupTest(group),order=catalogueGroupOrder(group);const found=CATALOGUE.filter(c=>inGroup(c)&&(category==='All categories'||c.category===category)&&(show!=='available'||c.status==='available')&&(!q||[c.name,c.category,c.example,c.use,c.needs,...c.tags].some(t=>t.toLowerCase().includes(q))));
+ return order?found.sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id)):found;
 }
 export function illustrativePreview(id){
  if(id==='geo-spike')return `<svg viewBox="0 0 160 100" role="img" aria-label="Spike map preview"><path d="M10 82C40 60 70 88 100 70S140 76 152 60" fill="none" stroke="#c9d4dc" stroke-width="8"/>${[[30,80,40],[52,76,22],[74,82,55],[96,72,30],[118,74,16],[138,66,44]].map(([x,y,h])=>`<path d="M${x-4} ${y}L${x} ${y-h}L${x+4} ${y}Z" fill="#27a49b" fill-opacity=".85"/>`).join('')}</svg>`;

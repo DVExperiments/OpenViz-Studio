@@ -67,7 +67,7 @@ async def main():
         paths['png']=await dl('export-png','chart')
         paths['svg']=await dl('export-svg','chart')
         paths['openviz']=await dl('export-project','project')
-        await pg.click('#headerExport'); await pg.wait_for_timeout(800); paths['html']=await dl('publish-download','publication'); await act('close-modal')
+        await pg.click('#headerExport'); await pg.wait_for_timeout(800); await pg.wait_for_timeout(800); await pg.evaluate("()=>document.querySelector('#modalLayer [data-action=publish-open]')?.click()"); await pg.wait_for_timeout(800); paths['html']=await dl('publish-download','publication'); await act('close-modal')
         for k,v in paths.items(): print(k, v, os.path.getsize(v))
         print('errors', errs[:4]); await b.close()
 asyncio.run(main())

@@ -1,5 +1,5 @@
 import {WORLD} from './world-data.js';
-import {normalizeBoundaryAsset} from './regional-map.js';
+import {normalizeBoundaryAsset,looseName} from './regional-map.js';
 import {regionalExample} from './regional-example.js';
 import {chartExample} from './catalogue.js';
 import {BOUNDARY_SETS} from './boundaries/index.js';
@@ -128,3 +128,18 @@ export function countryStarter(id){const [,iso3,kind]=String(id).split(':'),c=st
  const centres=anchors.slice(0,6);
  if(kind==='density'){const rows=centres.flatMap((a,i)=>Array.from({length:12},(_,j)=>({Place:a.name,...near(a,i,j,.45),Weight:1+(i+j)%4})));return {name,rows,settings:{...base,...frame,type:'geo-heat',x:'Place',y:'Weight',geoRadius:25,geoShowLabels:false,geoLegendTitle:'Relative intensity',sourceNote:'Synthetic points · density is relative, not population'}};}
  const rows=centres.flatMap((a,i)=>Array.from({length:40+i*12},(_,j)=>({Place:a.name,...near(a,i,j),Weight:1})));return {name,rows,settings:{...base,...frame,type:'geo-heat',x:'Place',y:'',geoHeatMode:'hexbin',geoHexSize:12,geoShowLabels:false,geoLegendTitle:'Points per hexagon',title:`${c.name} · Where reports came from`,subtitle:'Each hexagon counts reports inside it · synthetic data',sourceNote:'Synthetic points inside the country frame'}};}
+
+// ---- V3.64: recognise a spreadsheet of region names ------------------------------------------
+// When a map's names match no country ("Waikato", "Otago"…), check them against every country's
+// region names and offer that country's regions map. The ~60 KB index loads only when needed.
+let regionNameIndex=null;
+export function primeRegionNames(json){regionNameIndex=new Map(Object.entries(json||{}).map(([iso3,names])=>[iso3,new Set(names.map(looseName).filter(Boolean))]));return regionNameIndex;}
+export async function loadRegionNames(fetcher=fetch){if(regionNameIndex)return regionNameIndex;const res=await fetcher(new URL('./boundaries/region-names.json',import.meta.url).href);if(!res.ok)throw Error('Region names could not be loaded.');return primeRegionNames(await res.json());}
+export function matchRegionCountry(values,index=regionNameIndex){if(!index)return null;const distinct=[...new Set((values||[]).filter(v=>v!==null&&v!==undefined&&String(v).trim()).map(v=>String(v).trim()))].slice(0,500);if(distinct.length<2)return null;
+ const keys=distinct.map(v=>[v,looseName(v)]);let best=null;
+ for(const [iso3,names] of index){let matched=0;for(const [,k] of keys)if(k&&names.has(k))matched++;if(matched&&(!best||matched>best.matched))best={iso3,matched};}
+ if(!best||best.matched<2||best.matched/distinct.length<.5)return null;const c=starterCountry(best.iso3),names=index.get(best.iso3);
+ return {iso3:best.iso3,name:c?.name||best.iso3,set:c?.admin1||null,matched:best.matched,total:distinct.length,unmatched:keys.filter(([,k])=>!names.has(k)).map(([v])=>v).slice(0,5)};}
+/** Settings that turn a world map into a map of one country's regions, joined by (forgiving) region name. */
+export function regionMapSettings(iso3){const c=starterCountry(iso3);if(!c?.admin1)return null;const ex=countryStarter(`country:${iso3}:regions`).settings;
+ return {geoCustom:ex.geoCustom,geoBoundaryKey:'name',geoBoundaryLabel:'name',geoJoinMode:'loose',geoProjection:ex.geoProjection,geoView:'fit',geoExtent:ex.geoExtent,geoFramePadding:ex.geoFramePadding??6};}

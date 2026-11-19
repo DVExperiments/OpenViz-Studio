@@ -294,3 +294,12 @@ input[type=text],input[type=search]:not(#catalogueQuery),textarea,[contenteditab
 :root[data-theme="dark"] .catalogue-groups .v36-popular-chip[aria-pressed="true"]{color:#06201d}
 :root[data-theme="dark"] .action-cta-primary,:root[data-theme="dark"] .home-action-featured:hover .action-cta-primary{color:#06201d}
 :root[data-theme="dark"] .home-action-featured:hover .action-cta-primary{background:#5fd0c3!important}
+
+/* V3.64: Save or share dialog */
+.export-group-title{font-size:12px;font-weight:650;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 6px}
+.export-group{display:grid;gap:8px}
+.export-more{margin-top:14px}
+.export-more summary{cursor:pointer;font-weight:600;color:var(--accent-deep,var(--accent));padding:6px 0}
+.region-suggestion{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--accent-soft,#e6f4f2);border:1px solid var(--accent);border-radius:8px;padding:10px 12px;margin:6px 0;color:var(--ink)}
+.settings-more{padding:14px 16px 20px;border-top:1px solid var(--line)}
+.settings-more .hint{margin-top:6px}

@@ -28,7 +28,7 @@ async def main():
         await act('to-present'); await act('add-text'); await pg.wait_for_timeout(400); await audit(pg,'slides',res)
         await act('story-new'); await pg.wait_for_timeout(500); await audit(pg,'story studio',res)
         await act('to-visualise'); await pg.wait_for_timeout(400)
-        await pg.click('#headerExport'); await pg.wait_for_timeout(900); await audit(pg,'publishing studio',res); await act('close-modal')
+        await pg.click('#headerExport'); await pg.wait_for_timeout(900); await pg.wait_for_timeout(900); await pg.evaluate("()=>document.querySelector('#modalLayer [data-action=publish-open]')?.click()"); await pg.wait_for_timeout(900); await audit(pg,'publishing studio',res); await act('close-modal')
         await act('parameters-open'); await audit(pg,'parameters dialog',res); await act('close-modal')
         await act('brand-open'); await audit(pg,'organisation theme',res); await act('close-modal')
         await act('live-connect'); await audit(pg,'live data dialog',res); await act('close-modal')
@@ -39,7 +39,7 @@ async def main():
         await pg.click('[data-menu="Insert"]'); await pg.click('#menuPopover button:has-text("Browse chart catalogue")'); await pg.wait_for_timeout(500); await audit(pg,'chart catalogue',res); await pg.keyboard.press('Escape'); await pg.wait_for_timeout(300)
         await act('home'); await pg.click('text=Open template library'); await pg.wait_for_timeout(300); await pg.fill('input[placeholder^="Search charts"]','Editorial table'); await pg.wait_for_timeout(300)
         await pg.locator('button:has-text("Try example")').first.click(); await pg.wait_for_timeout(900); await audit(pg,'editorial table editor',res)
-        await pg.click('#headerExport'); await pg.wait_for_timeout(800)
+        await pg.click('#headerExport'); await pg.wait_for_timeout(800); await pg.wait_for_timeout(800); await pg.evaluate("()=>document.querySelector('#modalLayer [data-action=publish-open]')?.click()"); await pg.wait_for_timeout(800)
         async with pg.expect_download(timeout=20000) as dl: await act('publish-download')
         html=open(await (await dl.value).path(),encoding='utf8').read(); open('/tmp/standalone.html','w').write(html); await act('close-modal')
         # published outputs

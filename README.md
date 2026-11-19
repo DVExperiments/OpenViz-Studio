@@ -1,4 +1,21 @@
-# OpenViz Studio V3.63: choosing what a chart shows
+# OpenViz Studio V3.64: easier for first-time users
+
+Changes from a usability walkthrough done as a first-time user who isn't comfortable with technology (full findings in `docs/USABILITY_REVIEW_V3_64.md`):
+
+- **Save or share** replaces "Publish & export". Picture (PNG), PDF and PowerPoint come first, then website options, a project backup, and "More formats" for designers.
+- **Maps of a country's regions just work.** If your names match no country but do match one country's regions ("Waikato", "Otago"…), the map offers *Show New Zealand's regions* in one click. Matching forgives accents, punctuation and words like District or City. The same **Forgiving** match rule is available for your own boundary files.
+- **Suggested for your data.** After importing from Home, the chart chooser opens straight away with 4–5 charts that suit your columns, drawn with your own numbers.
+- **Simpler Settings.** Only the everyday sections show at first. **Show all settings** reveals the rest.
+- **Your projects** now sit near the top of Home, under the start options.
+- Plainer words in several places:
+  - Titles now read "Sales by Month".
+  - The data page is titled "Check your data", with a **Make a chart** button.
+  - Two maps are renamed "Shaded map (choropleth)" and "Bubble map (proportional symbols)".
+  - Field labels and one warning are reworded.
+
+---
+
+## OpenViz Studio V3.63: choosing what a chart shows
 
 - **Data & axes** now sits at the top of the Settings panel for every chart. It has the chart's column choices (for example *Category / X axis* and *Value / Y axis*) and how rows with the same category are combined (sum, average, count, minimum, maximum). **More data options and the data table →** opens the Data view with every field option.
 - **Better first guesses** when you create a chart from your data. Readable names are preferred over codes (DistrictName rather than RegionCode). Real measures are preferred over identifier columns such as OBJECTID or FID, which are numbers but meaningless to add up. GIS geometry columns (Shape__Area, Shape__Length) are used only when there is nothing better. Years and dates are still preferred as the category.

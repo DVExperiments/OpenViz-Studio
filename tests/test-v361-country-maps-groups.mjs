@@ -33,8 +33,8 @@ assert.match(countryStarter('country:DEU:regions').settings.sourceNote,/fictiona
 const ci=countryStarter('country:UKR:places');const svg=buildChart(ci.rows,{...DEFAULT_CHART,...ci.settings},'geo-symbol');assert.doesNotMatch(svg,/undefined/);
 
 // template groups: every template is reachable from a group chip, and "All" shows everything
-assert.equal(CATALOGUE_GROUPS[0].id,'all');assert.equal(catalogueSearch('','All categories','all','all').length,CATALOGUE.length);
-const covered=new Set(CATALOGUE_GROUPS.filter(g=>!['all','new'].includes(g.id)).flatMap(g=>catalogueSearch('','All categories','all',g.id).map(c=>c.id)));
+assert.ok(CATALOGUE_GROUPS.some(g=>g.id==='all'));assert.equal(catalogueSearch('','All categories','all','all').length,CATALOGUE.length);
+const covered=new Set(CATALOGUE_GROUPS.filter(g=>!['all','new','suggested'].includes(g.id)).flatMap(g=>catalogueSearch('','All categories','all',g.id).map(c=>c.id)));
 assert.equal(covered.size,CATALOGUE.length,'every template belongs to a group');
 assert.ok(catalogueSearch('','All categories','all','new').some(c=>c.id==='quiz'),'New includes V3.60 templates');
 assert.ok(catalogueSearch('','All categories','all','maps').every(c=>c.category==='Geographic'));

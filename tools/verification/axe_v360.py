@@ -19,7 +19,7 @@ async def main():
             await card.locator('button:has-text("Try example")').first.click(); await pg.wait_for_timeout(900)
             await audit(pg,'editor '+n)
             if n in ('Quiz','Poll'):
-                await pg.click('#headerExport'); await pg.wait_for_timeout(700)
+                await pg.click('#headerExport'); await pg.wait_for_timeout(700); await pg.wait_for_timeout(700); await pg.evaluate("()=>document.querySelector('#modalLayer [data-action=publish-open]')?.click()"); await pg.wait_for_timeout(700)
                 async with pg.expect_download() as dl:
                     await pg.evaluate("()=>document.querySelector('[data-action=\"publish-download\"]').click()")
                 path=str(await (await dl.value).path()); html=open(path,encoding='utf8').read(); f='/tmp/axe_'+n+'.html'; open(f,'w').write(html)

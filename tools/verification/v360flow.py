@@ -109,7 +109,7 @@ async def main():
         await pg.keyboard.press('Escape'); await pg.wait_for_timeout(300)
 
         # ---- exported page: fullscreen button and RTL direction ----
-        await pg.click('#headerExport'); await pg.wait_for_timeout(800)
+        await pg.click('#headerExport'); await pg.wait_for_timeout(800); await pg.wait_for_timeout(800); await pg.evaluate("()=>document.querySelector('#modalLayer [data-action=publish-open]')?.click()"); await pg.wait_for_timeout(800)
         try:
             async with pg.expect_download(timeout=8000) as dl: await act('publish-download')
             path=await (await dl.value).path(); html=open(path,encoding='utf8').read(); open('/tmp/v360export.html','w').write(html)
