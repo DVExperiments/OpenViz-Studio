@@ -13,10 +13,10 @@ import {standaloneStoryHtml,storySvgAt,storyLayout} from './story.js';
 import {chartIsRtl} from './charts.js';
 
 export const PUBLISH_PRESETS=Object.freeze({
- responsive:{label:'Responsive website',ratio:'16 / 9',height:540,description:'Flexible width for websites and blogs'},
- article:{label:'Article / research',ratio:'4 / 3',height:520,description:'Readable figures in articles and reports'},
- presentation:{label:'Presentation / widescreen',ratio:'16 / 9',height:720,description:'Large frame for slides and full-width publishing'},
- portrait:{label:'Portrait / mobile',ratio:'3 / 4',height:680,description:'Narrow column for mobile-first pages'}
+ responsive:{label:'Fits any screen (recommended)',ratio:'16 / 9',height:540,description:'Flexible width for websites and blogs'},
+ article:{label:'Narrow, for an article',ratio:'4 / 3',height:520,description:'Readable figures in articles and reports'},
+ presentation:{label:'Wide, for a presentation',ratio:'16 / 9',height:720,description:'Large frame for slides and full-width publishing'},
+ portrait:{label:'Tall, for phones',ratio:'3 / 4',height:680,description:'Narrow column for mobile-first pages'}
 });
 export const PUBLISH_DEVICES=Object.freeze({desktop:{width:1080,height:620},tablet:{width:700,height:600},phone:{width:375,height:660}});
 const safeText=s=>escapeHtml(String(s??''));

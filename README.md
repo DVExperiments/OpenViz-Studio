@@ -1,4 +1,24 @@
-# OpenViz Studio V3.64: easier for first-time users
+# OpenViz Studio V3.65: backups, plain publishing, phones and tablets
+
+- **No more surprise project.** On a first visit the example project is shown but not saved. It is only saved once you change it. New projects no longer list an empty "My dashboard" or "Slides".
+- **Backups.** Work is saved in this browser only, so:
+  - after your first chart, a reminder offers **Back up now**
+  - the sidebar shows when you last backed up
+  - each project on Home has a **Back up** button and shows its backup status
+  - reminders come back when a project has changed for a week since its last backup
+- **Plain publishing.** "Publishing Studio" is now **Put it on a website**, set out as three steps: download the web page, upload it, copy the code. The page options use everyday words, and the specialist options sit under "More options".
+- **Plain dashboards.** The dashboard screens use everyday words:
+  - "Arrange charts: Automatically / By hand"
+  - "Connect charts by"
+  - "When someone clicks a chart: Highlight the same item in every chart / Show only that item / Do nothing"
+  - "Save as web page"
+- **Plain names in the sidebar and toolbars.** The sidebar now reads Data, Charts, Dashboards, Slides, Stories and Saved versions. In the toolbars, "Reload file" and "New column from a formula" replace the old names.
+- **Phones and tablets.** The header keeps **Save** on screen, and the editor toolbar wraps so **Settings** and **Change template** are always reachable. The chart chooser hides its filters behind **Search and filters**, and form controls are larger.
+- **User test kit.** The practice files are in `docs/user-testing/`. The script, task cards, observation sheet and questionnaire are in the shared doc "OpenViz Studio user test kit".
+
+---
+
+## OpenViz Studio V3.64: easier for first-time users
 
 Changes from a usability walkthrough done as a first-time user who isn't comfortable with technology (full findings in `docs/USABILITY_REVIEW_V3_64.md`):
 

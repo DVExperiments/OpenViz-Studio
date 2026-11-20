@@ -20,6 +20,7 @@ async def main():
         svg=lambda: pg.locator('#liveChartSvg > svg').first
         async def home(): await pg.click('[data-action="home"]'); await pg.wait_for_timeout(400)
         await pg.goto(URL,wait_until='networkidle'); await pg.wait_for_timeout(500)
+        await pg.evaluate("localStorage.setItem('openviz-all-settings','1')")
 
         # ---- templates and their interactivity inside the editor ----
         await demo('Quiz')

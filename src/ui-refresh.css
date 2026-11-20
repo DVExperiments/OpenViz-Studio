@@ -303,3 +303,59 @@ input[type=text],input[type=search]:not(#catalogueQuery),textarea,[contenteditab
 .region-suggestion{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--accent-soft,#e6f4f2);border:1px solid var(--accent);border-radius:8px;padding:10px 12px;margin:6px 0;color:var(--ink)}
 .settings-more{padding:14px 16px 20px;border-top:1px solid var(--line)}
 .settings-more .hint{margin-top:6px}
+
+/* V3.65: backups */
+.backup-reminder{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff8e6;border:1px solid #e0b44a;color:#4a3500;border-radius:8px;padding:10px 14px;margin:10px 16px 0}
+:root[data-theme="dark"] .backup-reminder{background:#3a2f12;border-color:#a4822a;color:#fbe6b0}
+.project-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.project-foot small{flex-basis:100%;padding-left:16px}
+.project-foot .button-small{margin-left:12px}
+.online-dot.warn{background:#d68a00}
+.backup-missing{color:#9a5b00;font-weight:600}
+:root[data-theme="dark"] .backup-missing{color:#f2b84b}
+.home-backup-note{margin:-4px 0 12px;color:var(--muted);font-size:13px}
+.recent-actions{gap:8px;flex-wrap:wrap}
+.publish-steps{margin:8px 0 12px;padding-left:20px;display:grid;gap:14px}
+.publish-steps li>strong{display:block;margin-bottom:6px}
+.publish-more{margin-top:12px}.publish-more summary{cursor:pointer;font-weight:600;padding:6px 0}
+
+/* V3.65: phones and tablets. Keep the main actions (Settings, Save or share) on screen. */
+@media (max-width:1100px){
+ #workspaceToolbar,.studio-view .workspace-toolbar{flex-wrap:wrap;row-gap:6px;height:auto!important;max-height:none!important;overflow:visible!important;min-height:44px;padding-top:6px;padding-bottom:6px}
+ .studio-view .workspace-toolbar .studio-devices{display:none!important}
+ #workspaceToolbar .toolbar-spacer{flex:1 1 0;min-width:0}
+}
+@media (max-width:900px){
+ #workspaceToolbar .studio-devices{display:none}
+}
+@media (max-width:700px){
+ .app-header{gap:6px;overflow:hidden}
+ #commandButton{display:none!important}
+ #editorHelpButton{display:none!important}
+ .brand strong span{display:none}
+ #homeQuickLinks{display:none}
+ #projectName{max-width:28vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ #saveStatus{display:none}
+ #headerExport{padding:0 10px;white-space:nowrap}
+ #headerExport span{display:inline}
+ #menuLine{overflow-x:auto;scrollbar-width:none}
+ .backup-reminder{margin:8px;font-size:13px}
+ .catalogue-filters{display:none}
+ .catalogue-filters.show-filters{display:grid}
+}
+@media (max-width:420px){
+ #headerExport span{display:none}
+ #headerExport::after{content:'Save';font-weight:600}
+ .brand strong{display:none}
+}
+
+.catalogue-filter-toggle{display:none}
+@media (max-width:700px){.catalogue-filter-toggle{display:inline-flex;margin:4px 0 8px}}
+@media (max-width:700px){
+ .element-ribbon{display:none}
+ .studio-meta-size,.studio-chart-meta .muted{display:none}
+}
+:root[data-theme="dark"] .backup-reminder .primary,:root[data-theme="dark"] .region-suggestion .primary{color:#06201d!important}
+@media (max-width:700px){select,input:not([type=checkbox]):not([type=radio]):not([type=range]){min-height:32px}}
+@media (max-width:700px){select{min-width:min(140px,100%);max-width:100%}}
+@media (max-width:700px){.field-row{flex-wrap:wrap}.field-row>.field{min-width:140px;flex:1 1 140px}}

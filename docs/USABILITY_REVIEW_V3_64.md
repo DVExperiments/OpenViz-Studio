@@ -50,18 +50,18 @@ The persona doesn't know words like dataset, aggregation, choropleth, iframe or 
 
 | # | Issue | Suggested fix | Priority |
 |---|---|---|---|
-| 11 | First launch saves a sample project, "Regional sales analysis", that the person never made. New projects also come with an empty "My dashboard" and "Slides (1)". | Don't save the sample until it is edited. Create dashboards and slides on first use. | High |
-| 12 | Work lives only in this browser. Clearing browser data or switching computers loses it. The warning is a line at the bottom of Home. | A gentle reminder after the first chart ("Keep a backup?"), and a one-click backup on Home. | High |
-| 13 | Publishing Studio jargon: iframe, Team Server, "Content mode", "Layout preset", "112,316 HTML characters". | A plain first screen ("Put this on a website: 1. Download 2. Upload to your site 3. Paste this code"), with the options under "Advanced". | Medium |
-| 14 | Dashboard jargon: "Linked field", "Highlight matching marks", "Responsive grid / Free canvas", "Comparison chooser". | Plain labels ("When someone clicks a bar…"), and a single **Add chart** first. | Medium |
-| 15 | The sidebar uses Datasets, Visualisations, Visual stories, Design versions and "Local-first workspace". | Data, Charts, Stories and Saved versions. | Medium |
+| 11 | **Fixed in V3.65.** First launch saves a sample project, "Regional sales analysis", that the person never made. New projects also come with an empty "My dashboard" and "Slides (1)". | Don't save the sample until it is edited. Create dashboards and slides on first use. | High |
+| 12 | **Fixed in V3.65** (backup reminder, backup status, Back up on each project). Work lives only in this browser. Clearing browser data or switching computers loses it. The warning is a line at the bottom of Home. | A gentle reminder after the first chart ("Keep a backup?"), and a one-click backup on Home. | High |
+| 13 | **Fixed in V3.65** (three plain steps). Publishing Studio jargon: iframe, Team Server, "Content mode", "Layout preset", "112,316 HTML characters". | A plain first screen ("Put this on a website: 1. Download 2. Upload to your site 3. Paste this code"), with the options under "Advanced". | Medium |
+| 14 | **Fixed in V3.65.** Dashboard jargon: "Linked field", "Highlight matching marks", "Responsive grid / Free canvas", "Comparison chooser". | Plain labels ("When someone clicks a bar…"), and a single **Add chart** first. | Medium |
+| 15 | **Fixed in V3.65.** The sidebar uses Datasets, Visualisations, Visual stories, Design versions and "Local-first workspace". | Data, Charts, Stories and Saved versions. | Medium |
 | 16 | The chooser still shows 14 group chips plus Category, Show and Preview dropdowns. | Put the dropdowns behind a "Filters" button. | Medium |
 | 17 | "1 Choose a template / 2 Connect data / 3 Design & share" look like buttons but do nothing. | Style them as a step indicator, not buttons. | Low |
 | 18 | Status lines and warnings use analyst wording, such as "Sum of Sales per Month." or "No compatible geographic observations". | Rewrite the 20 most common warnings in plain English, each with the action to take. | Medium |
 | 19 | The region map counts tiny outlying islands as "unshaded" ("7 of 24 regions have values; 17 remain unshaded"). | Count mainland regions only, or say "No data for 17 areas, mostly small islands". | Low |
 | 20 | The "Select element" dropdown has 16 technical options, such as "Individual value label" and "Data series". | Hide it in the simple view; clicking on the chart already works. | Low |
 | 21 | Many template names are expert terms: Beeswarm, Ridgeline, Marimekko, Editorial table. | Add a plain one-line "Use this to…" under each name. | Low |
-| 22 | Phone and tablet layouts, screen readers and real people were not tested in this round. | Run the 5-person test (test kit available on request). | High |
+| 22 | **Phone and tablet checked and fixed in V3.65**; screen readers and real people still to do (test kit ready). Phone and tablet layouts, screen readers and real people were not tested in this round. | Run the 5-person test (test kit available on request). | High |
 
 ## Verification of the fixes
 
